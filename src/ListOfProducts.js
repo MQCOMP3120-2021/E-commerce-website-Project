@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams
+import { useParams, Link
 } from "react-router-dom"
 
 const ListOfProducts = ({products}) => {
@@ -8,7 +8,7 @@ const ListOfProducts = ({products}) => {
             {
                 products.map((item) => {
                     <li key={item.id}>
-                        {item.photo}
+                        <Link to={`/products/${item.id}`}>{item.photo}</Link>
                         {item.name}
                         {item.price}
                     </li>
@@ -18,14 +18,14 @@ const ListOfProducts = ({products}) => {
     )
 }
 
-const SingleProduct = ({product, addQuantity}) => {
+const SingleProduct = ({product}) => {
      const id = Number(useParams().id)
     const singleP = product.find(p=> p.id === id)
     console.log(singleP)
     if(singleP){
         return(
             <>
-            <img src={product.photo}></img>
+            <img src={product.photo} alt="bread"></img>
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p>{product.price}</p>

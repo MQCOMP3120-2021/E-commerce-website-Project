@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "First Bread",
+      "description": "Deliciouuuuususususuusususu bread",
+      "price": "$9,00",
+      "reviews": [
+        "First review",
+        "Second Review"
+      ],
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Fresh_made_bread_05.jpg/250px-Fresh_made_bread_05.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Second Bread",
+      "description": "Horrribleeeeeefefefe bread",
+      "price": "$20,00",
+      "reviews": [
+        "First review",
+        "Second Review"
+      ],
+      "photo": ""
+    },
+    {
+      "id": 3,
+      "name": "Third Bread",
+      "description": "Deliciouuuuususususuusususu bread",
+      "price": "$4,00",
+      "reviews": [
+        "First review",
+        "Second Review"
+      ],
+      "photo": ""
+    },
+    {
+      "id": 4
+    }
+  ]
+}

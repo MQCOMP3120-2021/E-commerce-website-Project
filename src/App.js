@@ -1,3 +1,4 @@
+import React, {useState} from 'react'
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -6,6 +7,7 @@ import {
 import productDisplay from './ListOfProducts';
 
 function App() {
+  const [products, setProducts] = useState([])
 
 
 
@@ -23,10 +25,10 @@ function App() {
       </ul>
       <Switch>
         <Route path="/products/:id">
-          
+          <productDisplay.SingleProduct product ={products} />
         </Route>
         <Route path="/Menu">
-          
+          <productDisplay.ListOfProducts  products={products}/> 
         </Route>
         <Route path="/Contact-us">
 

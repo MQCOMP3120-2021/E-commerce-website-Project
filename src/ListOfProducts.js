@@ -1,6 +1,9 @@
 import React from 'react'
+import { useParams
+} from "react-router-dom"
+
 const ListOfProducts = ({products}) => {
-    return(
+     return(
         <ul>
             {
                 products.map((item) => {
@@ -16,7 +19,7 @@ const ListOfProducts = ({products}) => {
 }
 
 const SingleProduct = ({product, addQuantity}) => {
-    const id = Number(userParams().id)
+     const id = Number(useParams().id)
     const singleP = product.find(p=> p.id === id)
     console.log(singleP)
     if(singleP){
@@ -36,4 +39,9 @@ const SingleProduct = ({product, addQuantity}) => {
         )
     }
 }
-export default ListOfProducts
+
+const productDisplay = {
+    ListOfProducts, SingleProduct
+}
+
+export default productDisplay

@@ -6,13 +6,13 @@ const ListOfProducts = ({products}) => {
      return(
         <ul>
             {
-                products.map((item) => {
+                products.map((item) => 
                     <li key={item.id}>
                         <Link to={`/products/${item.id}`}>{item.photo}</Link>
                         {item.name}
                         {item.price}
                     </li>
-                })
+            )
             }
         </ul>
     )

@@ -24,13 +24,6 @@ const App = () => {
   },
   [])
 
-/**   const menuPage = () => (
-    <productDisplay.ListOfProducts  products={products}/> 
-  )
-  const singleProductPage = () => (
-    <productDisplay.SingleProduct product ={products} />
-  )*/
-
   return (
    <Router>
     <div className="App">

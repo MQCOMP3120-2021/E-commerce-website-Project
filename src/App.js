@@ -1,15 +1,35 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
   Switch, Route, Link
 } from "react-router-dom";
 import productDisplay from './ListOfProducts';
+import productService from './services/productService';
 
-function App() {
+
+
+const App = () => {
   const [products, setProducts] = useState([])
 
+ 
 
+  useEffect(()=>{
+    console.log("effect is being run")
+    productService.getAll()
+    .then(objects => {
+      console.log("we have a response", objects)
+      setProducts(objects)
+    })
+  },
+  [])
+
+/**   const menuPage = () => (
+    <productDisplay.ListOfProducts  products={products}/> 
+  )
+  const singleProductPage = () => (
+    <productDisplay.SingleProduct product ={products} />
+  )*/
 
   return (
    <Router>
@@ -25,12 +45,13 @@ function App() {
       </ul>
       <Switch>
         <Route path="/products/:id">
-          <productDisplay.SingleProduct product ={products} />
+         <productDisplay.SingleProduct product ={products} />
         </Route>
         <Route path="/Menu">
-          <productDisplay.ListOfProducts  products={products}/> 
+         <productDisplay.ListOfProducts  products={products}/> 
         </Route>
         <Route path="/Contact-us">
+          <p>This is contact us content</p>
 
         </Route>
         <Route path="/FAQ">
@@ -40,6 +61,10 @@ function App() {
 
         </Route>
         <Route path="/Login">
+
+        </Route>
+        <Route path="/">
+          <p>this is home page</p>
 
         </Route>
       </Switch>

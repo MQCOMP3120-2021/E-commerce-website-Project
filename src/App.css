@@ -141,7 +141,8 @@
 }
 
 .trendingButton {
-/* float:right; ALIGN BUTTON*/
- background-color: black;
-
+ display: block;
+ margin-left: auto;
+ margin-right: 15%;
 }
+

@@ -61,7 +61,7 @@ const Home = () => (
                     <p className="trending-sub">Chocolate Croissant</p>
                 </div>
             </section>
-            <Link to='/Menu'><button className="trendingButton" onClick= "" >Shop Now</button>  </Link>
+            <Link to='/Menu'><button className="trendingButton" >Shop Now</button>  </Link>
         </div>
 
     </div>

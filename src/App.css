@@ -121,3 +121,27 @@
   border: solid 1px white;
   padding: 0;
 }
+
+.container-grid {
+  display: grid;
+  grid-area: auto;
+  grid-template-columns: 300px 315px auto;
+  max-width:fit-content;
+  margin:auto;
+
+}
+
+.trendingItem img{
+  max-height: 350px;
+}
+
+.trending-sub {
+  color: white;
+  font-family: cormorant;
+}
+
+.trendingButton {
+/* float:right; ALIGN BUTTON*/
+ background-color: black;
+
+}

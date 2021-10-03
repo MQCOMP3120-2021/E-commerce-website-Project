@@ -9,6 +9,10 @@ import trendingFirst from '../assets/trendingFirst.jpg'
 import trendingSecond from '../assets/trendingSecond.jpg'
 import trendingThird from '../assets/trendingThird.jpg'
 
+
+
+
+
 const Home = () => (
     <div className="homeContainer">
 
@@ -43,7 +47,21 @@ const Home = () => (
 
         <div className="trendingProducts">
             <h1 className="trendingTitle">Trending Products</h1>
-                
+            <section className="container-grid">
+                <div className="trendingItem">
+                    <img src= {trendingFirst} alt="First trending image"/>
+                    <p className="trending-sub">Signature Sourdough</p>
+                </div>
+                <div className="trendingItem">
+                    <img src= {trendingSecond} alt="First trending image"/> 
+                    <p className="trending-sub">Cinnamon Roll</p>
+                </div>
+                <div className="trendingItem">
+                    <img src= {trendingThird} alt="First trending image"/> 
+                    <p className="trending-sub">Chocolate Croissant</p>
+                </div>
+            </section>
+            <button className="trendingButton" onClick= "" >Shop Now</button>   
         </div>
 
     </div>

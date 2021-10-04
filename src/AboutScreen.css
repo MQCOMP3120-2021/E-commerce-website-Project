@@ -113,10 +113,14 @@ body{
 .socialMedia h2{
     margin-top: 0;
     color: white;
-    border-bottom: 0.01em solid white;
     padding-bottom: 2px;
     font-size: 2em;
     text-align: center;
+    font-family: 'Cormorant', serif;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    width: fit-content;
+    margin:auto;
 }
 
 .sm-icons{

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import '../App.css';
+import '../homeScreen.css';
 import {
   BrowserRouter as Router,
   Switch, Route, Link
@@ -10,15 +10,12 @@ import trendingSecond from '../assets/trendingSecond.jpg'
 import trendingThird from '../assets/trendingThird.jpg'
 import logo from '../assets/j-logo.png'
 
-
-
-
-
 const Home = () => (
+
     <div className="homeContainer">
 
         <div className="bg-img">
-            <ul className="Navbar">
+            <ul className="DarkNavbar">
                 <li><Link to= "/" className="darkNav">Home</Link></li>
                 <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
 

@@ -12,7 +12,7 @@ import twitterIcon from '../assets/twitter.png'
 const About = () => {
     return(
         <div className="aboutPage">
-            <ul className="Navbar">
+            <ul className="DarkNavbar">
                 <li><Link to= "/" className="darkNav">Home</Link></li>
                 <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
                 <li><Link to= "/About" className="darkNav">About</Link></li>
@@ -56,10 +56,10 @@ const About = () => {
             <div className="socialMedia">
                 <h2>KEEP IN TOUCH</h2>
                 <ul className="sm-icons">
-                    <li className="sm-icon"><a href="#"><img src={emailIcon} width="80px" height="80px" alt="email"/></a></li>
-                    <li className="sm-icon"><a href="#"><img src={igIcon} width="80px" height="80px" alt="instagram"/></a></li>
-                    <li className="sm-icon"><a href="#"><img src={twitterIcon} width="80px" height="80px" alt="twitter"/></a></li>
-                    <li className="sm-icon"><a href="#"><img src={fbIcon} width="80px" height="80px" alt="facebook"/></a></li>
+                    <li className="sm-icon"><a href="#"><img src={emailIcon} width="50px" height="50px" alt="email"/></a></li>
+                    <li className="sm-icon"><a href="#"><img src={igIcon} width="50px" height="50px" alt="instagram"/></a></li>
+                    <li className="sm-icon"><a href="#"><img src={twitterIcon} width="50px" height="50px" alt="twitter"/></a></li>
+                    <li className="sm-icon"><a href="#"><img src={fbIcon} width="50px" height="50px" alt="facebook"/></a></li>
                 </ul>
             </div>
         </div>

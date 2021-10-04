@@ -3,36 +3,27 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Cormorant', serif;
 }
 
-.Navbar {
+.DarkNavbar {
     list-style-type: none;
     text-decoration: none;
     display:flex;
     justify-content: space-between;
     min-height: 80px;
     margin-right: 10%;
-    margin-left: 5%;
+    margin-left: 10%;
     padding-top: 40px;
 }
   
-.Navbar li{
+.DarkNavbar li{
     margin:auto;
 }
-  
   
 .darkNav {
     text-decoration: none;
     color: white;
-    font-size: 17px;
-    font-family: 'Cormorant', serif;
-    font-weight: bold;
-}
-  
-.brightNav {
-    text-decoration: none;
-    color: black;
     font-size: 17px;
     font-family: 'Cormorant', serif;
     font-weight: bold;
@@ -46,16 +37,6 @@
     border-bottom-width: 1px;
     width: fit-content;
 }
-  
-.brightNav:hover {
-    /* text-decoration: underline; */
-    color:black;
-    transition: 0.2s;
-    padding-bottom: 3px;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    width: fit-content;
-}
 
 .aboutSection{
     color: white;
@@ -63,12 +44,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5% 18%;
+    padding: 5% 18% 10% 18%;
 }
 
 .aboutSection h2{
     border-bottom: 0.01em solid white;
-    padding-bottom: 2px;
+    padding-bottom: 8px;
     font-size: 2em;
 }
 
@@ -91,7 +72,7 @@
 .locationSection h2{
     color: white;
     border-bottom: 0.01em solid white;
-    padding-bottom: 2px;
+    padding-bottom: 8px;
     font-size: 2em;
 }
 
@@ -113,7 +94,7 @@
 .socialMedia h2{
     margin-top: 0;
     color: white;
-    padding-bottom: 2px;
+    padding-bottom: 8px;
     font-size: 2em;
     text-align: center;
     font-family: 'Cormorant', serif;

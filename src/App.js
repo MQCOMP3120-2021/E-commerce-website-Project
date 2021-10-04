@@ -12,7 +12,6 @@ import Contact from './pages/contactScreen.js';
 import Faq from './pages/FAQScreen.js';
 import Cart from './pages/cartScreen.js';
 import Login from './pages/loginScreen.js';
-import About from './pages/aboutScreen.js'
 
 
 const App = () => {
@@ -51,9 +50,9 @@ const App = () => {
           <Menu />
          <productDisplay.ListOfProducts  products={products}/> 
         </Route>
-        <Route path="/About">
-          <About />
-          {/* <p>This is contact us content</p> */}
+        <Route path="/Contact-us">
+          <Contact />
+          <p>This is contact us content</p>
 
         </Route>
         <Route path="/FAQ">

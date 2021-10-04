@@ -1,0 +1,130 @@
+body{
+    background: url("assets/aboutBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Navbar {
+    list-style-type: none;
+    text-decoration: none;
+    display:flex;
+    justify-content: space-between;
+    min-height: 80px;
+    margin-right: 10%;
+    margin-left: 5%;
+    padding-top: 40px;
+}
+  
+.Navbar li{
+    margin:auto;
+}
+  
+  
+.darkNav {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-family: 'Cormorant', serif;
+    font-weight: bold;
+}
+  
+.brightNav {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    font-family: 'Cormorant', serif;
+    font-weight: bold;
+}
+  
+.darkNav:hover {
+    color:white;
+    transition: 0.2s;
+    padding-bottom: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    width: fit-content;
+}
+  
+.brightNav:hover {
+    /* text-decoration: underline; */
+    color:black;
+    transition: 0.2s;
+    padding-bottom: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    width: fit-content;
+}
+
+.aboutSection{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 18%;
+}
+
+.aboutSection h2{
+    border-bottom: 0.01em solid white;
+    padding-bottom: 2px;
+    font-size: 2em;
+}
+
+.aboutSection p{
+    text-align: center;
+    line-height: 2;
+    font-size: 1.2em;
+}
+
+.locationSection{
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 18%;
+    margin-bottom: 0;
+}
+
+.locationSection h2{
+    color: white;
+    border-bottom: 0.01em solid white;
+    padding-bottom: 2px;
+    font-size: 2em;
+}
+
+.locationSection h6{
+    font-size: 1em;
+    color: white;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.socialMedia{
+    background: black;
+    margin: 0;
+    padding: 5% 18%;
+    display: flex;
+    flex-direction: column;
+}
+
+.socialMedia h2{
+    margin-top: 0;
+    color: white;
+    border-bottom: 0.01em solid white;
+    padding-bottom: 2px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.sm-icons{
+    padding-top: 5%;
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.sm-icon{
+    text-decoration: none;
+}

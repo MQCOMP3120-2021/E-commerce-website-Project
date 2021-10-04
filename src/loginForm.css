@@ -1,0 +1,36 @@
+body{
+    background: white !important;
+}
+.loginSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginImg{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
+.loginForm{
+    height: 400px;
+    width: 400px;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.loginForm h3{
+    color: white;
+    text-align: left;
+    font-weight: 400;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+form button{
+    border: none;
+    color: white;
+}

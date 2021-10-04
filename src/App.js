@@ -53,7 +53,7 @@ const App = () => {
         </Route>
         <Route path="/About">
           <About />
-          {/* <p>This is contact us content</p> */}
+          <p>This is contact us content</p>
 
         </Route>
         <Route path="/FAQ">

@@ -8,6 +8,7 @@ import reviewImage from '../assets/reviewImage.png'
 import trendingFirst from '../assets/trendingFirst.jpg'
 import trendingSecond from '../assets/trendingSecond.jpg'
 import trendingThird from '../assets/trendingThird.jpg'
+import logo from '../assets/j-logo.png'
 
 
 
@@ -20,8 +21,13 @@ const Home = () => (
             <ul className="Navbar">
                 <li><Link to= "/" className="darkNav">Home</Link></li>
                 <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
+
                 <li><Link to= "/About" className="darkNav">About</Link></li>
                 <li><img src="" className="App-logo" alt="logo" /> </li>
+
+                <li><Link to= "/Contact-us" className="darkNav">Contact</Link></li>
+                <li><img src= {logo} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
+
                 <li><Link to= "/FAQ" className="darkNav">FAQ</Link></li>
                 <li><Link to= "/My-cart" className="darkNav">Cart</Link></li>
                 <li><Link to= "/Login" className="darkNav">Login</Link></li>
@@ -53,15 +59,18 @@ const Home = () => (
                     <p className="trending-sub">Signature Sourdough</p>
                 </div>
                 <div className="trendingItem">
-                    <img src= {trendingSecond} alt="First trending image"/> 
+                    <img src= {trendingSecond} alt="Second trending image"/> 
                     <p className="trending-sub">Cinnamon Roll</p>
                 </div>
                 <div className="trendingItem">
-                    <img src= {trendingThird} alt="First trending image"/> 
+                    <img src= {trendingThird} alt="Third trending image"/> 
                     <p className="trending-sub">Chocolate Croissant</p>
                 </div>
             </section>
-            <Link to='/Menu'><button className="trendingButton" >Shop Now</button>  </Link>
+            <Link to='/Menu'>
+                <button className="trendingButton">Shop Now   <i className="inline-icon material-icons">trending_flat</i>
+                </button>  
+            </Link>
         </div>
 
     </div>

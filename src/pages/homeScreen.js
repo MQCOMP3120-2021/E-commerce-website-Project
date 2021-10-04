@@ -8,6 +8,7 @@ import reviewImage from '../assets/reviewImage.png'
 import trendingFirst from '../assets/trendingFirst.jpg'
 import trendingSecond from '../assets/trendingSecond.jpg'
 import trendingThird from '../assets/trendingThird.jpg'
+import logo from '../assets/j-logo.png'
 
 
 
@@ -21,7 +22,7 @@ const Home = () => (
                 <li><Link to= "/" className="darkNav">Home</Link></li>
                 <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
                 <li><Link to= "/Contact-us" className="darkNav">Contact</Link></li>
-                <li><img src="" className="App-logo" alt="logo" /> </li>
+                <li><img src= {logo} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
                 <li><Link to= "/FAQ" className="darkNav">FAQ</Link></li>
                 <li><Link to= "/My-cart" className="darkNav">Cart</Link></li>
                 <li><Link to= "/Login" className="darkNav">Login</Link></li>
@@ -61,7 +62,7 @@ const Home = () => (
                     <p className="trending-sub">Chocolate Croissant</p>
                 </div>
             </section>
-            <Link to='/Menu'><button className="trendingButton" >Shop Now</button>  </Link>
+            <Link to='/Menu'><button className="trendingButton" >Shop Now</button></Link>
         </div>
 
     </div>

@@ -23,9 +23,7 @@ const Home = () => (
                 <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
 
                 <li><Link to= "/About" className="darkNav">About</Link></li>
-                <li><img src="" className="App-logo" alt="logo" /> </li>
 
-                <li><Link to= "/Contact-us" className="darkNav">Contact</Link></li>
                 <li><img src= {logo} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
 
                 <li><Link to= "/FAQ" className="darkNav">FAQ</Link></li>

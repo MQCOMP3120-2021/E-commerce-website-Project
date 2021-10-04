@@ -24,12 +24,14 @@ const Login = () => (
                 <img src={loginImg} alt="pastry" className="loginImg"/>
               </div>
               <div className = "loginForm">
-                <h3>Login To Your Account</h3>
-                <form>
-                  <input type="text" name="username" placeholder="username"/>
-                  <input type="password" name="password" placeholder="password"/>
-                  <button type="submit">GO →</button>
-                </form>
+                <div className = "loginPadding">
+                  <h3>Login To Your Account</h3>
+                  <form>
+                    <input type="text" name="username" placeholder="username"/>
+                    <input type="password" name="password" placeholder="password"/>
+                    <button type="submit">GO →</button>
+                  </form>
+                </div>
               </div>
             </div>
         </div>

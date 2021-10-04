@@ -17,8 +17,10 @@ body{
     background: black;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+}
+.loginPadding{
+    padding: 2% 10%;
 }
 .loginForm h3{
     color: white;
@@ -33,4 +35,5 @@ form{
 form button{
     border: none;
     color: white;
+    text-align: right;
 }

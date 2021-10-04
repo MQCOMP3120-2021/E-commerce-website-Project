@@ -1,0 +1,76 @@
+body{
+    background: url("assets/aboutBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Navbar {
+    list-style-type: none;
+    text-decoration: none;
+    display:flex;
+    justify-content: space-between;
+    min-height: 80px;
+    margin-right: 10%;
+    margin-left: 5%;
+    padding-top: 40px;
+}
+  
+.Navbar li{
+    margin:auto;
+}
+  
+  
+.darkNav {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-family: 'Cormorant', serif;
+    font-weight: bold;
+}
+  
+.brightNav {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    font-family: 'Cormorant', serif;
+    font-weight: bold;
+}
+  
+.darkNav:hover {
+    color:white;
+    transition: 0.2s;
+    padding-bottom: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    width: fit-content;
+}
+  
+.brightNav:hover {
+    /* text-decoration: underline; */
+    color:black;
+    transition: 0.2s;
+    padding-bottom: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    width: fit-content;
+}
+
+.aboutSection{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 18%;
+}
+.aboutSection h2{
+    border-bottom: 0.01em solid white;
+    padding-bottom: 2px;
+    font-size: 2em;
+}
+.aboutSection p{
+    text-align: center;
+    line-height: 2;
+    font-size: 1.2em;
+}

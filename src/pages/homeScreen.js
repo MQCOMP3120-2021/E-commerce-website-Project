@@ -20,7 +20,7 @@ const Home = () => (
             <ul className="Navbar">
                 <li><Link to= "/" className="darkNav">Home</Link></li>
                 <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
-                <li><Link to= "/Contact-us" className="darkNav">Contact</Link></li>
+                <li><Link to= "/About" className="darkNav">About</Link></li>
                 <li><img src="" className="App-logo" alt="logo" /> </li>
                 <li><Link to= "/FAQ" className="darkNav">FAQ</Link></li>
                 <li><Link to= "/My-cart" className="darkNav">Cart</Link></li>

@@ -53,15 +53,18 @@ const Home = () => (
                     <p className="trending-sub">Signature Sourdough</p>
                 </div>
                 <div className="trendingItem">
-                    <img src= {trendingSecond} alt="First trending image"/> 
+                    <img src= {trendingSecond} alt="Second trending image"/> 
                     <p className="trending-sub">Cinnamon Roll</p>
                 </div>
                 <div className="trendingItem">
-                    <img src= {trendingThird} alt="First trending image"/> 
+                    <img src= {trendingThird} alt="Third trending image"/> 
                     <p className="trending-sub">Chocolate Croissant</p>
                 </div>
             </section>
-            <Link to='/Menu'><button className="trendingButton" >Shop Now</button>  </Link>
+            <Link to='/Menu'>
+                <button className="trendingButton">Shop Now   <i className="inline-icon material-icons">trending_flat</i>
+                </button>  
+            </Link>
         </div>
 
     </div>

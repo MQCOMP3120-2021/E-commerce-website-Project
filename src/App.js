@@ -6,13 +6,17 @@ import {
 } from "react-router-dom";
 import productDisplay from './ListOfProducts';
 import productService from './services/productService';
-
+import Home from './pages/homeScreen.js';
+import Menu from './pages/menuScreen.js';
+import Contact from './pages/contactScreen.js';
+import Faq from './pages/FAQScreen.js';
+import Cart from './pages/cartScreen.js';
+import Login from './pages/loginScreen.js';
 
 
 const App = () => {
   const [products, setProducts] = useState([])
 
- 
 
   useEffect(()=>{
     console.log("effect is being run")
@@ -24,44 +28,50 @@ const App = () => {
   },
   [])
 
+  
+
   return (
    <Router>
-    <div className="App">
-      <ul className="Navbar">
-        <li><Link to= "/">Home</Link></li>
-        <li><Link to= "/Menu">Menu</Link></li>
-        <li><Link to= "/Contact-us">Contact</Link></li>
-        <li><img src="" className="App-logo" alt="logo" /> </li>
-        <li><Link to= "/FAQ">FAQ</Link></li>
-        <li><Link to= "/My-cart">Cart</Link></li>
-        <li><Link to= "/Login">Login</Link></li>
-      </ul>
+    {/* <div className="App">
+          <ul className="Navbar">
+            <li><Link to= "/" className="appNav">Home</Link></li>
+            <li><Link to= "/Menu" className="appNav">Menu</Link></li>
+            <li><Link to= "/Contact-us" className="appNav">Contact</Link></li>
+            <li><img src="" className="App-logo" alt="logo" /> </li>
+            <li><Link to= "/FAQ" className="appNav">FAQ</Link></li>
+            <li><Link to= "/My-cart" className="appNav">Cart</Link></li>
+            <li><Link to= "/Login" className="appNav">Login</Link></li>
+          </ul> */}
       <Switch>
         <Route path="/products/:id">
          <productDisplay.SingleProduct product ={products} />
         </Route>
         <Route path="/Menu">
+          <Menu />
          <productDisplay.ListOfProducts  products={products}/> 
         </Route>
         <Route path="/Contact-us">
+          <Contact />
           <p>This is contact us content</p>
 
         </Route>
         <Route path="/FAQ">
+          <Faq />
 
         </Route>
         <Route path="/My-cart">
+          <Cart />
 
         </Route>
         <Route path="/Login">
+          <Login />
 
         </Route>
         <Route path="/">
-          <p>this is home page</p>
+          <Home />
 
         </Route>
       </Switch>
-    </div>
  </Router>  );
 }
 

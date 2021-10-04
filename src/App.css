@@ -14,3 +14,7 @@
   margin-right:100px;
 }
 
+img {
+  max-height: 300px;
+  max-width: 300px;
+}

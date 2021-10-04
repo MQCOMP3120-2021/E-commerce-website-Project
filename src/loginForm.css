@@ -7,20 +7,20 @@ body{
     align-items: center;
 }
 .loginImg{
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     object-fit: cover;
 }
 .loginForm{
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     background: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 .loginPadding{
-    padding: 2% 10%;
+    padding: 2% 12%;
 }
 .loginForm h3{
     color: white;
@@ -36,4 +36,5 @@ form button{
     border: none;
     color: white;
     text-align: right;
+    font-size: 16px;
 }

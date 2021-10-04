@@ -17,6 +17,7 @@
   margin:auto;
 }
 
+
 .darkNav {
   text-decoration: none;
   color: white;
@@ -204,3 +205,4 @@
   padding: 20px;
   animation: fadein 0.35s ease-in;
 }
+

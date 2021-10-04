@@ -8,7 +8,7 @@ const ListOfProducts = ({products}) => {
             {
                 products.map((item) => 
                     <li key={item.id}>
-                        <Link to={`/products/${item.id}`}>{item.photo}</Link>
+                        <Link to={`/products/${item.id}`}><img src={item.photo} alt="bread"></img></Link>
                         {item.name}
                         {item.price}
                     </li>
@@ -24,7 +24,7 @@ const SingleProduct = ({product}) => {
     console.log(singleP)
     if(singleP){
         return(
-            <>
+            <main>
             <img src={product.photo} alt="bread"></img>
             <h3>{product.name}</h3>
             <p>{product.description}</p>
@@ -35,7 +35,7 @@ const SingleProduct = ({product}) => {
             <ul>
               <li>Review goes here</li>
             </ul>
-            </>
+            </main>
         )
     }
 }

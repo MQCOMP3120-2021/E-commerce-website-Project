@@ -7,8 +7,26 @@ const getAll = () => {
                 .then(response => response.data)
 }
 
+const getCart = () => {
+    return axios.get(baseURL + "cart")
+                .then(response => response.data)
+}
+const addtoCart = (newItem) => {
+    return axios.post(baseURL + "cart", newItem)
+                .then((response) => response.data)
+}
 
-const productService = {getAll}
+const updateCart = (thing) => {
+    return axios.put(baseURL + "cart" + thing.id, thing)
+                .then((response) => response.data)
+}
+
+const removeCart = (thing) => {
+    return axios.delete(baseURL + "cart" + thing.id)
+                .then((response) => response.data)
+}
+
+const productService = {getAll, getCart, addtoCart, updateCart, removeCart}
 
 export default productService;
 

@@ -34,7 +34,14 @@
       "photo": ""
     },
     {
-      "id": 4
+      "id": 4,
+      "name": "Sesame Bagel",
+      "description": "Bagels with a mix of sesame seeds on top",
+      "price": "$3.80",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://assets.epicurious.com/photos/54b2a9f83edeef84363b172f/master/pass/366757_bagels_1x1.jpg"
     }
   ]
 }

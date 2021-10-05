@@ -29,10 +29,10 @@ const App = () => {
   },
   [])
 
-  useEffect(()=>{
-    fetchCart()
-  },
-  [])
+  // useEffect(()=>{
+  //   fetchCart()
+  // },
+  // [])
 
   const fetchCart = () => {
     console.log("effect is being run")
@@ -91,8 +91,8 @@ const App = () => {
 
         </Route>
         {/* temporary: to be deleted */}
-        <Route path="/product">
-          <Product product ={products} moreCart={addCart}/>
+        <Route path="/product/:id">
+          <Product products ={products} moreCart={addCart}/>
 
         </Route>
         <Route path="/">

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useParams, Link
 } from "react-router-dom"
-import './Product.css'
 
 const ListOfProducts = ({products}) => {
      return(
@@ -20,7 +19,7 @@ const ListOfProducts = ({products}) => {
 }
 
 const SingleProduct = ({product, moreCart}) => {
-     const id = Number(useParams().id)
+    const id = Number(useParams().id)
     const singleP = product.find(p=> p.id === id)
     console.log(singleP)
     if(singleP){

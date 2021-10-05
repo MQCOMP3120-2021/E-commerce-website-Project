@@ -3,18 +3,110 @@
 }
 
 .Navbar {
-  list-style: none;
-  display:inline-flex;
-  background-color: pink;
+  list-style-type: none;
+  text-decoration: none;
+  display:flex;
+  justify-content: space-between;
   min-height: 80px;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding-top: 40px;
 }
 
 .Navbar li{
   margin:auto;
-  margin-right:100px;
 }
 
-img {
-  max-height: 300px;
-  max-width: 300px;
+.darkNav {
+  text-decoration: none;
+  color: white;
+  font-size: 17;
+  font-family: 'Cormorant', serif;
+  font-weight: bold;
 }
+
+.brightNav {
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  font-family: 'Cormorant', serif;
+  font-weight: bold;
+}
+
+.darkNav:hover {
+  color:white;
+  transition: 0.2s;
+  padding-bottom: 3px;
+  border-bottom-style: solid;
+  border-bottom-width: 0.5px;
+  width: fit-content;
+}
+
+.brightNav:hover {
+  color:black;
+  transition: 0.2s;
+  padding-bottom: 3px;
+  border-bottom-style: solid;
+  border-bottom-width: 0.5px;
+  width: fit-content;
+}
+
+.faq-accordion{
+  font-family: 'Cormorant';
+  margin-left: 10%;
+  max-width: 70%;
+  margin-top:5%;
+}
+
+.faq-accordion h3{
+  border-bottom: 1px solid black;
+}
+.accordion {
+  border:1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+  background-color: #fff8ff;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  text-align: left;
+  border: none;
+}
+
+.accordion__button:hover {
+  background-color: #f0f0f0;
+}
+
+.accordion__button:before {
+  display: inline-block;
+  content: '';
+  height: 10px;
+  width: 10px;
+  margin-right: 12px;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+  transform: rotate(45deg);
+}
+
+[hidden] {
+  display: none;
+}
+
+.accordion__panel {
+  padding: 20px;
+  animation: fadein 0.35s ease-in;
+}
+
+
+

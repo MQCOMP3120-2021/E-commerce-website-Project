@@ -1,0 +1,31 @@
+.BrightNavbar {
+  list-style-type: none;
+  text-decoration: none;
+  display:flex;
+  justify-content: space-between;
+  min-height: 80px;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding-top: 40px;
+}
+
+.BrightNavbar li{
+  margin:auto;
+}
+
+.brightNav {
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  font-family: 'Cormorant', serif;
+  font-weight: bold;
+}
+
+.brightNav:hover {
+  color:black;
+  transition: 0.2s;
+  padding-bottom: 3px;
+  border-bottom-style: solid;
+  border-bottom-width: 0.5px;
+  width: fit-content;
+}

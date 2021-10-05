@@ -8,7 +8,7 @@ import logo from '../assets/logo-black.png'
 import loginImg from '../assets/loginImg.jpg'
 const Login = () => (
 
-        <div className="App">
+        <div className="LoginForm">
             <ul className="Navbar">
                 <li><Link to= "/" className="brightNav">Home</Link></li>
                 <li><Link to= "/Menu" className="brightNav">Menu</Link></li>

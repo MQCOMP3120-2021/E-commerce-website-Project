@@ -9,7 +9,6 @@ import {
   AccordionItemPanel, } from 'react-accessible-accordion'
   import logo from '../assets/logo-black.png'
 
-
 const Faq = () => (
 
         <div className="faqContainer">

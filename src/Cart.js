@@ -1,5 +1,7 @@
+import { render } from '@testing-library/react';
 import React, {useState, useEffect} from 'react';
 import productService from './services/productService';
+
 const CartData = () => {
     const [cart, setCart] = useState([])
     

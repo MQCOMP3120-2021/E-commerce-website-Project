@@ -18,6 +18,7 @@ import About from './pages/aboutScreen.js'
 const App = () => {
   const [products, setProducts] = useState([])
 
+  const [cart, setCart] = useState([])
 
   useEffect(()=>{
     console.log("effect is being run")
@@ -29,7 +30,30 @@ const App = () => {
   },
   [])
 
-  
+  useEffect(()=>{
+    fetchCart()
+  },
+  [])
+
+  const fetchCart = () => {
+    console.log("effect is being run")
+    productService.getCart()
+    .then(objects => {
+      console.log("we have a response", objects)
+      setCart(objects)
+    })
+  }
+
+  const addCart = (content) => {
+    console.log(content)
+    productService.addtoCart( content )
+    .then((object) => {
+      console.log("POST response: ", object)
+      setCart(cart.concat(object))
+      console.log("new item added", object)
+    })
+  }
+
 
   return (
    <Router>
@@ -45,7 +69,7 @@ const App = () => {
           </ul> */}
       <Switch>
         <Route path="/products/:id">
-         <productDisplay.SingleProduct product ={products} />
+         <productDisplay.SingleProduct product ={products} moreCart={addCart}/>
         </Route>
         <Route path="/Menu">
           <Menu />

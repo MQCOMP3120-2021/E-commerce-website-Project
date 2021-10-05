@@ -1,4 +1,4 @@
-.BrightNavbar {
+.Navbar {
   list-style-type: none;
   text-decoration: none;
   display:flex;
@@ -9,7 +9,7 @@
   padding-top: 40px;
 }
 
-.BrightNavbar li{
+.Navbar li{
   margin:auto;
 }
 

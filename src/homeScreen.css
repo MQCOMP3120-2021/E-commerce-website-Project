@@ -1,4 +1,4 @@
-.DarkNavbar {
+.Navbar {
     list-style-type: none;
     text-decoration: none;
     display:flex;
@@ -9,7 +9,7 @@
     padding-top: 40px;
 }
   
-.DarkNavbar li{
+.Navbar li{
     margin:auto;
 }
   

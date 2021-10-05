@@ -15,7 +15,7 @@ const Home = () => (
     <div className="homeContainer">
 
         <div className="bg-img">
-            <ul className="DarkNavbar">
+            <ul className="Navbar">
                 <li><Link to= "/" className="darkNav">Home</Link></li>
                 <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
 

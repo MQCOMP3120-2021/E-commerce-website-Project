@@ -12,7 +12,7 @@ import twitterIcon from '../assets/twitter.png'
 const About = () => {
     return(
         <div className="aboutPage">
-            <ul className="DarkNavbar">
+            <ul className="Navbar">
                 <li><Link to= "/" className="darkNav">Home</Link></li>
                 <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
                 <li><Link to= "/About" className="darkNav">About</Link></li>

@@ -30,7 +30,7 @@ const SingleProduct = ({product, moreCart}) => {
             <p>{product.description}</p>
             <p>{product.price}</p>
             <button >Quantity button goes here</button>
-            <button onClick={() => moreCart(product)}>Add to Cart button goes here</button>
+            <button onClick={() => moreCart(product)}>Add to Cart</button>
 
             <ul>
               <li>Review goes here</li>

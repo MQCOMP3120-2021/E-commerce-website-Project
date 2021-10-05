@@ -44,7 +44,7 @@ const App = () => {
     .then((object) => {
       console.log("POST response: ", object)
       setCart(cart.concat(object))
-      console.log("new item added", object)
+      console.log("Item added", object)
     })
   }
 

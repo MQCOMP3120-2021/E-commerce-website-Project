@@ -28,6 +28,7 @@ app.post('/api/cart', (req,res) => {
     productid: body.id,
     name: body.name,
     description: body.description,
+    review: body.review,
     price: body.price,
     photo: body.photo,
     quantity: 1

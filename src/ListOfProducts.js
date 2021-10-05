@@ -24,18 +24,18 @@ const SingleProduct = ({product, moreCart}) => {
     console.log(singleP)
     if(singleP){
         return(
-            <main>
+            <>
             <img src={product.photo} alt="bread"></img>
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p>{product.price}</p>
             <button >Quantity button goes here</button>
-            <button onClick={() => moreCart(product)}>Add to Cart</button>
+            <button onClick={() => moreCart(singleP)}>Add to Cart</button>
 
             <ul>
               <li>Review goes here</li>
             </ul>
-            </main>
+            </>
         )
     }
 }

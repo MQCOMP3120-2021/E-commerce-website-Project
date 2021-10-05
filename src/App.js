@@ -13,6 +13,7 @@ import Faq from './pages/FAQScreen.js';
 import Cart from './pages/cartScreen.js';
 import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
+import ListofCart from './ListofCart';
 
 
 const App = () => {
@@ -44,6 +45,23 @@ const App = () => {
     })
   }
 
+  const producttoCart = (content) => {
+    const body = content
+
+    const newCart = {
+      id: cart.length + 1,
+      productid: body.id,
+      name: body.name,
+      description: body.description,
+      review: body.review,
+      price: body.price,
+      photo: body.photo,
+      quantity: 1
+    }
+
+    addCart(newCart)
+  }
+
   const addCart = (content) => {
     console.log(content)
     productService.addtoCart( content )
@@ -54,6 +72,18 @@ const App = () => {
     })
   }
 
+  const removeCart = (content) =>{
+    productService.removeCart(content)
+    .then((object) => {
+      console.log("Item has been removed", object)
+      let newCart = cart.filter((c) => c.id !== cart.id)
+      setCart(newCart)
+    })
+    .catch((error) => {
+      console.log("Item has not been removed")
+    })
+    fetchCart()
+  }
 
   return (
    <Router>
@@ -69,7 +99,7 @@ const App = () => {
           </ul> */}
       <Switch>
         <Route path="/products/:id">
-         <productDisplay.SingleProduct product ={products} moreCart={addCart}/>
+         <productDisplay.SingleProduct product ={products} moreCart={producttoCart}/>
         </Route>
         <Route path="/Menu">
           <Menu />
@@ -85,6 +115,7 @@ const App = () => {
         </Route>
         <Route path="/My-cart">
           <Cart />
+          <ListofCart cartcontents={cart} removeItem={removeCart}/>
 
         </Route>
         <Route path="/Login">

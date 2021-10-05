@@ -24,7 +24,7 @@ const Faq = () => (
             </ul>
             <div className="faq-accordion">
   
-              <h3>Frequent Asked Questions</h3>
+              <h3>Frequently Asked Questions</h3>
               <Accordion>
             <AccordionItem>
                 <AccordionItemHeading>

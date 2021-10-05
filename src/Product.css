@@ -102,3 +102,34 @@ body{
     padding: 3% 5%;
     font-size: 15px;
 }
+.reviewSec{
+    padding: 2% 10%;
+}
+.reviewSec h3{
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 0;
+}
+.reviewSec hr{
+    height:1px;
+    border-width:0;
+    color:black;
+    background-color:black;
+    margin: 1em auto 2em auto;
+}
+.productReviews{
+    display: flex;
+    justify-content: space-evenly;
+}
+.productReview{
+    background-color: rgb(240, 239, 230);
+    width: 24%;
+    padding: 5% 3%;
+}
+.productReview p{
+    line-height: 1.5em;
+}
+.productReview h5{
+    font-size: 20px;
+    font-weight: 400;
+}

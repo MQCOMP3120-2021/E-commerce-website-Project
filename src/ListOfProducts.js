@@ -18,7 +18,7 @@ const ListOfProducts = ({products}) => {
     )
 }
 
-const SingleProduct = ({product}) => {
+const SingleProduct = ({product, moreCart}) => {
      const id = Number(useParams().id)
     const singleP = product.find(p=> p.id === id)
     console.log(singleP)
@@ -30,7 +30,7 @@ const SingleProduct = ({product}) => {
             <p>{product.description}</p>
             <p>{product.price}</p>
             <button >Quantity button goes here</button>
-            <button>Add to Cart button goes here</button>
+            <button onClick={() => moreCart(product)}>Add to Cart button goes here</button>
 
             <ul>
               <li>Review goes here</li>

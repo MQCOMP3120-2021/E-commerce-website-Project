@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import '../App.css';
+import '../menuScreen.css';
 import {
   BrowserRouter as Router,
   Switch, Route, Link
@@ -8,15 +8,16 @@ import {
 const Menu = () => (
 
         <div className="App">
-            <ul className="Navbar">
+            <ul className="BrightNavbar">
                 <li><Link to= "/" className="brightNav">Home</Link></li>
                 <li><Link to= "/Menu" className="brightNav">Menu</Link></li>
-                <li><Link to= "/Contact-us" className="brightNav">Contact</Link></li>
+                <li><Link to= "/About" className="brightNav">About</Link></li>
                 <li><img src="" className="App-logo" alt="logo" /> </li>
                 <li><Link to= "/FAQ" className="brightNav">FAQ</Link></li>
                 <li><Link to= "/My-cart" className="brightNav">Cart</Link></li>
                 <li><Link to= "/Login" className="brightNav">Login</Link></li>
             </ul>
+
         </div>
 
 )

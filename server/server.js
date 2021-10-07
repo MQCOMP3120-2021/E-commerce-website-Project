@@ -15,6 +15,18 @@ app.get('/api/products', (req, res) => {
     res.json(data.products)
 })
 
+app.get('/api/products/:id', (request, response) => {
+  const id = Number(request.params.id)
+  const product = data.products.filter(p => p.id === id)[0]
+  // return a 404 if there is no such product
+  if (product) {
+   response.json(product)
+  } else {
+   response.status(404)
+   response.send("<h1>Product not found.</h1>")
+  }
+})
+
 app.get('/api/cart', (req,res) => {
   console.log("GET")
   res.json(data.cart)

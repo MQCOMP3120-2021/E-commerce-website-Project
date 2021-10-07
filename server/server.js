@@ -1,10 +1,14 @@
 const express = require('express') 
 const fs = require("fs") 
 const cors = require("cors")
+const bcrypt = require ("bcrypt")
+const jwt = require("jsonwebtoken")
 
 const rawData = fs.readFileSync("server/sample.json")
 const data = JSON.parse(rawData)
-
+const getUser = (username) => {
+  return data.users.filter(u=>u.username ==username)[0]
+}
 const app = express() 
 
 app.use(cors())
@@ -71,6 +75,34 @@ const generateId = () => {
   const MAXID = data.cart.length > 0 ? Math.max(...data.cart.map((u) => u.id)) : 0
   return MAXID + 1
 }
+
+app.post('/api/login', async (req, res) => {
+
+  const {username, password} = req.body
+
+  const user = getUser(username)
+  console.log(user)
+
+  if (!user) {
+      return res.status(401).json({error: "invalid username or password"})
+  }
+
+  if (await bcrypt.compare(password, user.password)) {
+      console.log("Password is good!")
+
+      const userForToken = {
+          id: user.id,
+          username: user.username            
+      }
+      const token = jwt.sign(userForToken, "secret")
+
+      return res.status(200).json({token, username: user.username, name: user.name})
+
+  } else {
+      return res.status(401).json({error: "invalid username or password"})
+  }
+
+})
 
 const PORT = 3001
 app.listen(PORT, () => {

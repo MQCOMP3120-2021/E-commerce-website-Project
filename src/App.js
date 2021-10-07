@@ -17,8 +17,8 @@ import About from './pages/aboutScreen.js'
 
 const App = () => {
   const [products, setProducts] = useState([])
-
   const [cart, setCart] = useState([])
+  const [user, setUser] = useState(null)
 
   useEffect(()=>{
     console.log("effect is being run")
@@ -88,7 +88,7 @@ const App = () => {
 
         </Route>
         <Route path="/Login">
-          <Login />
+          <Login user={user} setUser={setUser}/>
 
         </Route>
         <Route path="/">

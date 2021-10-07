@@ -19,6 +19,7 @@ const Login = ({user, setUser}) => {
   
   productService.login({username, password})
   .then(data => {
+    console.log("Success:", data)
     setUser(data)
   })
   .catch(error =>{

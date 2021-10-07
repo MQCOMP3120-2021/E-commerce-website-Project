@@ -6,8 +6,34 @@ import {
 } from "react-router-dom";
 import logo from '../assets/logo-black.png'
 import loginImg from '../assets/loginImg.jpg'
-const Login = () => (
+import productService from '../services/productService';
 
+const Login = ({user, setUser}) => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+  const formHandler =(event) => {
+    event.preventDefault()
+    console.log("Login form submitted")
+  
+  
+  productService.login({username, password})
+  .then(data => {
+    setUser(data)
+  })
+  .catch(error =>{
+    console.log("Error:", error)
+  })
+  }
+
+  if(user){
+    return(
+      <div className="loggedIn">
+        <p>Logged in as {user.name}</p>
+      </div>
+    )
+  } else {
+    return(
         <div className="LoginForm">
             <ul className="Navbar">
                 <li><Link to= "/" className="brightNav">Home</Link></li>
@@ -26,9 +52,9 @@ const Login = () => (
               <div className = "loginForm">
                 <div className = "loginPadding">
                   <h3>Login To Your Account</h3>
-                  <form>
-                    <input type="text" name="username" placeholder="username"/>
-                    <input type="password" name="password" placeholder="password"/>
+                  <form onSubmit={formHandler}>
+                    <input type="text" name="username" placeholder="username" onChange={e=>setUsername(e.target.value)}/>
+                    <input type="password" name="password" placeholder="password" onChange={e=>setPassword(e.target.value)}/>
                     <button type="submit">GO →</button>
                   </form>
                 </div>
@@ -36,6 +62,6 @@ const Login = () => (
             </div>
         </div>
 
-)
+    )}}
 
 export default Login;

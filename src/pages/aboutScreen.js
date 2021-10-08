@@ -1,8 +1,5 @@
 import { render } from "@testing-library/react"
 import '../AboutScreen.css'
-import {
-    Link
- } from "react-router-dom";
 import logo from '../assets/j-logo.png'
 import fbIcon from '../assets/facebook.png'
 import igIcon from '../assets/instagram.png'
@@ -12,15 +9,6 @@ import twitterIcon from '../assets/twitter.png'
 const About = () => {
     return(
         <div className="aboutPage">
-            <ul className="Navbar">
-                <li><Link to= "/" className="darkNav">Home</Link></li>
-                <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
-                <li><Link to= "/About" className="darkNav">About</Link></li>
-                <li><img src={logo} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
-                <li><Link to= "/FAQ" className="darkNav">FAQ</Link></li>
-                <li><Link to= "/My-cart" className="darkNav">Cart</Link></li>
-                <li><Link to= "/Login" className="darkNav">Login</Link></li>
-            </ul>
 
             <div className="aboutSection">
                 <h2>ABOUT US</h2>

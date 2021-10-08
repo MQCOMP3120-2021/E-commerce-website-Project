@@ -1,26 +1,16 @@
 import React from 'react';
 import '../App.css';
-import {
-   Link
-} from "react-router-dom";
+
 import {
   Accordion, AccordionItem,
   AccordionItemHeading, AccordionItemButton,
   AccordionItemPanel, } from 'react-accessible-accordion'
-  import logo from '../assets/logo-black.png'
+ 
 
 const Faq = () => (
 
         <div className="faqContainer">
-            <ul className="Navbar">
-                <li><Link to= "/" className="brightNav">Home</Link></li>
-                <li><Link to= "/Menu" className="brightNav">Menu</Link></li>
-                <li><Link to= "/About" className="brightNav">About</Link></li>
-                <li><img src={logo} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
-                <li><Link to= "/FAQ" className="brightNav">FAQ</Link></li>
-                <li><Link to= "/My-cart" className="brightNav">Cart</Link></li>
-                <li><Link to= "/Login" className="brightNav">Login</Link></li>
-            </ul>
+          
             <div className="faq-accordion">
   
               <h3>Frequently Asked Questions</h3>

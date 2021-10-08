@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams, Link
 } from "react-router-dom"
-//import './Product.css'
+import './Product.css'
 import defaultImg from './assets/defaultImg.jpg'
 import logo from './assets/logo-black.png'
 
@@ -29,15 +29,7 @@ const SingleProduct = ({product, moreCart}) => {
     if(singleP){
         return(
             <>
-            <ul className="Navbar">
-                    <li><Link to= "/" className="brightNav">Home</Link></li>
-                    <li><Link to= "/Menu" className="brightNav">Menu</Link></li>
-                    <li><Link to= "/About" className="brightNav">About</Link></li>
-                    <li><img src={logo} className="App-logo" alt="logo" height="100px" width="100px"/> </li>
-                    <li><Link to= "/FAQ" className="brightNav">FAQ</Link></li>
-                    <li><Link to= "/My-cart" className="brightNav">Cart</Link></li>
-                    <li><Link to= "/Login" className="brightNav">Login</Link></li>
-            </ul>
+            
             {product ? (
                 <>
                     <div className="productCard">

@@ -13,6 +13,8 @@ import Faq from './pages/FAQScreen.js';
 import Cart from './pages/cartScreen.js';
 import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
+import navBar from './Navigation-bar'
+
 
 
 const App = () => {
@@ -57,45 +59,49 @@ const App = () => {
 
   return (
    <Router>
-    {/* <div className="App">
-          <ul className="Navbar">
-            <li><Link to= "/" className="appNav">Home</Link></li>
-            <li><Link to= "/Menu" className="appNav">Menu</Link></li>
-            <li><Link to= "/Contact-us" className="appNav">Contact</Link></li>
-            <li><img src="" className="App-logo" alt="logo" /> </li>
-            <li><Link to= "/FAQ" className="appNav">FAQ</Link></li>
-            <li><Link to= "/My-cart" className="appNav">Cart</Link></li>
-            <li><Link to= "/Login" className="appNav">Login</Link></li>
-          </ul> */}
+     <div className="App">
       <Switch>
+
         <Route path="/products/:id">
-         <productDisplay.SingleProduct product ={products} moreCart={addCart}/>
+           <navBar.BrightNavBar/>
+           <productDisplay.SingleProduct product ={products} moreCart={addCart}/>
         </Route>
+
         <Route path="/Menu">
-          <Menu />
-         <productDisplay.ListOfProducts  products={products}/> 
+           <navBar.BrightNavBar/>
+           <productDisplay.ListOfProducts  products={products}/> 
         </Route>
+
         <Route path="/About">
-          <About />
-
+           <div className="aboutPage">
+              <navBar.DarkNavBar/>
+           </div>
+           <About />
         </Route>
+
         <Route path="/FAQ">
+          <navBar.BrightNavBar/>
           <Faq />
-
         </Route>
+
         <Route path="/My-cart">
+          <navBar.BrightNavBar/>
           <Cart />
-
         </Route>
+
         <Route path="/Login">
+          <navBar.BrightNavBar/>
           <Login user={user} setUser={setUser}/>
-
         </Route>
-        <Route path="/">
-          <Home />
 
+        <Route path="/">
+           <div className="bg-img">
+              <navBar.DarkNavBar/>
+           </div>
+           <Home />
         </Route>
       </Switch>
+    </div>
  </Router>  );
 }
 

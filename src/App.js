@@ -57,52 +57,102 @@ const App = () => {
   }
 
 
+ if(user){
   return (
    <Router>
      <div className="App">
       <Switch>
 
         <Route path="/products/:id">
-           <navBar.BrightNavBar/>
+           <navBar.BrightNavBarUser/>
            <productDisplay.SingleProduct product ={products} moreCart={addCart}/>
         </Route>
 
         <Route path="/Menu">
-           <navBar.BrightNavBar/>
+           <navBar.BrightNavBarUser/>
            <productDisplay.ListOfProducts  products={products}/> 
         </Route>
 
         <Route path="/About">
            <div className="aboutPage">
-              <navBar.DarkNavBar/>
+              <navBar.DarkNavBarUser/>
            </div>
            <About />
         </Route>
 
         <Route path="/FAQ">
-          <navBar.BrightNavBar/>
+          <navBar.BrightNavBarUser/>
           <Faq />
         </Route>
 
         <Route path="/My-cart">
-          <navBar.BrightNavBar/>
+          <navBar.BrightNavBarUser/>
           <Cart />
         </Route>
 
-        <Route path="/Login">
-          <navBar.BrightNavBar/>
-          <Login user={user} setUser={setUser}/>
+        <Route path="/My-Account">
+          <navBar.BrightNavBarUser/>
+          
         </Route>
 
         <Route path="/">
            <div className="bg-img">
-              <navBar.DarkNavBar/>
+              <navBar.DarkNavBarUser/>
            </div>
            <Home />
         </Route>
       </Switch>
     </div>
- </Router>  );
+ </Router>  )
+}
+else {
+  return (
+    <Router>
+      <div className="App">
+       <Switch>
+ 
+         <Route path="/products/:id">
+            <navBar.BrightNavBar/>
+            <productDisplay.SingleProduct product ={products} moreCart={addCart}/>
+         </Route>
+ 
+         <Route path="/Menu">
+            <navBar.BrightNavBar/>
+            <productDisplay.ListOfProducts  products={products}/> 
+         </Route>
+ 
+         <Route path="/About">
+            <div className="aboutPage">
+               <navBar.DarkNavBar/>
+            </div>
+            <About />
+         </Route>
+ 
+         <Route path="/FAQ">
+           <navBar.BrightNavBar/>
+           <Faq />
+         </Route>
+ 
+         <Route path="/My-cart">
+           <navBar.BrightNavBar/>
+           <Cart />
+         </Route>
+ 
+         <Route path="/Login">
+           <navBar.BrightNavBar/>
+           <Login user={user} setUser={setUser}/>
+         </Route>
+ 
+         <Route path="/">
+            <div className="bg-img">
+               <navBar.DarkNavBar/>
+            </div>
+            <Home />
+         </Route>
+       </Switch>
+     </div>
+  </Router>  )
+  }
 }
 
 export default App;

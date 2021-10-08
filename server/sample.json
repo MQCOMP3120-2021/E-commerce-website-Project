@@ -55,5 +55,14 @@
         "photo": "https://assets.epicurious.com/photos/54b2a9f83edeef84363b172f/master/pass/366757_bagels_1x1.jpg",
         "quantity": 2
     }
+  ],
+
+  "users": [
+    {
+      "id": 0,
+      "username": "bobalooba",
+      "name":"Bob Bobalooba",
+      "password":"$2b$10$2vVopSZSinRu7H3bS4ZsyeqVFRbMCyyXg9.9UgerDO/D7sX3MWKPe"
+    }
   ]
 }

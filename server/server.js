@@ -1,10 +1,14 @@
 const express = require('express') 
 const fs = require("fs") 
 const cors = require("cors")
+const bcrypt = require ("bcrypt")
+const jwt = require("jsonwebtoken")
 
 const rawData = fs.readFileSync("server/sample.json")
 const data = JSON.parse(rawData)
-
+const getUser = (username) => {
+  return data.users.filter(u=>u.username ==username)[0]
+}
 const app = express() 
 
 app.use(cors())
@@ -22,15 +26,15 @@ app.get('/api/products', (req, res) => {
     res.json(data.products)
 })
 
-app.get('/api/product/:id', (req,res) =>{
-    const id = Number(request.params.id)
-    const product = data.products.find(p => p.id === id)
-    if(product){
-        res.json(product)
-    }
-    else{
-        res.status(404).end()
-    }
+app.get('/api/products/:id', (request, response) => {
+  const id = Number(request.params.id)
+  const product = data.products.filter(p => p.id === id)[0]
+  // return a 404 if there is no such product
+  if (product) {
+   response.json(product)
+  } else {
+   response.status(404).end()
+  }
 })
 
 app.get('/api/cart', (req,res) => {
@@ -78,7 +82,35 @@ const generateId = () => {
   return MAXID + 1
 }
 
-const PORT = 3001
+app.post('/api/login', async (req, res) => {
+
+  const {username, password} = req.body
+
+  const user = getUser(username)
+  console.log(user)
+
+  if (!user) {
+      return res.status(401).json({error: "invalid username or password"})
+  }
+
+  if (await bcrypt.compare(password, user.password)) {
+      console.log("Password is good!")
+
+      const userForToken = {
+          id: user.id,
+          username: user.username            
+      }
+      const token = jwt.sign(userForToken, "secret")
+
+      return res.status(200).json({token, username: user.username, name: user.name})
+
+  } else {
+      return res.status(401).json({error: "invalid username or password"})
+  }
+
+})
+
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })

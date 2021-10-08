@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseURL = "http://localhost:3001/api/"
+const baseURL = "/api/"
 
 
 const getAll = () => {
@@ -26,7 +26,12 @@ const removeCart = (thing) => {
                 .then((response) => response.data)
 }
 
-const productService = {getAll, getCart, addtoCart, updateCart, removeCart}
+const login = ({username, password}) => {
+    return axios.post(baseURL + 'login', {username, password})
+    .then(response => response.data)
+}
+
+const productService = {getAll, getCart, addtoCart, updateCart, removeCart, login}
 
 export default productService;
 

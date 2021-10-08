@@ -7,8 +7,10 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.22.0",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "react": "^17.0.2",
     "react-accessible-accordion": "^4.0.0",
     "react-dom": "^17.0.2",
@@ -21,9 +23,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server -p 3001 --watch server/sample.json",
-    "dev": "nodemon server/server.js"
+   
+    "server": "nodemon server/server.js",
+    "docs": "jsdoc -c jsdoc.conf.json"
+
   },
+  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -43,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "jsdoc": "^3.6.7",
     "json-server": "^0.16.3",
     "nodemon": "^2.0.13"
   }

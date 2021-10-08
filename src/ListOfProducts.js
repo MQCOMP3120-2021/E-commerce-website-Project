@@ -19,7 +19,7 @@ const ListOfProducts = ({products}) => {
 }
 
 const SingleProduct = ({product, moreCart}) => {
-     const id = Number(useParams().id)
+    const id = Number(useParams().id)
     const singleP = product.find(p=> p.id === id)
     console.log(singleP)
     if(singleP){

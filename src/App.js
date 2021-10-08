@@ -12,9 +12,8 @@ import Contact from './pages/contactScreen.js';
 import Faq from './pages/FAQScreen.js';
 import Cart from './pages/cartScreen.js';
 import Login from './pages/loginScreen.js';
-import About from './pages/aboutScreen.js'
-
-
+import About from './pages/aboutScreen.js';
+import Product from './pages/Product.js';
 const App = () => {
   const [products, setProducts] = useState([])
 
@@ -30,10 +29,10 @@ const App = () => {
   },
   [])
 
-  useEffect(()=>{
-    fetchCart()
-  },
-  [])
+  // useEffect(()=>{
+  //   fetchCart()
+  // },
+  // [])
 
   const fetchCart = () => {
     console.log("effect is being run")
@@ -89,6 +88,11 @@ const App = () => {
         </Route>
         <Route path="/Login">
           <Login />
+
+        </Route>
+        {/* temporary: to be deleted */}
+        <Route path="/product/:id">
+          <Product products ={products} moreCart={addCart}/>
 
         </Route>
         <Route path="/">

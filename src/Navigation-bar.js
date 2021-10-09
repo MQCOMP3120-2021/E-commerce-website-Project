@@ -23,7 +23,7 @@ const BrightNavBar = () => {
 
 const DarkNavBar = () => {
     return(
-      <ul className="Navbar">
+      <ul className="Navbar" style={{ marginBottom: 0 }}>
         <li><Link to= "/" className="darkNav">Home</Link></li>
         <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
         <li><Link to= "/About" className="darkNav">About</Link></li>

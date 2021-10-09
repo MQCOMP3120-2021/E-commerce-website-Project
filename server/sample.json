@@ -2,46 +2,126 @@
   "products": [
     {
       "id": 1,
-      "name": "First Bread",
+      "name": "Signature Sourdough",
       "description": "Deliciouuuuususususuusususu bread",
-      "price": "$9,00",
+      "price": "$10.00",
       "reviews": [
         "First review",
         "Second Review"
       ],
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Fresh_made_bread_05.jpg/250px-Fresh_made_bread_05.jpg"
+      "photo": "https://images.unsplash.com/photo-1620921592619-652411a0d01a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2835&q=80"
     },
     {
       "id": 2,
-      "name": "Second Bread",
+      "name": "Cinnamon Roll (4 in a Pack)",
       "description": "Horrribleeeeeefefefe bread",
-      "price": "$20,00",
+      "price": "$20.00",
       "reviews": [
         "First review",
         "Second Review"
       ],
-      "photo": ""
+      "photo": "https://images.unsplash.com/photo-1597673934455-f32e0fe3f529?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGNpbm5hbW9uJTIwYnVufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
     },
     {
       "id": 3,
-      "name": "Third Bread",
+      "name": "Chocolate Croissant",
       "description": "Deliciouuuuususususuusususu bread",
-      "price": "$4,00",
+      "price": "$6.00",
       "reviews": [
         "First review",
         "Second Review"
       ],
-      "photo": ""
+      "photo": "https://images.unsplash.com/photo-1618417759309-bf38129c6e37?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGNyb2lzc2FudHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
     },
     {
       "id": 4,
-      "name": "Sesame Bagel",
+      "name": "Plain Doughnut (3 in a Pack)",
       "description": "Bagels with a mix of sesame seeds on top",
-      "price": "$3.80",
+      "price": "$6.00",
       "reviews": [
         "First review"
       ],
-      "photo": "https://assets.epicurious.com/photos/54b2a9f83edeef84363b172f/master/pass/366757_bagels_1x1.jpg"
+      "photo": "https://images.unsplash.com/photo-1589199750869-334ae4187406?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80"
+    },
+    {
+      "id": 5,
+      "name": "Blueberry Muffin",
+      "description": "Bagels with a mix of sesame seeds on top",
+      "price": "$3.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1558303420-f814d8a590f5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Ymx1ZWJlcnJ5JTIwbXVmZmlufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 6,
+      "name": "Semla",
+      "description": "Bagels with a mix of sesame seeds on top",
+      "price": "$5.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1582215669338-6cfdb76bca45?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2VtbGF8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 7,
+      "name": "Macaron",
+      "description": "Bagels with a mix of sesame seeds on top",
+      "price": "$3.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFjYXJvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 8,
+      "name": "Scone",
+      "description": "Bagels with a mix of sesame seeds on top",
+      "price": "$3.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1606946144557-0d04974df266?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2NvbmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 9,
+      "name": "Almond Croissant",
+      "description": "Bagels with a mix of sesame seeds on top",
+      "price": "$8.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1586657263857-346c4b712ff5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y3JvaXNzYW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 10,
+      "name": "Eclair",
+      "description": "Bagels with a mix of sesame seeds on top",
+      "price": "$4.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1582217308209-2207886c55bd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZWNsYWlyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 11,
+      "name": "Apple Tart",
+      "description": "Bagels with a mix of sesame seeds on top",
+      "price": "$5.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1562007908-17c67e878c88?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
+    },
+    {
+      "id": 12,
+      "name": "Banana Nut Bread",
+      "description": "Bagels with a mix of sesame seeds on top",
+      "price": "$15.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1601312540037-095ace539abb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
     }
   ],
   

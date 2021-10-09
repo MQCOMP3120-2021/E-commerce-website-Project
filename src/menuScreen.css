@@ -24,7 +24,7 @@ input[type=text] {
 .menuContainer {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  grid-gap: 20px 70px;
+  grid-gap: 1vh 5vw;
   max-width:fit-content;
   margin:auto; 
   margin-top: 6%;
@@ -35,10 +35,10 @@ input[type=text] {
 }
 
 .menuContainer img{
-  width: 240px;
+  width: 17vw;
   height: 270px;
-  object-fit: cover;
   text-align: right;
+  object-fit: cover;
 }
 
 .itemName p {

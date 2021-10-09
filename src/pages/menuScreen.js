@@ -8,7 +8,12 @@ import logo from '../assets/logo-black.png'
 
 const Menu = () => (
   <div className="App">
- 
+      <form action="/" method="get">
+            <input
+              type="text"
+              id="header-search"
+            /> 
+      </form>
   </div>
 )
 

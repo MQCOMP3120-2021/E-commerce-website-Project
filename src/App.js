@@ -15,8 +15,6 @@ import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
 import navBar from './Navigation-bar'
 
-
-
 const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState([])
@@ -70,6 +68,7 @@ const App = () => {
 
         <Route path="/Menu">
            <navBar.BrightNavBarUser/>
+           <Menu />
            <productDisplay.ListOfProducts  products={products}/> 
         </Route>
 
@@ -114,6 +113,7 @@ else {
  
          <Route path="/Menu">
             <navBar.BrightNavBar/>
+            <Menu />
             <productDisplay.ListOfProducts  products={products}/> 
          </Route>
  

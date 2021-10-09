@@ -1,31 +1,60 @@
-.Navbar {
+* {
   list-style-type: none;
-  text-decoration: none;
-  display:flex;
-  justify-content: space-between;
-  min-height: 80px;
-  margin-right: 10%;
-  margin-left: 10%;
-  padding-top: 40px;
 }
 
-.Navbar li{
+input[type=text]:focus {
+  border-color: black;
+  outline: 0; 
+}
+
+input[type=text] {
+  width: 20%;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 0px;
+  background-image: url(./assets/searchIcon.png);
+  background-size: 25px 27px;
+  background-position: 8px 8px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
   margin:auto;
+  height: 20%;
+}
+  
+.menuContainer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 20px 70px;
+  max-width:fit-content;
+  margin:auto; 
+  margin-top: 6%;
 }
 
-.brightNav {
-  text-decoration: none;
-  color: black;
-  font-size: 17px;
+.itemDisplay {
+  text-align: left;
+}
+
+.menuContainer img{
+  width: 240px;
+  height: 270px;
+  object-fit: cover;
+  text-align: right;
+}
+
+.itemName p {
+  font-family: 'Cormorant Infant', serif;
+  font-weight: 300;
+  font-size: 1em;
+  margin-top: 5%;
+  letter-spacing: 1px;
+}
+
+.itemPrice p {
   font-family: 'Cormorant', serif;
   font-weight: bold;
+  line-height: 0;
+  font-size: 1.1em;
+  margin-top: -13%;
 }
 
-.brightNav:hover {
-  color:black;
-  transition: 0.2s;
-  padding-bottom: 3px;
-  border-bottom-style: solid;
-  border-bottom-width: 0.5px;
-  width: fit-content;
-}
+

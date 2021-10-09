@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react"
-import '../AboutScreen.css'
+import '../css/AboutScreen.css';
 import logo from '../assets/j-logo.png'
 import fbIcon from '../assets/facebook.png'
 import igIcon from '../assets/instagram.png'

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams, Link
 } from "react-router-dom"
-import './Product.css'
-import './menuScreen.css'
+import './css/Product.css'
+import './css/menuScreen.css'
 import defaultImg from './assets/defaultImg.jpg'
 import logo from './assets/logo-black.png'
 

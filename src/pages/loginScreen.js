@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import '../loginForm.css';
+import '../css/loginForm.css';
 import {
   BrowserRouter as Router,
   Switch, Route, Link
@@ -44,7 +44,7 @@ const Login = ({user, setUser}) => {
               <div className = "loginForm">
                 <div className = "loginPadding">
                   <h3>Login To Your Account</h3>
-                  <form onSubmit={formHandler}>
+                  <form onSubmit={formHandler} className="loginFormHandler">
                     <input type="text" name="username" placeholder="username" onChange={e=>setUsername(e.target.value)}/>
                     <input type="password" name="password" placeholder="password" onChange={e=>setPassword(e.target.value)}/>
                     <button type="submit">GO →</button>

@@ -2,17 +2,17 @@
   list-style-type: none;
 }
 
-input[type=text]:focus {
+input[type=textBox]:focus {
   border-color: black;
   outline: 0; 
 }
 
-input[type=text] {
+input[type=textBox] {
   width: 20%;
   box-sizing: border-box;
   border: 1px solid black;
   border-radius: 0px;
-  background-image: url(./assets/searchIcon.png);
+  background-image: url(../assets/searchIcon.png);
   background-size: 25px 27px;
   background-position: 8px 8px; 
   background-repeat: no-repeat;

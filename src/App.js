@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import './App.css';
 import {
   BrowserRouter as Router,
   Switch, Route, Link
@@ -8,7 +7,6 @@ import productDisplay from './ListOfProducts';
 import productService from './services/productService';
 import Home from './pages/homeScreen.js';
 import Menu from './pages/menuScreen.js';
-import Contact from './pages/contactScreen.js';
 import Faq from './pages/FAQScreen.js';
 import Cart from './pages/cartScreen.js';
 import Login from './pages/loginScreen.js';

@@ -1,85 +1,53 @@
-.Navbar {
-    list-style-type: none;
-    text-decoration: none;
-    display:flex;
-    justify-content: space-between;
-    min-height: 80px;
-    margin-right: 10%;
-    margin-left: 10%;
-    padding-top: 40px;
-}
-  
-.Navbar li{
-    margin:auto;
-}
-  
-.darkNav {
-    text-decoration: none;
-    color: white;
-    font-size: 17px;
-    font-family: 'Cormorant', serif;
-    font-weight: bold;
-}
-
-.darkNav:hover {
-    color:white;
-    transition: 0.2s;
-    padding-bottom: 3px;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    width: fit-content;
-}
-
 .bg-img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(./assets/headerImage.png);
-    min-height: 900px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(./assets/headerImage.png);
+  min-height: 800px;
+  background-position: center;   
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.homeContainer {
+  background-color: black;
 }
   
-  .homeContainer {
-    background-color: black;
-  }
+.six.columns p {
+  color:white;
+  font-family: 'Cormorant', serif;
+  font-size: 25px;
+  padding-top: 16%;
+  padding-left: 5%;
+  text-align: left;
+}
   
-  .six.columns p {
-    color:white;
-    font-family: 'Cormorant', serif;
-    font-size: 25px;
-    padding-top: 16%;
-    padding-left: 5%;
-  }
+.six.columns img {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  float: right;}
   
-  .six.columns img {
-    width: 500px;
-    height: 500px;
-    object-fit: contain;
-    float: right;
-  }
+.container {
+  padding-top: 18%;
+  padding-bottom: 15%;
+}
   
-  .container {
-    margin-top: 15%;
-    margin-bottom: 15%;
-  }
+.foodCriticName {
+  font-style: italic;
+  margin-top: -50px;
+}
   
-  .foodCriticName {
-    font-style: italic;
-    margin-top: -50px;
-  }
-  
-  .trendingTitle {
-    text-align: center;
-    color:white;
-    font-size: 33px;
-    text-transform: uppercase;
-    font-family: 'Cormorant', serif;
-    padding-bottom: 8px;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    width: fit-content;
-    margin:auto;
-  }
+.trendingTitle {
+  text-align: center;
+  color:white;
+  font-size: 33px;
+  text-transform: uppercase;
+  font-family: 'Cormorant', serif;
+  padding-bottom: 8px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  width: fit-content;
+  margin:auto;
+}
   
   .container-grid {
     display: grid;

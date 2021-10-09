@@ -2,22 +2,33 @@ import React from 'react'
 import { useParams, Link
 } from "react-router-dom"
 import './Product.css'
+import './menuScreen.css'
 import defaultImg from './assets/defaultImg.jpg'
 import logo from './assets/logo-black.png'
 
 
 const ListOfProducts = ({products}) => {
      return(
+        
         <ul>
+            <section className="menuContainer">
             {
                 products.map((item) => 
+                <div className="itemDisplay">
                     <li key={item.id}>
                         <Link to={`/products/${item.id}`}><img src={item.photo} alt="bread"></img></Link>
-                        {item.name}
-                        {item.price}
+                            <div className="itemName">
+                                <p>{item.name}</p>
+                            </div>
+                            <div className="itemPrice">
+                                <p>{item.price}</p>
+                            </div>
+                            
                     </li>
+                    </div>
             )
             }
+            </section>
         </ul>
     )
 }

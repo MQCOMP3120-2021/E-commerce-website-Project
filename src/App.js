@@ -60,7 +60,7 @@ const App = () => {
  if(user){
   return (
    <Router>
-     <div className="App">
+  
       <Switch>
 
         <Route path="/products/:id">
@@ -80,11 +80,6 @@ const App = () => {
            <About />
         </Route>
 
-        <Route path="/FAQ">
-          <navBar.BrightNavBarUser/>
-          <Faq />
-        </Route>
-
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
           <Cart />
@@ -95,14 +90,15 @@ const App = () => {
           
         </Route>
 
-        <Route path="/">
-           <div className="bg-img">
-              <navBar.DarkNavBarUser/>
-           </div>
-           <Home />
-        </Route>
+          <Route path="/">
+            <div className="bg-img">
+                <navBar.DarkNavBarUser/>
+            </div>
+            <Home />
+          </Route>
+          
       </Switch>
-    </div>
+
  </Router>  )
 }
 else {

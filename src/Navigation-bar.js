@@ -1,9 +1,7 @@
 import React from 'react';
-
 import {
    Link
 } from "react-router-dom";
-
   import logo1 from './assets/logo-black.png'
   import logo2 from './assets/j-logo.png'
 

@@ -1,10 +1,14 @@
 const mongoose = require('mongoose')
-const url = process.env.MONGO_URL
+
+const url = process.env.MOGODB_URL
 
 const connect = async () => {
-    await mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
+    await mongoose.connect(url)
+                  .then(res => {
+                      console.log("connected to database")
+                  })
                   .catch((err) => {
-                      console.log("database connection error!")
+                      console.log("database connection error! ", err)
                   })
 }
 
@@ -26,6 +30,6 @@ const productSchema = new mongoose.Schema({
       }
   })
 
-  const Product = mongoose.model('Product', productSchema)
+  const Product = mongoose.model('Product', productSchema, 'Products')
 
   module.exports = Product

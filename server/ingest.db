@@ -6,17 +6,19 @@ const fs = require("fs")
 const rawData = fs.readFileSync("server/sample.json")
 const data = JSON.parse(rawData)
 
-data.product.map(Review => {
+data.product.map(Product => {
 
     console.log(product)
 
-    const newReview = new Review({
-        content: record.content,
-        votes: record.votes,
-        user: record.user
+    const product = new Product({
+        name: body.name,
+        desctiption: body.description,
+        price: "$" + body.price,
+        reviews: [],
+        photo: body.photo
     })
 
-    newReview.save().then(res => {
-        console.log("new review saved")
+    newProduct.save().then(res => {
+        console.log("new product saved")
     })
 })

@@ -3,15 +3,15 @@ import {
   BrowserRouter as Router,
   Switch, Route, Link
 } from "react-router-dom";
-import productDisplay from './ListOfProducts';
+import menuDisplay from './pages/menuScreen.js';
 import productService from './services/productService';
 import Home from './pages/homeScreen.js';
-import Menu from './pages/menuScreen.js';
 import Faq from './pages/FAQScreen.js';
 import Cart from './pages/cartScreen.js';
 import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
-import navBar from './Navigation-bar'
+import navBar from './Navigation-bar';
+import SingleProduct from './pages/individualScreen.js'
 
 const App = () => {
   const [products, setProducts] = useState([])
@@ -61,13 +61,13 @@ const App = () => {
 
         <Route path="/products/:id">
            <navBar.BrightNavBarUser/>
-           <productDisplay.SingleProduct product ={products} moreCart={addCart}/>
+           <SingleProduct product ={products} moreCart={addCart}/>
         </Route>
 
         <Route path="/Menu">
            <navBar.BrightNavBarUser/>
-           <Menu />
-           <productDisplay.ListOfProducts  products={products}/> 
+           <menuDisplay.SearchBar />
+           <menuDisplay.ListOfProducts  products={products}/> 
         </Route>
 
         <Route path="/About">
@@ -106,13 +106,13 @@ else {
  
          <Route path="/products/:id">
             <navBar.BrightNavBar/>
-            <productDisplay.SingleProduct product ={products} moreCart={addCart}/>
+            <SingleProduct product ={products} moreCart={addCart}/>
          </Route>
  
          <Route path="/Menu">
             <navBar.BrightNavBar/>
-            <Menu />
-            <productDisplay.ListOfProducts  products={products}/> 
+            <menuDisplay.SearchBar />
+            <menuDisplay.ListOfProducts  products={products}/> 
          </Route>
  
          <Route path="/About">

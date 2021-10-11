@@ -4,6 +4,8 @@ const cors = require("cors")
 const bcrypt = require ("bcrypt")
 const jwt = require("jsonwebtoken")
 
+require('dotenv').config()
+
 const rawData = fs.readFileSync("server/sample.json")
 const data = JSON.parse(rawData)
 const getUser = (username) => {

@@ -3,11 +3,20 @@ const fs = require("fs")
 const cors = require("cors")
 const bcrypt = require ("bcrypt")
 const jwt = require("jsonwebtoken")
+const Product = require("../models/products")
+const { response } = require('express')
 
 require('dotenv').config()
 
 const rawData = fs.readFileSync("server/sample.json")
 const data = JSON.parse(rawData)
+
+Product.find({}).then(result => {
+  result.forEach(product => {
+    data.product.push() = product
+  })
+})
+
 const getUser = (username) => {
   return data.users.filter(u=>u.username ==username)[0]
 }
@@ -17,15 +26,18 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static("build"))
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-Auth-Token");
+  res.append('Access-Control-Allow-Origin', ['*']);
+  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.append('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
 
 app.get('/api/products', (req, res) => {
     console.log("GET")
-    res.json(data.products)
+    Product.find({})
+           .then(products => {
+             response.json(products)
+           })
 })
 
 app.get('/api/products/:id', (request, response) => {

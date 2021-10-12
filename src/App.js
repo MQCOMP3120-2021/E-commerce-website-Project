@@ -17,7 +17,7 @@ const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState([])
   const [user, setUser] = useState(null)
-
+  
   useEffect(()=>{
     console.log("effect is being run")
     productService.getAll()
@@ -61,7 +61,7 @@ const App = () => {
 
         <Route path="/products/:id">
            <navBar.BrightNavBarUser/>
-           <productDisplay.SingleProduct product ={products} moreCart={addCart}/>
+           <productDisplay.SingleProduct products ={products} moreCart={addCart}/>
         </Route>
 
         <Route path="/Menu">

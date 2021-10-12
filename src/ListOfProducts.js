@@ -5,7 +5,7 @@ import './css/Product.css'
 import './css/menuScreen.css'
 import defaultImg from './assets/defaultImg.jpg'
 import logo from './assets/logo-black.png'
-
+import productService from './services/productService';
 
 const ListOfProducts = ({products}) => {
      return(
@@ -22,8 +22,7 @@ const ListOfProducts = ({products}) => {
                             </div>
                             <div className="itemPrice">
                                 <p>{item.price}</p>
-                            </div>
-                            
+                            </div>                            
                     </li>
                     </div>
             )
@@ -34,13 +33,16 @@ const ListOfProducts = ({products}) => {
 }
 
 const SingleProduct = ({product, moreCart}) => {
-    const id = Number(useParams().id)
-    const singleP = product.find(p=> p.id === id)
+    const id = useParams().id
+    const singleP = product.filter(
+        (data) => {
+            return data.id === id
+        }
+    )
     console.log(singleP)
     if(singleP){
         return(
             <>
-            
             {product ? (
                 <>
                     <div className="productCard">
@@ -54,7 +56,7 @@ const SingleProduct = ({product, moreCart}) => {
                                 <input type="number" value="1" min="1" className="qty"/>
                                 <input type="button" value=" + " className="incriment"/>
                             </div>
-                            <div ClassName="submitBtn">
+                            <div className="submitBtn">
                                 <button type="submit">ADD TO CART</button>
                             </div>
                         </div>
@@ -76,7 +78,7 @@ const SingleProduct = ({product, moreCart}) => {
             ) : (
                 <>
                     <div className="product404">
-                        <h3>Product not found :(</h3>
+                        <h3>Product not found</h3>
                     </div>
                 </>
             )}

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import '../css/FaqScreen.css';
-
+import {
+    BrowserRouter as Router,
+    Switch, Route, Link
+  } from "react-router-dom";
 import {
   Accordion, AccordionItem,
   AccordionItemHeading, AccordionItemButton,
-  AccordionItemPanel, } from 'react-accessible-accordion'
+  AccordionItemPanel, } from 'react-accessible-accordion';
+  import productService from '../services/productService';
+
  
 
 const Faq = () => (
@@ -115,12 +120,64 @@ const Faq = () => (
                 </AccordionItemPanel>
             </AccordionItem>
         </Accordion>
+    </div>
 
 
-            </div>
-        </div>
-        
+        </div> 
 
 )
 
-export default Faq;
+const FaqForm = () => {
+    const [status, setStatus] = useState("Submit");
+    
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setStatus("Sending...");
+      const { name, email, enquiry } = e.target.elements;
+      let details = {
+        name: name.value,
+        email: email.value,
+        enquiry: enquiry.value,
+      };
+
+      let response = await fetch("/api/FAQ", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(details),
+      });
+      setStatus("Submit");
+      let result = await response.json();
+      alert(result.status);
+    };
+    return (
+
+        <div className="enquiryForm">
+          <h1>Ask a Question</h1>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="name"></label>
+                <input type="text" id="name" placeholder="Name" required />
+              </div>
+              <div>
+                <label htmlFor="email"></label>
+                <input type="email" id="email" placeholder="Email" required />
+              </div>
+              <div>
+                <label htmlFor="enquiry"></label>
+                <textarea id="enquiry" placeholder="Enquiry" required />
+              </div>
+              <button type="submit">{status}   <i className="inline-icon material-icons">trending_flat</i></button>
+            </form>
+
+      </div>
+    );
+  };
+
+
+const faqDisplay = {
+    Faq, FaqForm
+  }
+
+export default faqDisplay;

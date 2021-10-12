@@ -6,6 +6,7 @@ const Product = require("../models/products")
 const { response } = require('express')
 const apiRouter = express.Router()
 var cors = require('cors')
+const nodemailer = require("nodemailer");
 var app = express()
 
 const SECRET = process.env.SECRET
@@ -155,6 +156,46 @@ apiRouter.post('/api/login', async (req, res) => {
       return res.status(401).json({error: "invalid username or password"})
   }
 
+})
+
+
+const contactEmail = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: "groupj.bakery@gmail.com",
+    pass: "GroupJ_Bakery",
+  },
+})
+
+apiRouter.post('/api/FAQ', (req,res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const enquiry = req.body.enquiry;
+
+  const mail = {
+    from: name,
+    to: "groupj.bakery@gmail.com",
+    subject: "Enquiry Form Submission",
+    html: `<p>Name: ${name}</p>
+          <p>Email: ${email}</p>
+          <p>Message: ${enquiry}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if(error) {
+      res.json({ status: "ERROR"});
+    } else {
+      res.json({ status: "Message Sent"});
+    }
+  })
+
+})
+
+contactEmail.verify((error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Ready to Send");
+  }
 })
 
 module.exports = apiRouter

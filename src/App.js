@@ -6,7 +6,7 @@ import {
 import menuDisplay from './pages/menuScreen.js';
 import productService from './services/productService';
 import Home from './pages/homeScreen.js';
-import Faq from './pages/FAQScreen.js';
+import faqDisplay from './pages/FAQScreen.js';
 import Cart from './pages/cartScreen.js';
 import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
@@ -124,7 +124,8 @@ else {
  
          <Route path="/FAQ">
            <navBar.BrightNavBar/>
-           <Faq />
+           <faqDisplay.Faq />
+           <faqDisplay.FaqForm />
          </Route>
  
          <Route path="/My-cart">

@@ -8,7 +8,7 @@ const ListOfProducts = ({products}) => {
             {
                 products.map((item) => 
                     <li key={item.id}>
-                        <Link to={`/products/${item.id}`}><img src={item.photo} alt="bread"></img></Link>
+                        <Link to={`/products/${item.id}`}><img src={item.photo} alt='bread'></img></Link>
                         {item.name}
                         {item.price}
                     </li>
@@ -25,11 +25,15 @@ const SingleProduct = ({product, moreCart}) => {
     if(singleP){
         return(
             <>
-            <img src={product.photo} alt="bread"></img>
+            <img src={product.photo} alt='bread'></img>
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p>{product.price}</p>
-            <button >Quantity button goes here</button>
+            <button>Quantity button goes here</button>
+            <form>
+                <label htmlFor='howmuch'></label>
+                <input name = 'howmuch' value = {1} /> 
+            </form>
             <button onClick={() => moreCart(singleP)}>Add to Cart</button>
 
             <ul>
@@ -39,6 +43,7 @@ const SingleProduct = ({product, moreCart}) => {
         )
     }
 }
+
 
 const productDisplay = {
     ListOfProducts, SingleProduct

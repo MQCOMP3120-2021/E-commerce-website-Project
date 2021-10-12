@@ -63,7 +63,6 @@ const App = () => {
   }
 
   const addCart = (content) => {
-    console.log(content)
     productService.addtoCart( content )
     .then((object) => {
       console.log("POST response: ", object)

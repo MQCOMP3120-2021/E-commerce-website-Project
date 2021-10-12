@@ -3,6 +3,7 @@
   margin-left: 15%;
   max-width: 70%;
   margin-top:5%;
+  margin-bottom: 8% ;
 }
 
 .faq-accordion h3{
@@ -12,20 +13,14 @@
 }
 
 .accordion {
-  /* border:1px solid rgba(0,0,0,0.1); */
   border-radius: 2px;
 }
-/* 
-.accordion__item + .accordion__item {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-} */
 
 .accordion__button {
   background-color: white;
   color: black;
   cursor: pointer;
   padding: 18px 0;
-  /* padding: 18px; */
   text-align: left;
   border: none;
 }
@@ -35,7 +30,6 @@
 }
 
 .accordion__button:before {
-  /* display: inline-block; */
   content: '';
   height: 8px;
   width: 8px;
@@ -60,5 +54,85 @@
   animation: fadein 0.35s ease-in;
 }
 
+.enquiryForm {
+  background-color: black;
+  padding: 10%;
+  text-align: center;
+}
 
+.enquiryForm h1 {
+  color:white;
+  text-align: center;
+  font-size: 33px;
+  text-transform: uppercase;
+  font-family: 'Cormorant', serif;
+  padding-bottom: 8px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  width: fit-content;
+  margin:auto;
+}
+
+form {
+  padding-top: 7%;
+}
+
+textarea {
+  resize: none;
+  width:40%;
+  border:none;
+  border-radius: 0;
+  height: 200px;
+  padding-top: 1%;
+}
+
+input[type=text], input[type=email]{
+  border:none;
+  border-radius: 0;
+  width: 40%;
+  margin-bottom: 3%;
+  height: 55px;
+}
+
+::placeholder {
+  color: black;
+  font-family: 'Cormorant', serif;
+  letter-spacing: 2px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+input[type=text]:focus, input[type=email]:focus {
+  border:none;
+  outline: 0; 
+}
+
+textarea:focus {
+  border:none;
+  outline: 0; 
+}
+
+button[type=submit] {
+  background-color: black;
+  font-family: 'Cormorant', serif;
+  border:solid 1px white;
+  border-radius: 0;
+  letter-spacing: 4px;
+  font-weight: 600;
+  margin-bottom: 5%;
+  color:white;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  font-size: 11px;
+  width:200px;
+  text-align: center;
+  margin:auto;
+  margin-top: 5%;
+}
+
+button[type=submit]:hover {
+  background-color: white;
+  color:black;
+  transition: 0.2s;
+}
 

@@ -3,6 +3,7 @@ const fs = require("fs")
 const cors = require("cors")
 const bcrypt = require ("bcrypt")
 const jwt = require("jsonwebtoken")
+const nodemailer = require("nodemailer");
 
 const rawData = fs.readFileSync("server/sample.json")
 const data = JSON.parse(rawData)
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-Auth-Token");
   next();
 });
+
 
 app.get('/api/products', (req, res) => {
     console.log("GET")
@@ -109,6 +111,46 @@ app.post('/api/login', async (req, res) => {
   }
 
 })
+
+const contactEmail = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: "groupj.bakery@gmail.com",
+    pass: "GroupJ_Bakery",
+  },
+})
+
+app.post('/FAQ', (req,res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const enquiry = req.body.enquiry;
+
+  const mail = {
+    from: name,
+    to: "groupj.bakery@gmail.com",
+    subject: "Enquiry Form Submission",
+    html: `<p>Name: ${name}</p>
+          <p>Email: ${email}</p>
+          <p>Message: ${enquiry}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if(error) {
+      res.json({ status: "ERROR"});
+    } else {
+      res.json({ status: "Message Sent"});
+    }
+  })
+
+})
+
+contactEmail.verify((error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Ready to Send");
+  }
+})
+
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {

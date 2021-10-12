@@ -9,6 +9,7 @@ const getAll = () => {
 const getProduct = (id) => {
     return axios.get("/api/products/" + id)
                 .then(response => response.data)
+                .then(data => console.log("got it!", data))
 }
 const getCart = () => {
     return axios.get(baseURL + "cart")

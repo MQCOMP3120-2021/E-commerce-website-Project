@@ -7,7 +7,26 @@ import defaultImg from '../assets/defaultImg.jpg'
 const SingleProduct = ({product, moreCart}) => {
     const id = Number(useParams().id)
     const singleP = product.find(p=> p.id === Number(id))
-    console.log(singleP)
+    var qty = 1;
+
+    const decrementQty = () => {
+        if(qty > 1){
+            qty--;
+        }
+        else{
+            qty=1;
+        }
+    }
+
+    const incrementQty = () => {
+        if(qty < 99){
+            qty++;
+        }
+        else{
+            qty=99;
+        }
+    }
+
     if(singleP){
         return(
             <>
@@ -20,12 +39,9 @@ const SingleProduct = ({product, moreCart}) => {
                             <p>{singleP.description}</p>
                             <h6>{singleP.price}</h6>
                             <div className="quantityBtn">
-                                <input type="button" value=" - " className="decrement"/>
-                                <input type="number" value="1" min="1" className="qty"/>
-                                <input type="button" value=" + " className="incriment"/>
-                            </div>
-                            <div className="submitBtn">
-                                <button type="submit">ADD TO CART</button>
+                                <button onClick = {decrementQty} className="decrement"> - </button>
+                                <input type="number" value={qty} className="qtyInput"/>
+                                <button onClick = {incrementQty} className="incriment"> + </button>
                             </div>
                         </div>
                     </div>
@@ -40,7 +56,7 @@ const SingleProduct = ({product, moreCart}) => {
                             </div>
                         </div>
                         
-                         {/* * FIX THIS FOR REVIEWS NOT WORKING PROPERLY (error: CANT MAP FROM REVIEWS)
+                         * FIX THIS FOR REVIEWS NOT WORKING PROPERLY (error: CANT MAP FROM REVIEWS)
                         <div className="productReviews">
                             {(product.reviews).map((review) => {
                                 <div className="productReview">
@@ -48,7 +64,7 @@ const SingleProduct = ({product, moreCart}) => {
                                             <h5>USERNAME</h5>
                                         </div>
                             })}
-                        </div>  */}
+                        </div> 
                     </div>
                 </>
             ) : (

@@ -87,12 +87,12 @@ const App = () => {
           
         </Route>
 
-          <Route path="/">
-            <div className="bg-img">
-                <navBar.DarkNavBarUser/>
-            </div>
-            <Home />
-          </Route>
+        <Route path="/">
+          <div className="bg-img">
+              <navBar.DarkNavBarUser/>
+          </div>
+          <Home />
+        </Route>
           
       </Switch>
 

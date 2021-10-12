@@ -4,7 +4,6 @@ import { useParams, Link
 import './css/Product.css'
 import './css/menuScreen.css'
 import defaultImg from './assets/defaultImg.jpg'
-import logo from './assets/logo-black.png'
 import productService from './services/productService';
 
 const ListOfProducts = ({products}) => {
@@ -33,24 +32,24 @@ const ListOfProducts = ({products}) => {
 }
 
 const SingleProduct = ({product, moreCart}) => {
-    const id = useParams().id
+    const { id } = useParams()
     const singleP = product.filter(
-        (data) => {
-            return data.id === id
-        }
-    )
-    console.log(singleP)
+                    (data) => {
+                        return data.id === id
+                    }
+    )[0]
+
     if(singleP){
         return(
             <>
             {product ? (
                 <>
                     <div className="productCard">
-                        <img src={singleP[0].photo} className="productImg" onError={()=>this.img.src=defaultImg}/>
+                        <img src={singleP.photo} className="productImg" onError={()=>this.img.src=defaultImg}/>
                         <div className="productInfo">
-                            <h3>{singleP[0].name}</h3>
-                            <p>{singleP[0].description}</p>
-                            <h6>{singleP[0].price}</h6>
+                            <h3>{singleP.name}</h3>
+                            <p>{singleP.description}</p>
+                            <h6>{singleP.price}</h6>
                             <div className="quantityBtn">
                                 <input type="button" value=" - " className="decrement"/>
                                 <input type="number" value="1" min="1" className="qty"/>
@@ -64,15 +63,14 @@ const SingleProduct = ({product, moreCart}) => {
                     <div className="reviewSec">
                         <h3>Reviews</h3>
                         <hr/>
-                        {/** FIX THIS FOR REVIEWS NOT WORKING PROPERLY (error: CANT MAP FROM REVIEWS)
                         <div className="productReviews">
-                            {(product.reviews).map((review) => {
+                            {(singleP.reviews).map((review) => {
                                 return <div className="productReview">
                                             <p>{review}</p>
                                             <h5>USERNAME</h5>
                                         </div>
                             })}
-                        </div>*/}
+                        </div>
                     </div>
                 </>
             ) : (

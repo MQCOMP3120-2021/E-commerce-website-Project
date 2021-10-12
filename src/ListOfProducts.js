@@ -46,11 +46,11 @@ const SingleProduct = ({product, moreCart}) => {
             {product ? (
                 <>
                     <div className="productCard">
-                        <img src={product.photo} className="productImg" onError={()=>this.img.src=defaultImg}/>
+                        <img src={singleP[0].photo} className="productImg" onError={()=>this.img.src=defaultImg}/>
                         <div className="productInfo">
-                            <h3>{product.name}</h3>
-                            <p>{product.description}</p>
-                            <h6>{product.price}</h6>
+                            <h3>{singleP[0].name}</h3>
+                            <p>{singleP[0].description}</p>
+                            <h6>{singleP[0].price}</h6>
                             <div className="quantityBtn">
                                 <input type="button" value=" - " className="decrement"/>
                                 <input type="number" value="1" min="1" className="qty"/>

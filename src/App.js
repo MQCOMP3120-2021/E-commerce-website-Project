@@ -17,7 +17,7 @@ const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState([])
   const [user, setUser] = useState(null)
-
+  
   useEffect(()=>{
     console.log("effect is being run")
     productService.getAll()
@@ -87,12 +87,12 @@ const App = () => {
           
         </Route>
 
-          <Route path="/">
-            <div className="bg-img">
-                <navBar.DarkNavBarUser/>
-            </div>
-            <Home />
-          </Route>
+        <Route path="/">
+          <div className="bg-img">
+              <navBar.DarkNavBarUser/>
+          </div>
+          <Home />
+        </Route>
           
       </Switch>
 

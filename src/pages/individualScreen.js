@@ -24,7 +24,7 @@ const SingleProduct = ({product, moreCart}) => {
                                 <input type="number" value="1" min="1" className="qty"/>
                                 <input type="button" value=" + " className="incriment"/>
                             </div>
-                            <div ClassName="submitBtn">
+                            <div className="submitBtn">
                                 <button type="submit">ADD TO CART</button>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ const SingleProduct = ({product, moreCart}) => {
             ) : (
                 <>
                     <div className="product404">
-                        <h3>Product not found :(</h3>
+                        <h3>Product not found</h3>
                     </div>
                 </>
             )}

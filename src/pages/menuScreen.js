@@ -12,6 +12,7 @@ const SearchBar = () => (
             <input
               type="textBox"
               id="header-search"
+              placeholder="search item"
             /> 
       </form>
   </div>

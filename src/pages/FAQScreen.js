@@ -140,7 +140,7 @@ const FaqForm = () => {
         enquiry: enquiry.value,
       };
 
-      let response = await fetch("http://localhost:3000/FAQ", {
+      let response = await fetch("/api/FAQ", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",

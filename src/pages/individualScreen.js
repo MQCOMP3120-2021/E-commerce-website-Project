@@ -1,44 +1,13 @@
 import React from 'react'
 import { useParams, Link
 } from "react-router-dom"
-import './css/Product.css'
-import './css/menuScreen.css'
-import defaultImg from './assets/defaultImg.jpg'
-import productService from './services/productService';
-
-const ListOfProducts = ({products}) => {
-     return(
-        
-        <ul>
-            <section className="menuContainer">
-            {
-                products.map((item) => 
-                <div className="itemDisplay">
-                    <li key={item.id}>
-                        <Link to={`/products/${item.id}`}><img src={item.photo} alt="bread"></img></Link>
-                            <div className="itemName">
-                                <p>{item.name}</p>
-                            </div>
-                            <div className="itemPrice">
-                                <p>{item.price}</p>
-                            </div>                            
-                    </li>
-                    </div>
-            )
-            }
-            </section>
-        </ul>
-    )
-}
+import '../css/Product.css'
+import defaultImg from '../assets/defaultImg.jpg'
 
 const SingleProduct = ({product, moreCart}) => {
-    const { id } = useParams()
-    const singleP = product.filter(
-                    (data) => {
-                        return data.id === id
-                    }
-    )[0]
-
+    const id = Number(useParams().id)
+    const singleP = product.find(p=> p.id === Number(id))
+    console.log(singleP)
     if(singleP){
         return(
             <>
@@ -60,17 +29,26 @@ const SingleProduct = ({product, moreCart}) => {
                             </div>
                         </div>
                     </div>
+
                     <div className="reviewSec">
                         <h3>Reviews</h3>
                         <hr/>
                         <div className="productReviews">
-                            {(singleP.reviews).map((review) => {
-                                return <div className="productReview">
-                                            <p>{review}</p>
+                            <div className="productReview">
+                                {/* <p>{singleP.reviews}</p> */}
+                                {singleP.reviews.map(o => <span key={o}> {o} </span>)}
+                            </div>
+                        </div>
+                        
+                         {/* * FIX THIS FOR REVIEWS NOT WORKING PROPERLY (error: CANT MAP FROM REVIEWS)
+                        <div className="productReviews">
+                            {(product.reviews).map((review) => {
+                                <div className="productReview">
+                                            <p>{singleP.review}</p>
                                             <h5>USERNAME</h5>
                                         </div>
                             })}
-                        </div>
+                        </div>  */}
                     </div>
                 </>
             ) : (
@@ -85,8 +63,4 @@ const SingleProduct = ({product, moreCart}) => {
     }
 }
 
-const productDisplay = {
-    ListOfProducts, SingleProduct
-}
-
-export default productDisplay
+export default SingleProduct;

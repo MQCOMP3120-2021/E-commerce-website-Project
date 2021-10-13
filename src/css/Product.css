@@ -4,17 +4,20 @@
     align-items: center;
     padding: 2% 10%;
 }
+
 .productImg{
     width: 556px;
     height: 615px;
     object-fit: cover;
 }
+
 .productInfo{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: auto 8%;
 }
+
 .productInfo h3{
     font-size: 30px;
     font-weight: bold;
@@ -47,12 +50,19 @@
 }
 .submitBtn button{
     background: black;
-    border: none;
+    border: solid 1px white;
     border-radius: 0;
     color: white;
     padding: 3% 5%;
     font-size: 15px;
 }
+
+.submitBtn button:hover{
+    background: white;
+    border: solid 1px black;
+    color: black;
+}
+
 .reviewSec{
     padding: 2% 10%;
 }

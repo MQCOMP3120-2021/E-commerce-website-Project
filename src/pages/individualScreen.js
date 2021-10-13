@@ -56,14 +56,13 @@ const SingleProduct = ({product, moreCart}) => {
                         <h3>Reviews</h3>
                         <hr/>
                         <div className="productReviews">
-                            <div className="productReview">
-                                {singleP.reviews.map(o => <span key={o}> {o} </span>)}
-                                
-                            </div>
+                                {singleP.reviews.map( o => 
+                                    <div className="productReview">
+                                        <span key={o}> {o} </span>
+                                    </div>
+                                )}
                         </div>
-
                     </div>
-                    
                 </>
             ) : (
                 <>

@@ -106,7 +106,6 @@ else {
  
          <Route path="/products/:id">
             <navBar.BrightNavBar/>
-            {console.log("prod: " , products)}
             <SingleProduct product ={products} moreCart={addCart}/>
          </Route>
  

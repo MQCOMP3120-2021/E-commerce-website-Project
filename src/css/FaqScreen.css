@@ -86,7 +86,7 @@ textarea {
   padding-top: 1%;
 }
 
-input[type=text], input[type=email]{
+input[type=nameBox], input[type=email]{
   border:none;
   border-radius: 0;
   width: 40%;
@@ -102,7 +102,7 @@ input[type=text], input[type=email]{
   font-weight: 500;
 }
 
-input[type=text]:focus, input[type=email]:focus {
+input[type=nameBox]:focus, input[type=email]:focus {
   border:none;
   outline: 0; 
 }

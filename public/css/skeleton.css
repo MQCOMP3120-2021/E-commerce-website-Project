@@ -231,6 +231,7 @@ input[type="search"],
 input[type="text"],
 input[type="tel"],
 input[type="url"],
+input[type=nameBox],
 input[type="password"],
 textarea,
 select {
@@ -249,6 +250,7 @@ input[type="text"],
 input[type="tel"],
 input[type="url"],
 input[type="password"],
+input[type=nameBox],
 textarea {
   -webkit-appearance: none;
      -moz-appearance: none;

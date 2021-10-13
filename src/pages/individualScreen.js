@@ -5,9 +5,11 @@ import '../css/Product.css'
 import defaultImg from '../assets/defaultImg.jpg'
 
 const SingleProduct = ({product, moreCart}) => {
-    const id = Number(useParams().id)
-    const singleP = product.find(p=> p.id === Number(id))
-    console.log(singleP)
+    const { id } = useParams()
+    const singleP = product.filter((p) => {
+        return p.id === id
+    })[0]
+
     if(singleP){
         return(
             <>
@@ -33,22 +35,7 @@ const SingleProduct = ({product, moreCart}) => {
                     <div className="reviewSec">
                         <h3>Reviews</h3>
                         <hr/>
-                        <div className="productReviews">
-                            <div className="productReview">
-                                {/* <p>{singleP.reviews}</p> */}
-                                {singleP.reviews.map(o => <span key={o}> {o} </span>)}
-                            </div>
-                        </div>
-                        
-                         {/* * FIX THIS FOR REVIEWS NOT WORKING PROPERLY (error: CANT MAP FROM REVIEWS)
-                        <div className="productReviews">
-                            {(product.reviews).map((review) => {
-                                <div className="productReview">
-                                            <p>{singleP.review}</p>
-                                            <h5>USERNAME</h5>
-                                        </div>
-                            })}
-                        </div>  */}
+
                     </div>
                 </>
             ) : (

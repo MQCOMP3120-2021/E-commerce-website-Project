@@ -55,8 +55,15 @@ const SingleProduct = ({product, moreCart}) => {
                     <div className="reviewSec">
                         <h3>Reviews</h3>
                         <hr/>
+                        <div className="productReviews">
+                            <div className="productReview">
+                                {singleP.reviews.map(o => <span key={o}> {o} </span>)}
+                                
+                            </div>
+                        </div>
 
                     </div>
+                    
                 </>
             ) : (
                 <>

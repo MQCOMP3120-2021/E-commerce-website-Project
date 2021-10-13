@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch, Route, Link
 } from "react-router-dom";
-import menuDisplay from './pages/menuScreen.js';
+import ListOfProducts from './pages/menuScreen.js';
 import productService from './services/productService';
 import Home from './pages/homeScreen.js';
 import faqDisplay from './pages/FAQScreen.js';
@@ -66,8 +66,8 @@ const App = () => {
 
         <Route path="/Menu">
            <navBar.BrightNavBarUser/>
-           <menuDisplay.SearchBar />
-           <menuDisplay.ListOfProducts  products={products}/> 
+           {/* <menuDisplay.SearchBar />
+           <menuDisplay.ListOfProducts  products={products}/>  */}
         </Route>
 
         <Route path="/About">
@@ -111,8 +111,8 @@ else {
  
          <Route path="/Menu">
             <navBar.BrightNavBar/>
-            <menuDisplay.SearchBar />
-            <menuDisplay.ListOfProducts  products={products}/> 
+            {/* <menuDisplay.SearchBar /> */}
+            <ListOfProducts  products={products}/> 
          </Route>
  
          <Route path="/About">

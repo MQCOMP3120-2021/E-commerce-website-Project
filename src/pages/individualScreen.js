@@ -61,9 +61,11 @@ const SingleProduct = ({product, moreCart}) => {
                                     singleP.reviews.map( o => 
                                         <div className="productReview">
                                             <span key={o}> {o} </span>
-                                    </div> )
+                                        </div> )
                                 ) : (
-                                    <h3 className ="noReview">This product has no reviews</ h3>
+                                    <div className="noReview">
+                                        <h3>This product has no reviews.</ h3>
+                                    </div>
                                 )}
                         </div>
                     </div>

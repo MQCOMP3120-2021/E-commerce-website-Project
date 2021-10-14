@@ -1,23 +1,112 @@
-# Getting Started with Create React App
+# Application Outline
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Main Purpose
 
-In the project directory, you can run:
+This application acts as an online platform for a bakery shop located in Macquarie to sell their products to a wider range of customers through partnerships with delivery services.
 
-### `npm start`
+## Target User Group
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+People who have a basic understanding on how the Internet works should be able to navigate through the application easily. It is expected that users of the application will possess a PayPal account, credit or debit card that can be utilized in their payment process. Targeted users share an interest in bakery goods and enjoy using food delivery services. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Data Sources
 
-### `npm test`
+All images used in the application are copyright free.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The logo of the application is designed by the team, hence no permission is required. 
+
+Images of products are obtained through (https://unsplash.com/), where it grants the copyright license for users to use the photos freely and neither permission nor attribution is required.
+
+# Minimum Viable Product Outline
+
+## Pages
+
+The application contains 8 pages in total:
+- Home
+- Menu
+- Single product view
+- My order
+- Cart
+- Checkout
+- About
+- FAQ
+
+## Features
+
+A log in function is implemented to the web application, where customers can provide reviews and ratings on items purchased previously. Feedback can be provided through navigating to the "My Orders" page, which will appear after users log in to their account. 
+
+### Home
+
+Home page acts as a basic introduction page for the application. The page includes some images and a special review provided by famous food critics. A trending products display is added to the bottom section of the page, where a button is implemented along to bring users directly to the menu page.
+
+### Menu
+
+The menu page features all the products that the bakery shop sells. A search bar is attached to the top of the page, which should allow customers to easily find their targeted items. When users click on an item on the list, they will be redirected to the single product view page.
+
+### Single Product View
+
+A single product view page contains a basic description of the item selected. Customers who are interested in the product are permitted to choose their desired quantity and add the item into their cart. Some ratings and reviews provided by previous customers are also viewable by customers on the page. 
+
+### Cart
+
+Cart page allows customers to checkout the items that they have added or edit the quantity as desired. A delete option is available for customers who no longer show interest in a product added into cart.
+
+### Checkout
+
+Upon confirmation, customers will be redirected to the checkout page, where they are permitted to select their preferred delivery partners and payment methods. The screen also displays a random number next to delivery fee estimation to make the page look more realistic.
+
+### Contact
+
+The page includes a simple description of the business with a google map stating the location of the physical store. Users can also find the social media accounts connected to the business on the bottom section of the page. The icons will link users to the main page of the social media stated but no actual account will appear. 
+
+### FAQ
+
+Accordion component is implemented under the page to build vertically collapsing boxes that display some usual questions that users will encounter when using a web application of such. A contact form is attached below the accordion, allowing users to send emails to the business for further enquiries. 
+
+# Project Source Code
+
+## server
+
+All functions and components related to the server are stored under the server folder. 
+This also includes any JSON files used to store temporary samples for the project.
+
+### controllers
+
+### models
+
+### utils
+
+## src
+
+This folder stores all source materials required to build the project.
+
+### assets 
+
+The folder stores any assets and images that have been utilized for the project.
+
+### pages
+
+The folder is made up of js files that include all functions and components required for the front-end side of the application.
+They are organized according to the pages these components belong to. 
+
+### css
+
+The folder stores all css stylesheets that have been used to style the pages in the application. The stylesheets are arranged according to pages.
+
+### services
+
+The folder includes a js file that contains all axios methods utilized to handle data from api.
+
+# Next Steps
+
+
+# Roles and Contributions of Each Member
+
+
+# Interaction and Communication
+
+# Available Scripts
 
 ### `npm run build`
 

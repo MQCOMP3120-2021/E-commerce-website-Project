@@ -1,0 +1,102 @@
+.bg-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../assets/headerImage.png);
+  min-height: 800px;
+  background-position: center;   
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.homeContainer {
+  background-color: black;
+}
+  
+.six.columns p {
+  color:white;
+  font-family: 'Cormorant', serif;
+  font-size: 25px;
+  padding-top: 16%;
+  padding-left: 5%;
+  text-align: left;
+}
+  
+.six.columns img {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  float: right;}
+  
+.container {
+  padding-top: 18%;
+  padding-bottom: 15%;
+}
+  
+.foodCriticName {
+  font-style: italic;
+  margin-top: -50px;
+}
+  
+.trendingTitle {
+  text-align: center;
+  color:white;
+  font-size: 33px;
+  text-transform: uppercase;
+  font-family: 'Cormorant', serif;
+  padding-bottom: 8px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  width: fit-content;
+  margin:auto;
+}
+  
+  .container-grid {
+    display: grid;
+    grid-area: auto;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+    max-width:fit-content;
+    margin:auto;
+    margin-top: 50px;
+  }
+  
+  .trendingItem img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  .trending-sub {
+    color: white;
+    font-family: 'Cormorant', serif;
+    margin-top: 10px;
+    font-weight: 200;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
+  .trendingButton {
+    margin-left: 80.1%;
+    background-color: black;
+    font-family: 'Cormorant', serif;
+    border:solid 1px white;
+    border-radius: 0;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 5%;
+    color:white;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+  
+  .trendingButton:hover {
+    background-color: white;
+    color:black;
+    transition: 0.2s;
+  }
+
+  .material-icons {
+    font-size: 14px;
+    display: inline-flex;
+    vertical-align: top;
+  }

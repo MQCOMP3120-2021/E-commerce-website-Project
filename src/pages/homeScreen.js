@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import '../homeScreen.css';
+import '../css/homeScreen.css';
 import {
   BrowserRouter as Router,
   Switch, Route, Link
@@ -13,20 +13,6 @@ import logo from '../assets/j-logo.png'
 const Home = () => (
 
     <div className="homeContainer">
-
-        <div className="bg-img">
-            <ul className="DarkNavbar">
-                <li><Link to= "/" className="darkNav">Home</Link></li>
-                <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
-
-                <li><Link to= "/About" className="darkNav">About</Link></li>
-
-                <li><img src= {logo} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
-                <li><Link to= "/FAQ" className="darkNav">FAQ</Link></li>
-                <li><Link to= "/My-cart" className="darkNav">Cart</Link></li>
-                <li><Link to= "/Login" className="darkNav">Login</Link></li>
-            </ul>
-        </div>
 
         <div className="container">
             <div className="row">

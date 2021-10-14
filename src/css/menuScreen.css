@@ -1,0 +1,58 @@
+* {
+  list-style-type: none;
+}
+
+input[type=textBox]:focus {
+  border-color: black;
+  outline: 0; 
+}
+
+input[type=textBox] {
+  width: 20%;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 0px;
+  background-image: url(../assets/searchIcon.png);
+  background-size: 25px 27px;
+  background-position: 8px 8px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin:auto;
+  height: 20%;
+}
+.menuContainer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 1vh 5vw;
+  max-width:fit-content;
+  margin:auto; 
+  margin-top: 6%;
+}
+
+.itemDisplay {
+  text-align: left;
+}
+
+.menuContainer img{
+  width: 17vw;
+  height: 270px;
+  text-align: right;
+  object-fit: cover;
+}
+
+.itemName p {
+  font-family: 'Cormorant Infant', serif;
+  font-weight: 300;
+  font-size: 1em;
+  margin-top: 5%;
+  letter-spacing: 1px;
+}
+
+.itemPrice p {
+  font-family: 'Cormorant', serif;
+  font-weight: bold;
+  line-height: 0;
+  font-size: 1.1em;
+  margin-top: -10%;
+} 
+

@@ -1,12 +1,14 @@
 import axios from 'axios'
-const baseURL = "http://localhost:3001/api/"
-
+const baseURL = "/api/"
 
 const getAll = () => {
     return axios.get(baseURL + "products")
                 .then(response => response.data)
 }
-
+const getProduct = (id) => {
+    return axios.get("/api/products/" + id)
+                .then(response => response.data)
+}
 const getCart = () => {
     return axios.get(baseURL + "cart")
                 .then(response => response.data)
@@ -26,7 +28,12 @@ const removeCart = (thing) => {
                 .then((response) => response.data)
 }
 
-const productService = {getAll, getCart, addtoCart, updateCart, removeCart}
+const login = ({username, password}) => {
+    return axios.post(baseURL + 'login', {username, password})
+    .then(response => response.data)
+}
+
+const productService = {getAll, getProduct, getCart, addtoCart, updateCart, removeCart, login}
 
 export default productService;
 

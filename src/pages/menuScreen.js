@@ -1,28 +1,54 @@
 import React, {useState, useEffect} from 'react';
-import '../menuScreen.css';
+import '../css/menuScreen.css';
 import {
   BrowserRouter as Router,
   Switch, Route, Link
 } from "react-router-dom";
+import logo from '../assets/logo-black.png'
 
-const Menu = () => (
-
-        <div className="App">
-            <ul className="BrightNavbar">
-                <li><Link to= "/" className="brightNav">Home</Link></li>
-                <li><Link to= "/Menu" className="brightNav">Menu</Link></li>
-                <li><Link to= "/About" className="brightNav">About</Link></li>
-                <li><img src="" className="App-logo" alt="logo" /> </li>
-                <li><Link to= "/FAQ" className="brightNav">FAQ</Link></li>
-                <li><Link to= "/My-cart" className="brightNav">Cart</Link></li>
-                <li><Link to= "/Login" className="brightNav">Login</Link></li>
-            </ul>
-
-        </div>
-
+const SearchBar = () => (
+  <div className="App">
+      <form action="/" method="get">
+            <input
+              type="textBox"
+              id="header-search"
+              placeholder="Search item"
+            /> 
+      </form>
+  </div>
 )
 
-export default Menu;
+const ListOfProducts = ({products}) => {
+  return(
+     
+     <ul>
+         <section className="menuContainer">
+         {
+             products.map((item) => 
+             <div className="itemDisplay">
+                 <li key={item.id}>
+                     <Link to={`/products/${item.id}`}><img src={item.photo} alt="bread"></img></Link>
+                         <div className="itemName">
+                             <p>{item.name}</p>
+                         </div>
+                         <div className="itemPrice">
+                             <p>{item.price}</p>
+                         </div>
+                         
+                 </li>
+                 </div>
+         )
+         }
+         </section>
+     </ul>
+ )
+}
+
+const menuDisplay = {
+  ListOfProducts, SearchBar
+}
+
+export default menuDisplay;
 
 
 

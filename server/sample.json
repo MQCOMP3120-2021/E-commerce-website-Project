@@ -2,46 +2,126 @@
   "products": [
     {
       "id": 1,
-      "name": "First Bread",
-      "description": "Deliciouuuuususususuusususu bread",
-      "price": "$9,00",
+      "name": "Signature Sourdough",
+      "description": "As a naturally leavened bread, no commercial yeast was used for the rising process. It has a chewy texture and this soury taste that you will get addicted to. It allows you to put on any spreads or toppings to customize it to your own appetite. ",
+      "price": "$10.00",
       "reviews": [
         "First review",
         "Second Review"
       ],
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Fresh_made_bread_05.jpg/250px-Fresh_made_bread_05.jpg"
+      "photo": "https://images.unsplash.com/photo-1547978059-2639fd612c66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80"
     },
     {
       "id": 2,
-      "name": "Second Bread",
-      "description": "Horrribleeeeeefefefe bread",
-      "price": "$20,00",
+      "name": "Cinnamon Roll (4 in a Pack)",
+      "description": "Made with a rich dough leavened with yeast, our cinnamon roll is a sweet baked dough covered with cinnamon-sugar filling, and topped with our secret frosting.",
+      "price": "$20.00",
       "reviews": [
         "First review",
         "Second Review"
       ],
-      "photo": ""
+      "photo": "https://images.unsplash.com/photo-1536302981626-f77f29b17948?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80"
     },
     {
       "id": 3,
-      "name": "Third Bread",
-      "description": "Deliciouuuuususususuusususu bread",
-      "price": "$4,00",
+      "name": "Signature Croissant",
+      "description": "Our signature handmade puffy bread containing a flaky, crispy texture with a hint of sweetness without the use of any toppings or fillings.",
+      "price": "$6.00",
       "reviews": [
         "First review",
         "Second Review"
       ],
-      "photo": ""
+      "photo": "https://images.unsplash.com/photo-1623334044303-241021148842?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80"
     },
     {
       "id": 4,
-      "name": "Sesame Bagel",
-      "description": "Bagels with a mix of sesame seeds on top",
-      "price": "$3.80",
+      "name": "Plain Doughnut (3 in a Pack)",
+      "description": "A small fried snack that is crispy on the outside yet maintaining a soft inner texture. Icing sugar is sprinkled upon to provide the right amount of sweetness you need.",
+      "price": "$6.00",
       "reviews": [
         "First review"
       ],
-      "photo": "https://assets.epicurious.com/photos/54b2a9f83edeef84363b172f/master/pass/366757_bagels_1x1.jpg"
+      "photo": "https://images.unsplash.com/photo-1573050329989-9c2509328687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+    },
+    {
+      "id": 5,
+      "name": "Blueberry Muffin",
+      "description": "A batter-based bakery good that offers a similar taste of a bread and cake mixture, filled with our premium homemade blueberry jam.",
+      "price": "$3.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1611678849233-6715cbb56e4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1703&q=80"
+    },
+    {
+      "id": 6,
+      "name": "Semla",
+      "description": "A cardamom-spiced wheat bun originated from Sweden, filled with a mixture of milk and almond paste, and topped with fluffy whipped cream",
+      "price": "$5.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1582486983320-12feb082b528?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+    },
+    {
+      "id": 7,
+      "name": "Macarons (6 in a Pack)",
+      "description": "Sweet meringue-based sandwich cookie that comes in six different flavours: Cofee, Nutella, Passion Fruit, Earl Grey, Mango and Vanilla.",
+      "price": "$25.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFjYXJvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 8,
+      "name": "Scone",
+      "description": "A buttery bread glazed with egg wash offers a hint of sweet tanginess with a savoury taste originated from our premium homemade strawberry jam, topped with icing sugar that are only sprinkled upon customers' orders. ",
+      "price": "$3.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1606946144557-0d04974df266?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2NvbmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 9,
+      "name": "Almond Croissant",
+      "description": "Our signature puffy, flaky bread with a nutty sweetness from the fragrance of the fresh almond cream and topped with chopped almonds",
+      "price": "$8.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1565182363525-f95648bbeee0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80"
+    },
+    {
+      "id": 10,
+      "name": "Sourdough Pretzel",
+      "description": "A chewy yet crunchy sourdough made into the shape of a knot, offering a mixture of soury and salty taste along with sesame seeds toppings that enhance the bread's texture",
+      "price": "$5.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1568072430135-1a1fed9e6d01?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80"
+    },
+    {
+      "id": 11,
+      "name": "Apple Tart",
+      "description": "A small tart filled with fresh apple slices covered with a fair amount brown sugar and cinnamon that guarantees a balance between the sweet and tart flavor.",
+      "price": "$5.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1562007908-69cf18a6da04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80"
+    },
+    {
+      "id": 12,
+      "name": "Banana Nut Bread",
+      "description": "A cake-like moist, sweet bread made of fresh mashed bananas filled with chopped nuts and sprinkled with chocolate chips.",
+      "price": "$15.00",
+      "reviews": [
+        "First review"
+      ],
+      "photo": "https://images.unsplash.com/photo-1606101273945-e9eba91c0dc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80"
     }
   ],
   "cart": [
@@ -65,6 +145,15 @@
       "price": "$9,00",
       "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Fresh_made_bread_05.jpg/250px-Fresh_made_bread_05.jpg",
       "quantity": 1
+    }
+  ],
+
+  "users": [
+    {
+      "id": 0,
+      "username": "bobalooba",
+      "name":"Bob Bobalooba",
+      "password":"$2b$10$2vVopSZSinRu7H3bS4ZsyeqVFRbMCyyXg9.9UgerDO/D7sX3MWKPe"
     }
   ]
 }

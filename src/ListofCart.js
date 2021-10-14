@@ -4,7 +4,7 @@ import { Link
 import CartMath from './CartMath';
 
 
-const ListofCart = ({cartcontents, removeItem, updateCart}) => {
+const ListofCart = ({cartcontents, removeItem, updateItem}) => {
 
   return(
     <ul>
@@ -15,7 +15,7 @@ const ListofCart = ({cartcontents, removeItem, updateCart}) => {
         Product Name: {item.name}<br></br>
         Price: {item.price} <br></br>
         Amount: {item.quantity} 
-        <CartMath  itemAmount={item.quantity}/>
+        <CartMath  itemAmount={item.quantity} updateCart={updateItem}/>
         <button onClick={() => removeItem(item)}>Delete Item</button>
       </li>
     ))}

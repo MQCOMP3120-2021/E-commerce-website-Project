@@ -31,12 +31,25 @@ app.post('/api/cart', (req,res) => {
     review: body.review,
     price: body.price,
     photo: body.photo,
-    quantity: 1
+    quantity: body.quantity
   }
 
   data.cart = data.cart.concat(NewCartItem)
   console.log(NewCartItem)
   res.json(data.cart)
+})
+
+app.post('/api/cart/:id', (req,res) => {
+  const id = Number(req.params.id)
+  const len = data.cart.length
+  console.log('Cart ID is ', id)
+  const body = req.body
+
+  for (let i=0; i<len; i++){
+    if(data.cart.id === id){
+      data.cart.quantity = body.quantity
+    }
+  }
 })
 
 app.delete('/api/cart/:id', (req,res) => {
@@ -51,7 +64,7 @@ app.delete('/api/cart/:id', (req,res) => {
     }
   }
   else{
-    res.send("Cart has not been updated")
+    res.send("Item has not been removed from cart")
   }
   res.status(204).end()
 })

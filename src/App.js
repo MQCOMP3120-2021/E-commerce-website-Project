@@ -84,6 +84,18 @@ const App = () => {
     fetchCart()
   }
 
+  const updateCart = (content) =>{
+    console.log("Amount has been updated", content)
+    productService.updateCart(content)
+    .then((objects) => {
+      console.log("Item has been updated")
+    })
+    .catch((error) => {
+      console.log("Item has not been updated")
+    })
+    fetchCart()
+  }
+
   return (
    <Router>
     {/* <div className="App">
@@ -114,8 +126,7 @@ const App = () => {
         </Route>
         <Route path="/My-cart">
           <Cart />
-          <ListofCart cartcontents={cart} removeItem={removeCart}/>
-
+          <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
         </Route>
         <Route path="/Login">
           <Login />

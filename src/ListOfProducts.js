@@ -25,20 +25,23 @@ const SingleProduct = ({product, moreCart}) => {
     if(singleP){
         return(
             <>
-            <img src={product.photo} alt='bread'></img>
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-            <button>Quantity button goes here</button>
-            <form>
+            <div className='productCard'>
+                <img src={singleP.photo} alt='bread'></img>
+                <h3>{singleP.name}</h3>
+                <p>{singleP.description}</p>
+                <p>{singleP.price}</p>
+                <button>Quantity button goes here</button>
+                <form>
                 <label htmlFor='howmuch'></label>
                 <input name = 'howmuch' value = {1} /> 
-            </form>
-            <button onClick={() => moreCart(singleP)}>Add to Cart</button>
+                </form>
+                <button onClick={() => moreCart(singleP)}>Add to Cart</button>
 
-            <ul>
-              <li>Review goes here</li>
-            </ul>
+                <ul>
+                <li>Reviews</li>
+                </ul>
+            </div>
+            
             </>
         )
     }

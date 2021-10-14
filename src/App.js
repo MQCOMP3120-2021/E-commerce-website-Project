@@ -10,8 +10,6 @@ import faqDisplay from './pages/FAQScreen.js';
 import Cart from './pages/cartScreen.js';
 import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
-import ListofCart from './ListofCart';
-
 import navBar from './Navigation-bar';
 import SingleProduct from './pages/individualScreen.js'
 
@@ -44,56 +42,16 @@ const App = () => {
     })
   }
 
-  const producttoCart = (content) => {
-    const body = content
-
-    const newCart = {
-      id: cart.length + 1,
-      productid: body.id,
-      name: body.name,
-      description: body.description,
-      review: body.review,
-      price: body.price,
-      photo: body.photo,
-      quantity: 1
-    }
-
-    addCart(newCart)
-  }
-
   const addCart = (content) => {
+    console.log(content)
     productService.addtoCart( content )
     .then((object) => {
       console.log("POST response: ", object)
       setCart(cart.concat(object))
-      console.log("Item added", object)
+      console.log("new item added", object)
     })
   }
 
-  const removeCart = (content) =>{
-    productService.removeCart(content)
-    .then((object) => {
-      console.log("Item has been removed", object)
-      let newCart = cart.filter((c) => c.id !== cart.id)
-      setCart(newCart)
-    })
-    .catch((error) => {
-      console.log("Item has not been removed")
-    })
-    fetchCart()
-  }
-
-  const updateCart = (content) =>{
-    console.log("Amount has been updated", content)
-    productService.updateCart(content)
-    .then((objects) => {
-      console.log("Item has been updated")
-    })
-    .catch((error) => {
-      console.log("Item has not been updated")
-    })
-    fetchCart()
-  }
 
  if(user){
   return (
@@ -122,7 +80,6 @@ const App = () => {
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
           <Cart />
-          <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
         </Route>
 
         <Route path="/My-Account">

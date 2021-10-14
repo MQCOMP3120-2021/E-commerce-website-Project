@@ -124,27 +124,16 @@
       "photo": "https://images.unsplash.com/photo-1606101273945-e9eba91c0dc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80"
     }
   ],
-  "cart": [
+  
+  "cart":[
     {
-      "id": 1,
-      "productid": 4,
-      "name": "Sesame Bagel",
-      "description": "Bagels with a mix of sesame seeds on top",
-      "price": "$3.80",
-      "reviews": [
-        "First review"
-      ],
-      "photo": "https://assets.epicurious.com/photos/54b2a9f83edeef84363b172f/master/pass/366757_bagels_1x1.jpg",
-      "quantity": 2
-    },
-    {
-      "id": 2,
-      "productid": 1,
-      "name": "First Bread",
-      "description": "Deliciouuuuususususuusususu bread",
-      "price": "$9,00",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Fresh_made_bread_05.jpg/250px-Fresh_made_bread_05.jpg",
-      "quantity": 1
+        "id": 1,
+        "productid": 4,
+        "name": "Sesame Bagel",
+        "description": "Bagels with a mix of sesame seeds on top",
+        "price": "$3.80",
+        "photo": "https://assets.epicurious.com/photos/54b2a9f83edeef84363b172f/master/pass/366757_bagels_1x1.jpg",
+        "quantity": 2
     }
   ],
 

@@ -46,9 +46,10 @@ const SingleProduct = ({product, moreCart}) => {
                                 <input type="number" value={qty} className="qtyInput"/>
                                 <button onClick = {incrementQty} className="incriment"> + </button>
                             </div>
-                            <div className="submitBtn">
+                            <button onClick={() => moreCart(singleP)}>Add to Cart</button>
+                            {/* <div className="submitBtn">
                                 <button type="submit">ADD TO CART</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 

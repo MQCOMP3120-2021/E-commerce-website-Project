@@ -48,8 +48,8 @@ const App = () => {
     const body = content
 
     const newCart = {
-      id: cart.length + 1,
-      productid: body.id,
+      id: body.id,
+      productid: body.productid,
       name: body.name,
       description: body.description,
       review: body.review,

@@ -55,7 +55,7 @@ const App = () => {
       review: body.review,
       price: body.price,
       photo: body.photo,
-      quantity: 1
+      quantity: body.quantity
     }
 
     addCart(newCart)

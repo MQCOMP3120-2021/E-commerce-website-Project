@@ -3,6 +3,7 @@ const fs = require("fs")
 const bcrypt = require ("bcrypt")
 const jwt = require("jsonwebtoken")
 const Product = require("../models/products")
+const Cart = require("../models/cart")
 const { response } = require('express')
 const apiRouter = express.Router()
 var cors = require('cors')
@@ -64,7 +65,7 @@ apiRouter.get('/api/products/:id', (req, res) => {
 })
 
 apiRouter.post('/api/products', (req, res) => {
-    const body = request.body
+    const body = req.body
 
     if(!body.content){
         return response.status(400).json({error:"missing content(s)"})
@@ -86,62 +87,61 @@ apiRouter.post('/api/products', (req, res) => {
 })
 
 apiRouter.get('/api/cart', (req,res) => {
-  console.log("GET")
-  res.json(data.cart)
+  console.log("GETTING CART")
+  Cart.find({})
+      .then(items => {
+        res.json(items)
+  })
 })
 
 apiRouter.post('/api/cart', (req,res) => {
   const body = req.body
 
-  const NewCartItem = {
-    id: generateId(),
-    productid: body.id,
+  if(!body.content){
+    return response.status(400).json({error:"Item Not Added"})
+  }
+
+  const cart = new Cart({
+    productid: body.productid,
     name: body.name,
     description: body.description,
     price: body.price,
+    reviews: body.reviews,
     photo: body.photo,
     quantity: body.quantity
-  }
+  })
 
-  data.cart = data.cart.concat(NewCartItem)
-  console.log(NewCartItem)
-  res.json(data.cart)
+  cart.save()
+      .then(c => {
+        response.json(c)
+        console.log("Item Added", c.name)
+      })
 })
 
-apiRouter.post('/api/cart/:id', (req,res) => {
-  const id = Number(req.params.id)
-  const len = data.cart.length
-  console.log('Cart ID is ', id)
-  const body = req.body
+apiRouter.put('/api/cart/:id', (req, res, next) => {
 
-  for (let i=0; i<len; i++){
-    if(data.cart.id === id){
-      data.cart.quantity = body.quantity
-    }
-  }
+  const newAmount = req.body
+  Cart.findByIdAndUpdate(req.params.id, newAmount, { new: true })
+      .then(updatedAmount => {
+        res.json(updatedAmount)
+      })
+      .catch(error => next(error))
+  
 })
 
-apiRouter.delete('/api/cart/:id', (req,res) => {
-  const id = Number(req.params.id)
-  const len = data.cart.length
-
-  data.cart = data.cart.filter((c) => c.id !== id)
-  if (data.cart.length < len){
-    res.send("Item has been removed")
-    for (let i = 0; i<len; i++){
-      data.cart[i].id = i
-    }
-  }
-  else{
-    res.send("Item has not been removed from cart")
-  }
-  res.status(204).end()
+apiRouter.delete('/api/cart/:id', (req, res, next) => {
+  Cart.findByIdAndRemove(req.params.id)
+      .then(result => {
+        res.status(204).end()
+      })
+      .catch(error => next(error))
+  
 })
 
-const generateId = () => {
-  const MAXID = data.cart.length > 0 ? Math.max(...data.cart.map((u) => u.id)) : 0
-  return MAXID + 1
-}
+// const generateId = () => {
+//   const MAXID = data.cart.length > 0 ? Math.max(...data.cart.map((u) => u.id)) : 0
+//   return MAXID + 1
+// }
 
 apiRouter.post('/api/login', async (req, res) => {
 

@@ -44,6 +44,7 @@ const App = () => {
   }
 
   const producttoCart = (content) => {
+    console.log('this function has been activated')
     const body = content
 
     const newCart = {
@@ -120,8 +121,8 @@ const App = () => {
 
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
-          <Cart />
-          <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
+          <Cart cartcontents={cart} removeItem = {removeCart}/>
+          
         </Route>
 
         <Route path="/My-Account">

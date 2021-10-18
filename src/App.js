@@ -7,12 +7,12 @@ import ListOfProducts from './pages/menuScreen.js';
 import productService from './services/productService';
 import Home from './pages/homeScreen.js';
 import faqDisplay from './pages/FAQScreen.js';
-import Cart from './pages/cartScreen.js';
+// import Cart from './pages/cartScreen.js';
 import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
 import navBar from './Navigation-bar';
 import SingleProduct from './pages/individualScreen.js'
-import ListofCart from './ListofCart';
+import ListofCart from './pages/cartScreen.js';
 
 const App = () => {
   const [products, setProducts] = useState([])
@@ -121,7 +121,7 @@ const App = () => {
 
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
-          <Cart cartcontents={cart} removeItem = {removeCart}/>
+          {/* <Cart cartcontents={cart} removeItem = {removeCart}/> */}
           
         </Route>
 
@@ -173,7 +173,7 @@ else {
  
          <Route path="/My-cart">
            <navBar.BrightNavBar/>
-           <Cart />
+           {/* <Cart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/> */}
            <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
          </Route>
  

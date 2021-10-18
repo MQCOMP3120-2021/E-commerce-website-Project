@@ -5,7 +5,7 @@ const url = process.env.MOGODB_URL
 const connect = async () => {
     await mongoose.connect(url)
                   .then(res => {
-                      console.log("connected to database")
+                      console.log("connected to cart database")
                   })
                   .catch((err) => {
                       console.log("database connection error! ", err)

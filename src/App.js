@@ -13,6 +13,7 @@ import About from './pages/aboutScreen.js'
 import navBar from './Navigation-bar';
 import SingleProduct from './pages/individualScreen.js'
 import ListofCart from './pages/cartScreen.js';
+import SignUp from './pages/signupScreen'
 
 const App = () => {
   const [products, setProducts] = useState([])
@@ -119,13 +120,19 @@ const App = () => {
            <About />
         </Route>
 
+        <Route path="/FAQ">
+           <navBar.BrightNavBar/>
+           <faqDisplay.Faq />
+           <faqDisplay.FaqForm />
+         </Route>
+
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
           {/* <Cart cartcontents={cart} removeItem = {removeCart}/> */}
           
         </Route>
 
-        <Route path="/My-Account">
+        <Route path="/Logout">
           <navBar.BrightNavBarUser/>
           
         </Route>
@@ -185,6 +192,11 @@ else {
          <Route path="/Login">
            <navBar.BrightNavBar/>
            <Login user={user} setUser={setUser}/>
+         </Route>
+
+         <Route path="/sign-up">
+           <navBar.BrightNavBar/>
+           <SignUp setUser={setUser}/>
          </Route>
 
         <Route path="/Checkout">

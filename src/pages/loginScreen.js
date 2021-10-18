@@ -45,8 +45,8 @@ const Login = ({user, setUser}) => {
                 <div className = "loginPadding">
                   <h3>Login To Your Account</h3>
                   <form onSubmit={formHandler} className="loginFormHandler">
-                    <input type="text" name="username" placeholder="username" onChange={e=>setUsername(e.target.value)}/>
-                    <input type="password" name="password" placeholder="password" onChange={e=>setPassword(e.target.value)}/>
+                    <input type="text" name="username" placeholder="Username" onChange={e=>setUsername(e.target.value)}/>
+                    <input type="password" name="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
                     <button type="submit">GO →</button>
                   </form>
                 </div>

@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch, Route, Link
 } from "react-router-dom";
-import menuDisplay from './pages/menuScreen.js';
+import ListOfProducts from './pages/menuScreen.js';
 import productService from './services/productService';
 import Home from './pages/homeScreen.js';
 import faqDisplay from './pages/FAQScreen.js';
@@ -12,6 +12,7 @@ import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
 import navBar from './Navigation-bar';
 import SingleProduct from './pages/individualScreen.js'
+import ListofCart from './ListofCart';
 
 const App = () => {
   const [products, setProducts] = useState([])
@@ -42,16 +43,56 @@ const App = () => {
     })
   }
 
+  const producttoCart = (content) => {
+    const body = content
+
+    const newCart = {
+      id: cart.length + 1,
+      productid: body.id,
+      name: body.name,
+      description: body.description,
+      review: body.review,
+      price: body.price,
+      photo: body.photo,
+      quantity: 1
+    }
+
+    addCart(newCart)
+  }
+
   const addCart = (content) => {
-    console.log(content)
     productService.addtoCart( content )
     .then((object) => {
       console.log("POST response: ", object)
       setCart(cart.concat(object))
-      console.log("new item added", object)
+      console.log("Item added", object)
     })
   }
 
+  const removeCart = (content) =>{
+    productService.removeCart(content)
+    .then((object) => {
+      console.log("Item has been removed", object)
+      let newCart = cart.filter((c) => c.id !== cart.id)
+      setCart(newCart)
+    })
+    .catch((error) => {
+      console.log("Item has not been removed")
+    })
+    fetchCart()
+  }
+
+  const updateCart = (content) =>{
+    console.log("Amount has been updated", content)
+    productService.updateCart(content)
+    .then((objects) => {
+      console.log("Item has been updated")
+    })
+    .catch((error) => {
+      console.log("Item has not been updated")
+    })
+    fetchCart()
+  }
 
  if(user){
   return (
@@ -61,13 +102,13 @@ const App = () => {
 
         <Route path="/products/:id">
            <navBar.BrightNavBarUser/>
-           <SingleProduct product ={products} moreCart={addCart}/>
+           <SingleProduct product ={products} moreCart={producttoCart}/>
         </Route>
 
         <Route path="/Menu">
            <navBar.BrightNavBarUser/>
-           <menuDisplay.SearchBar />
-           <menuDisplay.ListOfProducts  products={products}/> 
+           {/* <menuDisplay.SearchBar />
+           <menuDisplay.ListOfProducts  products={products}/>  */}
         </Route>
 
         <Route path="/About">
@@ -80,6 +121,7 @@ const App = () => {
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
           <Cart />
+          <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
         </Route>
 
         <Route path="/My-Account">
@@ -111,8 +153,8 @@ else {
  
          <Route path="/Menu">
             <navBar.BrightNavBar/>
-            <menuDisplay.SearchBar />
-            <menuDisplay.ListOfProducts  products={products}/> 
+            {/* <menuDisplay.SearchBar /> */}
+            <ListOfProducts  products={products}/> 
          </Route>
  
          <Route path="/About">
@@ -131,6 +173,7 @@ else {
          <Route path="/My-cart">
            <navBar.BrightNavBar/>
            <Cart />
+           <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
          </Route>
  
          <Route path="/Login">

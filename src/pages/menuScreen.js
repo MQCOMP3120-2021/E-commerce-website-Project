@@ -4,51 +4,58 @@ import {
   BrowserRouter as Router,
   Switch, Route, Link
 } from "react-router-dom";
-import logo from '../assets/logo-black.png'
 
-const SearchBar = () => (
-  <div className="App">
-      <form action="/" method="get">
-            <input
-              type="textBox"
-              id="header-search"
-              placeholder="search item"
-            /> 
-      </form>
-  </div>
-)
 
 const ListOfProducts = ({products}) => {
+  const [allProducts, setProducts] = useState([])
+  const [search, setSearch] = useState('')
+
+  const searchQuery = products.filter((p) => {
+    return (p.name.toLowerCase().includes(search))
+  })
+  
+  const displayProducts = () => {
+    return(
+      searchQuery.map((item) => 
+      <div className="itemDisplay">
+          <li key={item.id}>
+              <Link to={`/products/${item.id}`}><img src={item.photo} alt="bread"></img></Link>
+                  <div className="itemName">
+                      <p>{item.name}</p>
+                  </div>
+                  <div className="itemPrice">
+                      <p>{item.price}</p>
+                  </div>
+                  
+          </li>
+        </div>
+      )
+    )
+  }
   return(
-     
-     <ul>
-         <section className="menuContainer">
-         {
-             products.map((item) => 
-             <div className="itemDisplay">
-                 <li key={item.id}>
-                     <Link to={`/products/${item.id}`}><img src={item.photo} alt="bread"></img></Link>
-                         <div className="itemName">
-                             <p>{item.name}</p>
-                         </div>
-                         <div className="itemPrice">
-                             <p>{item.price}</p>
-                         </div>
-                         
-                 </li>
-                 </div>
-         )
-         }
-         </section>
-     </ul>
+    <>
+      <div className="SearchBar">
+          <form>
+                <input
+                  type="textBox"
+                  id="header-search"
+                  placeholder="Search item"
+                  name="search"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+          </form>
+      </div>
+      <ul>
+          <section className="menuContainer">
+            {displayProducts()}
+          </section>
+      </ul>
+     </>
  )
 }
 
-const menuDisplay = {
-  ListOfProducts, SearchBar
-}
-
-export default menuDisplay;
+export default ListOfProducts;
 
 
 

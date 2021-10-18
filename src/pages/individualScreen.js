@@ -1,32 +1,35 @@
 import React from 'react'
 import { useParams, Link
 } from "react-router-dom"
+import { useState } from 'react'
 import '../css/Product.css'
 import defaultImg from '../assets/defaultImg.jpg'
 
 const SingleProduct = ({product, moreCart}) => {
-    const id = Number(useParams().id)
-    const singleP = product.find(p=> p.id === Number(id))
-    var qty = 1;
+    const { id } = useParams()
+    const singleP = product.filter((p) => {
+        return p.id === id
+    })[0]
+    const [qty, setQty] = useState(1)
 
     const decrementQty = () => {
         if(qty > 1){
-            qty--;
+            setQty(qty-1)
         }
         else{
-            qty=1;
+            setQty(1)
         }
     }
 
     const incrementQty = () => {
         if(qty < 99){
-            qty++;
+            setQty(qty+1)
         }
         else{
-            qty=99;
+            setQty(99)
         }
     }
-
+    
     if(singleP){
         return(
             <>
@@ -43,28 +46,29 @@ const SingleProduct = ({product, moreCart}) => {
                                 <input type="number" value={qty} className="qtyInput"/>
                                 <button onClick = {incrementQty} className="incriment"> + </button>
                             </div>
+                            <button onClick={() => moreCart(singleP)}>Add to Cart</button>
+                            {/* <div className="submitBtn">
+                                <button type="submit">ADD TO CART</button>
+                            </div> */}
                         </div>
                     </div>
 
                     <div className="reviewSec">
                         <h3>Reviews</h3>
                         <hr/>
-                        <div className="productReviews">
-                            <div className="productReview">
-                                {/* <p>{singleP.reviews}</p> */}
-                                {singleP.reviews.map(o => <span key={o}> {o} </span>)}
-                            </div>
-                        </div>
                         
-                         * FIX THIS FOR REVIEWS NOT WORKING PROPERLY (error: CANT MAP FROM REVIEWS)
                         <div className="productReviews">
-                            {(product.reviews).map((review) => {
-                                <div className="productReview">
-                                            <p>{singleP.review}</p>
-                                            <h5>USERNAME</h5>
-                                        </div>
-                            })}
-                        </div> 
+                                {(singleP.reviews.length > 0) ? (
+                                    singleP.reviews.map( o => 
+                                        <div className="productReview">
+                                            <span key={o}> {o} </span>
+                                        </div> )
+                                ) : (
+                                    <div className="noReview">
+                                        <h3>This product has no reviews.</ h3>
+                                    </div>
+                                )}
+                        </div>
                     </div>
                 </>
             ) : (

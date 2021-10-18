@@ -66,7 +66,37 @@ Accordion component is implemented under the page to build vertically collapsing
 
 # Project Source Code
 
+## server
 
+All functions and components related to the server are stored under the server folder. 
+This also includes any JSON files used to store temporary samples for the project.
+
+### controllers
+
+### models
+
+### utils
+
+## src
+
+This folder stores all source materials required to build the project.
+
+### assets 
+
+The folder stores any assets and images that have been utilized for the project.
+
+### pages
+
+The folder is made up of js files that include all functions and components required for the front-end side of the application.
+They are organized according to the pages these components belong to. 
+
+### css
+
+The folder stores all css stylesheets that have been used to style the pages in the application. The stylesheets are arranged according to pages.
+
+### services
+
+The folder includes a js file that contains all axios methods utilized to handle data from api.
 
 # Next Steps
 

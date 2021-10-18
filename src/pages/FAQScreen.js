@@ -158,7 +158,7 @@ const FaqForm = () => {
             <form onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name"></label>
-                <input type="text" id="name" placeholder="Name" required />
+                <input type="nameBox" id="name" placeholder="Name" required />
               </div>
               <div>
                 <label htmlFor="email"></label>

@@ -44,10 +44,10 @@ const About = () => {
             <div className="socialMedia">
                 <h2>KEEP IN TOUCH</h2>
                 <ul className="sm-icons">
-                    <li className="sm-icon"><a href="#"><img src={emailIcon} width="50px" height="50px" alt="email"/></a></li>
-                    <li className="sm-icon"><a href="#"><img src={igIcon} width="50px" height="50px" alt="instagram"/></a></li>
-                    <li className="sm-icon"><a href="#"><img src={twitterIcon} width="50px" height="50px" alt="twitter"/></a></li>
-                    <li className="sm-icon"><a href="#"><img src={fbIcon} width="50px" height="50px" alt="facebook"/></a></li>
+                    <li className="sm-icon"><a href="https://www.gmail.com/" target="_blank"><img src={emailIcon} width="50px" height="50px" alt="email"/></a></li>
+                    <li className="sm-icon"><a href="https://www.instagram.com/" target="_blank"><img src={igIcon} width="50px" height="50px" alt="instagram"/></a></li>
+                    <li className="sm-icon"><a href="https://www.twitter.com/" target="_blank"><img src={twitterIcon} width="50px" height="50px" alt="twitter"/></a></li>
+                    <li className="sm-icon"><a href="https://www.facebook.com/" target="_blank"><img src={fbIcon} width="50px" height="50px" alt="facebook"/></a></li>
                 </ul>
             </div>
         </div>

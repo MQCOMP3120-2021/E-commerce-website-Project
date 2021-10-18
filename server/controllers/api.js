@@ -4,6 +4,7 @@ const bcrypt = require ("bcrypt")
 const jwt = require("jsonwebtoken")
 const Product = require("../models/products")
 const Cart = require("../models/cart")
+const User = require("../models/user")
 const { response } = require('express')
 const apiRouter = express.Router()
 var cors = require('cors')
@@ -169,6 +170,20 @@ apiRouter.post('/api/login', async (req, res) => {
       return res.status(401).json({error: "invalid username or password"})
   }
 
+})
+
+apiRouter.post('/api/sign-up', async (req, res) => {
+  const body= req.body
+  const limit = 10
+  const passwordHash= await bcrypt.hash(body.password, limit)
+
+  const user = new User({
+      username:body.username,
+      name: body.name,
+      password: passwordHash,
+  })
+  const savedUser = await user.save()
+  res.json(savedUser)
 })
 
 

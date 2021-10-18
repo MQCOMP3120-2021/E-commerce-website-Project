@@ -130,6 +130,11 @@ const App = () => {
           
         </Route>
 
+        <Route path="/Checkout">
+          <navBar.BrightNavBarUser/>
+          
+        </Route>
+
           <Route path="/">
             <div className="bg-img">
                 <navBar.DarkNavBarUser/>
@@ -181,6 +186,11 @@ else {
            <navBar.BrightNavBar/>
            <Login user={user} setUser={setUser}/>
          </Route>
+
+        <Route path="/Checkout">
+          <navBar.BrightNavBarUser/>
+          
+        </Route>
  
          <Route path="/">
             <div className="bg-img">

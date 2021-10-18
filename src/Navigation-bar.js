@@ -45,7 +45,7 @@ const BrightNavBarUser = () => {
     <li><img src={logo1} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
     <li><Link to= "/FAQ" className="brightNav">FAQ</Link></li>
     <li><Link to= "/My-cart" className="brightNav">Cart</Link></li>
-    <li><Link to= "/My-Account" className="brightNav">My Account</Link></li> 
+    <li><Link to= "/Add-review" className="brightNav">Review</Link></li> 
   </ul>
   )
 }
@@ -60,7 +60,7 @@ const DarkNavBarUser = () => {
       <li><img src= {logo2} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
       <li><Link to= "/FAQ" className="darkNav">FAQ</Link></li>
       <li><Link to= "/My-cart" className="darkNav">Cart</Link></li>
-      <li><Link to= "/My-Account" className="darkNav">My Account</Link></li>
+      <li><Link to= "/Add-Review" className="darkNav">Review</Link></li>
      </ul>
   )
 }

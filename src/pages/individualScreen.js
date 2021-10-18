@@ -4,8 +4,10 @@ import { useParams, Link
 import { useState } from 'react'
 import '../css/Product.css'
 import defaultImg from '../assets/defaultImg.jpg'
+import AddReview from './addReview'
 
 const SingleProduct = ({product, moreCart}) => {
+
     const { id } = useParams()
     const singleP = product.filter((p) => {
         return p.id === id
@@ -46,10 +48,9 @@ const SingleProduct = ({product, moreCart}) => {
                                 <input type="number" value={qty} className="qtyInput"/>
                                 <button onClick = {incrementQty} className="incriment"> + </button>
                             </div>
-                            <button onClick={() => moreCart(singleP)}>Add to Cart</button>
-                            {/* <div className="submitBtn">
-                                <button type="submit">ADD TO CART</button>
-                            </div> */}
+                            <div className="submitBtn">
+                                <button type ="submit" onClick={() => moreCart(singleP)}>Add to Cart</button>
+                            </div>
                         </div>
                     </div>
 
@@ -65,7 +66,9 @@ const SingleProduct = ({product, moreCart}) => {
                                         </div> )
                                 ) : (
                                     <div className="noReview">
-                                        <h3>This product has no reviews.</ h3>
+                                        <h3>This product has no reviews yet. 
+                                            <Link to= "/Add-review" > Click here to add one.</Link>
+                                        </h3>
                                     </div>
                                 )}
                         </div>

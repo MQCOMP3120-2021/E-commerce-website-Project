@@ -13,6 +13,7 @@ import About from './pages/aboutScreen.js'
 import navBar from './Navigation-bar';
 import SingleProduct from './pages/individualScreen.js'
 import ListofCart from './pages/cartScreen.js';
+import AddReview from './pages/addReview.js';
 
 const App = () => {
   const [products, setProducts] = useState([])
@@ -108,8 +109,7 @@ const App = () => {
 
         <Route path="/Menu">
            <navBar.BrightNavBarUser/>
-           {/* <menuDisplay.SearchBar />
-           <menuDisplay.ListOfProducts  products={products}/>  */}
+           <ListOfProducts products={products}/> 
         </Route>
 
         <Route path="/About">
@@ -119,21 +119,28 @@ const App = () => {
            <About />
         </Route>
 
+        <Route path="/FAQ">
+           <navBar.BrightNavBarUser/>
+           <faqDisplay.Faq />
+           <faqDisplay.FaqForm />
+         </Route>
+
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
           {/* <Cart cartcontents={cart} removeItem = {removeCart}/> */}
           
         </Route>
 
-        <Route path="/My-Account">
+        <Route path="/Add-review">
           <navBar.BrightNavBarUser/>
-          
+          <AddReview />
         </Route>
 
-        <Route path="/Checkout">
+        {/* <Route path="/Add-review">
           <navBar.BrightNavBarUser/>
+          <AddReview />
           
-        </Route>
+        </Route> */}
 
           <Route path="/">
             <div className="bg-img">
@@ -159,7 +166,6 @@ else {
  
          <Route path="/Menu">
             <navBar.BrightNavBar/>
-            {/* <menuDisplay.SearchBar /> */}
             <ListOfProducts  products={products}/> 
          </Route>
  
@@ -186,11 +192,6 @@ else {
            <navBar.BrightNavBar/>
            <Login user={user} setUser={setUser}/>
          </Route>
-
-        <Route path="/Checkout">
-          <navBar.BrightNavBarUser/>
-          
-        </Route>
  
          <Route path="/">
             <div className="bg-img">

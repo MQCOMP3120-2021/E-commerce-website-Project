@@ -49,10 +49,13 @@ const Login = ({user, setUser}) => {
                     <input type="password" name="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
                     <button type="submit">GO →</button>
                   </form>
+                  <p><Link to = "/sign-up">Create your Account</Link></p>
                 </div>
               </div>
             </div>
         </div>
+
+        
 
     )}}
 

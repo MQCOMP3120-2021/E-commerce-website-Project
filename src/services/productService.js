@@ -33,8 +33,8 @@ const login = ({username, password}) => {
     return axios.post(baseURL + 'login', {username, password})
     .then(response => response.data)
 }
-const signUp = ({username, password, uName}) => {
-    return axios.post(baseURL + 'sign-up', {username, password, uName})
+const signUp = ({username, password, name}) => {
+    return axios.post(baseURL + 'sign-up', {username, password, name})
     .then(response => response.data)
 }
 

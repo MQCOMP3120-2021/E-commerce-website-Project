@@ -6,14 +6,14 @@ import productService from '../services/productService';
 const SignUp = ({setUser}) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [uName, setUName] = useState ('')
+  const [name, setName] = useState ('')
 
   const signUpFormHandler =(event) => {
     event.preventDefault()
     console.log("Login form submitted")
   
   
-  productService.signUp({username, password, uName})
+  productService.signUp({username, password, name})
   .then(data => {
     console.log("Success, new user created:", data)
     setUser(data)
@@ -33,7 +33,7 @@ const SignUp = ({setUser}) => {
                 <div className = "loginPadding">
                   <h3>Create your account</h3>
                   <form onSubmit={signUpFormHandler} className="signUpFormHandler">
-                    <input type="text" name="name" placeholder="Your Full Name" onChange={e=>setUName(e.target.value)}/>
+                    <input type="text" name="name" placeholder="Your Full Name" onChange={e=>setName(e.target.value)}/>
                     <input type="text" name="username" placeholder="Username" onChange={e=>setUsername(e.target.value)}/>
                     <input type="password" name="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
                     <button type="submit">GO →</button>

@@ -108,8 +108,9 @@ const App = () => {
 
         <Route path="/Menu">
            <navBar.BrightNavBarUser/>
-           {/* <menuDisplay.SearchBar />
-           <menuDisplay.ListOfProducts  products={products}/>  */}
+           <navBar.BrightNavBar/>
+            {/* <menuDisplay.SearchBar /> */}
+            <ListOfProducts  products={products}/> 
         </Route>
 
         <Route path="/About">
@@ -119,9 +120,16 @@ const App = () => {
            <About />
         </Route>
 
+        <Route path="/FAQ">
+           <navBar.BrightNavBar/>
+           <faqDisplay.Faq />
+           <faqDisplay.FaqForm />
+         </Route>
+
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
-          {/* <Cart cartcontents={cart} removeItem = {removeCart}/> */}
+          {/* <Cart cartcontents={cart} removeItem = {removeCart}/> 
+          <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>*/}
           
         </Route>
 
@@ -178,8 +186,8 @@ else {
  
          <Route path="/My-cart">
            <navBar.BrightNavBar/>
-           {/* <Cart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/> */}
-           <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
+           {/* <Cart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/> 
+           <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>*/}
          </Route>
  
          <Route path="/Login">

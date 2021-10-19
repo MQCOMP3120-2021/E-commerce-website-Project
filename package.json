@@ -54,9 +54,11 @@
     ]
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^2.1.0",
     "cross-env": "^7.0.3",
     "jsdoc": "^3.6.7",
     "json-server": "^0.16.3",
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "supertest": "^6.1.6"
   }
 }

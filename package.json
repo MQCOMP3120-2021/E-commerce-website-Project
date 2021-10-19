@@ -27,7 +27,7 @@
   "scripts": {
     "start": "cross-env PORT=3001 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cross-env NODE_ENV=test jest --verbose --coverage --testPathPattern server",
     "testreact": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "cross-env NODE_ENV=development nodemon server/server.js",

@@ -19,10 +19,16 @@ const sampleData =  (fileName) => {
     const rawData = fs.readFileSync(fileName)
     const data = JSON.parse(rawData)
 
-    data.units.map(async record => { 
+    data.products.map(async record => { 
         const l = new Product(record)
         await l.save() 
     })
+
+    // for(let i=0; i<data.products.length; i++) {
+    //     const record = data.products[i]
+    //     const p = new Product(record)
+    //     await p.save() 
+    // }
 }
 
 describe('api', () => {
@@ -37,12 +43,29 @@ describe('api', () => {
                 .expect('Content-Type', /application\/json/)
     })
 
-    test('there are twelve unit records', async () => {
+    test('there are twelve product records', async () => {
         const response = await api.get('/api/products')
         expect(response.body).toHaveLength(12)
     })
 
-    test('get request returns single unit', async () => {
+    // test('login works with correct username/password', async () => {
+
+    //     const data = {
+    //         username: 'bobalooba',
+    //         password: 'bob'
+    //     }
+
+    //     await api.post('/api/login')
+    //              .send(data)
+    //              .expect(200)
+    //              .expect('Content-Type', /application\/json/)
+    //              .then((res) => {
+    //                 expect(res.body.username).toBe(data.username)
+    //                 expect(res.body.name).toBe('Bob Bobalooba')
+    //             })
+    // })
+
+    test('get request returns single product', async () => {
         await api.get('/api/products/1')
                 .expect(200)
                 .expect('Content-Type', /application\/json/)

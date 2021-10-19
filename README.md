@@ -28,7 +28,6 @@ The application contains 8 pages in total:
 - Single product view
 - My order
 - Cart
-- Checkout
 - About
 - FAQ
 
@@ -52,10 +51,6 @@ A single product view page contains a basic description of the item selected. Cu
 
 Cart page allows customers to checkout the items that they have added or edit the quantity as desired. A delete option is available for customers who no longer show interest in a product added into cart.
 
-### Checkout
-
-Upon confirmation, customers will be redirected to the checkout page, where they are permitted to select their preferred delivery partners and payment methods. The screen also displays a random number next to delivery fee estimation to make the page look more realistic.
-
 ### Contact
 
 The page includes a simple description of the business with a google map stating the location of the physical store. Users can also find the social media accounts connected to the business on the bottom section of the page. The icons will link users to the main page of the social media stated but no actual account will appear. 
@@ -73,9 +68,15 @@ This also includes any JSON files used to store temporary samples for the projec
 
 ### controllers
 
+The folder contains lines of codes that controls the logic behind the application and acts as a coordinater between View and Model. It controls the way user interacts with the application.
+
 ### models
 
+The folder stores materials that integrate the application with databases. 
+
 ### utils
+
+The folder contains a middleware js where it deals with receiving requests and responses to objects. 
 
 ## src
 
@@ -100,11 +101,46 @@ The folder includes a js file that contains all axios methods utilized to handle
 
 # Next Steps
 
+- A sorting function should be added to the application, where it allows users to view the products in menu in sorted manner such as by ratings, pricing or alphabetical order of product names.
+
+- The proper checkout page should be set up, where users can select their desired delivery partner and choose their payment methods.
 
 # Roles and Contributions of Each Member
 
+## Jing Wen Ng
+
+- Created interface designs for application on Figma
+- Worked on any documentations required (i.e. the project proposal, README.md)
+- Created the initial empty React application
+- Resolved merge conflicts between branches when necessary.
+- Assisted on styling for Home Page, Menu Page and FAQ Page.
+- Added email function on FAQ page. 
+
+## Jessica Franklin
+
+- Resolved merge conflicts between branches when necessary.
+- Created the login and signup function for users.
+- Worked on the Home Page, FAQ Page.
+- Resolved errors occuring on the application.
+
+## Mariel Uykim
+
+- Resolved merge conflicts between branches when necessary.
+- Created database to store information.
+- Linked the application to the database.
+- Completed About Us page.
+- Fixed styling errors occuring. 
+- Resolved errors occuring on the application.
+
+### Daniel Wong
+
+- Worked on Cart page.
 
 # Interaction and Communication
+
+The team has been using Messenger as the main communication platform for members to dicuss their progress and arrange group meetings.
+
+Github has been utilized for members to publish their code into their respective branches. Once one pushed their changes into their branches, another member will pull the code to their local branch to examine that the code is functionable. After verification, the checker will merge the branches.
 
 # Available Scripts
 

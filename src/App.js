@@ -7,7 +7,6 @@ import ListOfProducts from './pages/menuScreen.js';
 import productService from './services/productService';
 import Home from './pages/homeScreen.js';
 import faqDisplay from './pages/FAQScreen.js';
-// import Cart from './pages/cartScreen.js';
 import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
 import navBar from './Navigation-bar';
@@ -128,8 +127,7 @@ const App = () => {
 
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
-          {/* <Cart cartcontents={cart} removeItem = {removeCart}/> 
-          <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>*/}
+          <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
 
         </Route>
 
@@ -186,8 +184,8 @@ else {
  
          <Route path="/My-cart">
            <navBar.BrightNavBar/>
-           {/* <Cart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/> 
-           <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>*/}
+           {/* <Cart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>  */}
+           {/* <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/> */}
          </Route>
  
          <Route path="/Login">

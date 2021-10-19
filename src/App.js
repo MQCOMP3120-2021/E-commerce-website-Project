@@ -130,7 +130,7 @@ const App = () => {
           <navBar.BrightNavBarUser/>
           {/* <Cart cartcontents={cart} removeItem = {removeCart}/> 
           <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>*/}
-          
+
         </Route>
 
         <Route path="/My-Account">

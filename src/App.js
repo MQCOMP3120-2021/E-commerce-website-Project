@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch, Route, Link
 } from "react-router-dom";
+import { Redirect } from 'react-router'
 import ListOfProducts from './pages/menuScreen.js';
 import productService from './services/productService';
 import Home from './pages/homeScreen.js';
@@ -111,6 +112,7 @@ const App = () => {
            <navBar.BrightNavBarUser/>
            {/* <menuDisplay.SearchBar />
            <menuDisplay.ListOfProducts  products={products}/>  */}
+           <ListOfProducts  products={products}/> 
         </Route>
 
         <Route path="/About">
@@ -133,7 +135,10 @@ const App = () => {
         </Route>
 
         <Route path="/Logout">
-          <navBar.BrightNavBarUser/>
+         {/* <navBar.BrightNavBar/>
+          <Login user={user} setUser={setUser}/>*/}
+          
+          <Redirect to= '/'/>
           
         </Route>
 

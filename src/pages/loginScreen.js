@@ -27,13 +27,7 @@ const Login = ({user, setUser}) => {
   })
   }
 
-  if(user){
-    return(
-      <div className="loggedIn">
-        <p>Logged in as {user.name}</p>
-      </div>
-    )
-  } else {
+ 
     return(
         <div className="LoginForm">
 
@@ -57,6 +51,6 @@ const Login = ({user, setUser}) => {
 
         
 
-    )}}
+    )}
 
 export default Login;

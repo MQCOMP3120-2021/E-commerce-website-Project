@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
 const url = process.env.MOGODB_URL
+console.log(url)
 const connect = async () => {
     await mongoose.connect(url)
                   .then(res => {
@@ -14,25 +15,29 @@ const connect = async () => {
 
 connect()
 
-const userSchema = new mongoose.Schema({
+
+
+const UserSchema = new mongoose.Schema(
+  {
     username: {
         type: String,
         unique: true
     },
     name: String, 
-    passwordHash: String,
-})
+    password: String,
+    cart: Array
+},
+  {collection: 'Users'})
 
-userSchema.plugin(uniqueValidator)
+UserSchema.plugin(uniqueValidator)
 
-userSchema.set('toJSON', {
+UserSchema.set('toJSON', {
     transform: (document, returnedObject) => {
         returnedObject.id = returnedObject._id.toString()
-        delete returnedObject._v
         delete returnedObject._id
         delete returnedObject.passwordHash
     }
 })
 
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model('User', UserSchema)
 module.exports = User

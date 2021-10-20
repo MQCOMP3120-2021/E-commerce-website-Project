@@ -96,6 +96,7 @@ apiRouter.get('/api/cart', (req,res) => {
 
 apiRouter.post('/api/cart', (req,res) => {
   const body = req.body
+  console.log(body)
 
   if(!body.content){
     return response.status(400).json({error:"Item Not Added"})
@@ -108,7 +109,7 @@ apiRouter.post('/api/cart', (req,res) => {
     price: body.price,
     reviews: body.reviews,
     photo: body.photo,
-    quantity: body.quantity
+    quantity: 1
   })
 
   cart.save()

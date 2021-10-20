@@ -20,12 +20,13 @@ const addtoCart = (newItem) => {
 }
 
 const updateCart = (thing) => {
-    return axios.put(baseURL + "cart" + thing.id, thing)
+    return axios.put(baseURL + "cart/" + thing.id, thing)
                 .then((response) => response.data)
 }
 
 const removeCart = (thing) => {
-    return axios.delete(baseURL + "cart" + thing.id)
+    console.log(thing.id)
+    return axios.delete(baseURL + "cart/" + thing.id)
                 .then((response) => response.data)
 }
 

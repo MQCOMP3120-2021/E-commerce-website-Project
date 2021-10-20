@@ -63,6 +63,7 @@ const ListofCart = ({cartcontents, removeItem}) => {
               </div>
             </td>
             <td>{setAmount(item.quantity)}</td>
+            <button onClick = {() => removeItem(item)}></button>
           </tr>
         ))}
 

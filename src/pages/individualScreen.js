@@ -5,6 +5,7 @@ import { useState } from 'react'
 import '../css/Product.css'
 import defaultImg from '../assets/defaultImg.jpg'
 import AddReview from './addReview'
+import productService from '../services/productService'
 
 const SingleProduct = ({product, moreCart}) => {
 
@@ -31,6 +32,10 @@ const SingleProduct = ({product, moreCart}) => {
             setQty(99)
         }
     }
+
+    const formHandler =(event) => {
+     
+      }
     
     if(singleP){
         return(
@@ -52,6 +57,17 @@ const SingleProduct = ({product, moreCart}) => {
                                 <button type ="submit" onClick={() => moreCart(singleP)}>Add to Cart</button>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="reviewSec">
+                        <h3>Add a Review:</h3>
+                        <form onSubmit={formHandler}>
+                        <input type="text" name="Add-a-Review" placeholder="Add your review here.." />
+                        
+                        <button type="submit" >Submit →</button>
+                        </form>
+
+
                     </div>
 
                     <div className="reviewSec">

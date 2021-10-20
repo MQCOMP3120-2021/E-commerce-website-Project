@@ -34,7 +34,12 @@ const login = ({username, password}) => {
     .then(response => response.data)
 }
 
-const productService = {getAll, getProduct, getCart, addtoCart, updateCart, removeCart, login}
+const addReview = (id) => {
+    return axios.post(baseURL + '/api/products/' + id)
+                 .then((response) => response.data)
+}
+
+const productService = {getAll, getProduct, getCart, addtoCart, updateCart, removeCart, login, addReview}
 
 export default productService;
 

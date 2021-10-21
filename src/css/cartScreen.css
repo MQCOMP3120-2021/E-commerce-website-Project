@@ -23,6 +23,7 @@ th {
 }
 
 td {
+    text-align: center;
     border-top: solid 1px black;
     border-bottom: none;
     font-family: 'Cormorant', serif;
@@ -55,3 +56,8 @@ td {
     border-color: black;
 }
 
+td img{
+    width:200px;
+    height: 150px;
+    
+}

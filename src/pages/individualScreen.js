@@ -49,7 +49,7 @@ const SingleProduct = ({product, moreCart}) => {
                                 <button onClick = {incrementQty} className="increment"><img src={plusSign} className="plus"/></button>
                             </div>
                             <div className="submitBtn">
-                                <button type="submit" onClick={() => moreCart(singleP)}>Add to Cart</button>
+                                <button type="submit" onClick={() => moreCart(singleP,qty)}>Add to Cart</button>
                             </div>
                             
                             {/* <div className="submitBtn">

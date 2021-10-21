@@ -98,25 +98,25 @@ apiRouter.post('/api/cart', (req,res) => {
   const body = req.body
   console.log(body)
 
-  if(!body.content){
-    return response.status(400).json({error:"Item Not Added"})
+  if(!body){
+    return res.status(400).json({error:"Item Not Added"})
   }
 
   const cart = new Cart({
-    productid: body.productid,
     name: body.name,
-    description: body.description,
     price: body.price,
-    reviews: body.reviews,
     photo: body.photo,
-    quantity: 1
+    quantity: body.quantity
   })
+
+  console.log(body.quantity)
 
   cart.save()
       .then(c => {
-        response.json(c)
+        res.json(c)
         console.log("Item Added", c.name)
       })
+      .catch(error => console.log(error))
 })
 
 apiRouter.put('/api/cart/:id', (req, res, next) => {

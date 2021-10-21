@@ -15,6 +15,7 @@ const getCart = () => {
                 .then(response => response.data)
 }
 const addtoCart = (newItem) => {
+    console.log(newItem)
     return axios.post(baseURL + "cart", newItem)
                 .then((response) => response.data)
 }

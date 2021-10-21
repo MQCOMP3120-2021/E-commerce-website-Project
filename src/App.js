@@ -11,8 +11,7 @@ import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
 import navBar from './Navigation-bar';
 import SingleProduct from './pages/individualScreen.js'
-import ListofCart from './pages/cartScreen.js';
-
+import CartScreen from './pages/cartScreen.js';
 const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState([])
@@ -40,32 +39,35 @@ const App = () => {
       console.log("we have a response", objects)
       setCart(objects)
     })
+    
   }
 
-  const producttoCart = (content) => {
-    console.log('this function has been activated')
+  const producttoCart = (content, qty) => {
     const body = content
+    console.log(qty)
 
     const newCart = {
-      id: body.id,
-      productid: body.productid,
       name: body.name,
-      description: body.description,
-      review: body.review,
       price: body.price,
       photo: body.photo,
-      quantity: 1
+      quantity: qty
     }
+    
 
-    addCart(newCart)
+    return newCart
   }
 
-  const addCart = (content) => {
+  const addCart = (content,qty) => {
+    content = producttoCart(content, qty)
+    console.log(content)
     productService.addtoCart( content )
     .then((object) => {
       console.log("POST response: ", object)
       setCart(cart.concat(object))
       console.log("Item added", object)
+    })
+    .catch((error) => {
+      console.log("Item has not been added")
     })
   }
 
@@ -102,7 +104,7 @@ const App = () => {
 
         <Route path="/products/:id">
            <navBar.BrightNavBarUser/>
-           <SingleProduct product ={products} moreCart={producttoCart}/>
+           <SingleProduct product ={products} moreCart={addCart}/>
         </Route>
 
         <Route path="/Menu">
@@ -127,7 +129,7 @@ const App = () => {
 
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
-          <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
+          <CartScreen cartcontents={cart} removeItem={removeCart} />
 
         </Route>
 
@@ -184,7 +186,7 @@ else {
  
          <Route path="/My-cart">
            <navBar.BrightNavBar/>
-           {/* <Cart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>  */}
+           <CartScreen cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
            {/* <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/> */}
          </Route>
  

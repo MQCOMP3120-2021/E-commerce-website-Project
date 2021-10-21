@@ -15,11 +15,8 @@ const connect = async () => {
 connect()
 
 const cartSchema = new mongoose.Schema({
-    productid: String,
     name: String,
-    description: String,
     price: String,
-    reviews: Array,
     photo: String,
     quantity: Number
   })

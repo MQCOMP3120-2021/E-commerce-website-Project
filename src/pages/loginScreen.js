@@ -7,10 +7,12 @@ import {
 import logo from '../assets/logo-black.png'
 import loginImg from '../assets/loginImg.jpg'
 import productService from '../services/productService';
+import { useHistory } from "react-router-dom"
 
 const Login = ({user, setUser}) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  let history = useHistory();
 
   const formHandler =(event) => {
     event.preventDefault()
@@ -21,6 +23,7 @@ const Login = ({user, setUser}) => {
   .then(data => {
     console.log("Success:", data)
     setUser(data)
+    history.push("/")
   })
   .catch(error =>{
     console.log("Error:", error)

@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {
   BrowserRouter as Router,
-  Switch, Route, Link
+  Switch, Route, Link, useHistory, Redirect, withRouter
 } from "react-router-dom";
-import { Redirect } from 'react-router'
 import ListOfProducts from './pages/menuScreen.js';
 import productService from './services/productService';
 import Home from './pages/homeScreen.js';
@@ -14,13 +13,15 @@ import About from './pages/aboutScreen.js'
 import navBar from './Navigation-bar';
 import SingleProduct from './pages/individualScreen.js'
 import ListofCart from './pages/cartScreen.js';
-import SignUp from './pages/signupScreen'
+import SignUp from './pages/signupScreen';
+// import Logout from './services/logoutHandler';
 
 const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState([])
   const [user, setUser] = useState(null)
-  
+  let history = useHistory()
+
   useEffect(()=>{
     console.log("effect is being run")
     productService.getAll()
@@ -97,6 +98,12 @@ const App = () => {
     fetchCart()
   }
 
+  const logoutHandle = () => {
+    localStorage.clear()
+    productService.logout()
+    setUser(null)
+  }
+
  if(user){
   return (
    <Router>
@@ -135,11 +142,8 @@ const App = () => {
         </Route>
 
         <Route path="/Logout">
-         {/* <navBar.BrightNavBar/>
-          <Login user={user} setUser={setUser}/>*/}
-          
-          <Redirect to= '/'/>
-          
+          {logoutHandle()}
+          <Redirect to="/"/>
         </Route>
 
         <Route path="/Checkout">

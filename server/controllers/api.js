@@ -163,7 +163,9 @@ apiRouter.post('/api/login', async (req, res) => {
       }
       const token = jwt.sign(userForToken, "secret")
 
-      return res.status(200).json({token, username: user.username, name: user.name})
+      return res.cookie('jwt', token, {httpOnly: true, maxAge: 30000000})
+                .status(200)
+                .json({token, username: user.username, name: user.name})
 
   } else {
       return res.status(401).json({error: "invalid username or password"})
@@ -199,11 +201,13 @@ apiRouter.post('/api/sign-up', async (req, res) => {
   res.json(savedUser)
 }})
 
-apiRouter.put('/api/logout', function(req, res) {
+apiRouter.get('/api/logout', function(req, res) {
   const authHeader = req.headers["authorization"];
   jwt.sign(authHeader, '', {expiresIn:1}, (logout, err) => {
     if(logout){
+      res.cookie('jwt', '', {maxAge: 1})
       res.send({msg:'You have been Logged Out'})
+      res.redirect('/')
     }
     else{
       res.send({msg:'Error'})

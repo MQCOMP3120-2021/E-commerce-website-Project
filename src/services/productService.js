@@ -44,7 +44,11 @@ const logout = () => {
                 .then(response => console.log("logged out!"))
 }
 
-const productService = {getAll, getProduct, getCart, addtoCart, updateCart, removeCart, login, signUp, logout}
+const getCurrentUser = () => {
+    return axios.get("/api/getUser")
+                .then(response => response.data)
+}
+const productService = {getAll, getProduct, getCart, addtoCart, updateCart, removeCart, login, signUp, logout, getCurrentUser}
 
 export default productService;
 

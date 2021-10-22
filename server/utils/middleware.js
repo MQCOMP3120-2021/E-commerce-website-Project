@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken")
+const User = require("../models/user")
 
 const requestLogger = (request, response, next) => {
     if (process.env.NODE_ENV === 'development') {
@@ -17,16 +18,26 @@ const errorMiddleware = (error, request, response, next) => {
 }
 
 const JwtCookieAuth = (req, res, next) => {
-    const token = req.cookies.token
+    const token = req.cookies.jwt
 
-    try{
-        const user = jwt.verify(token, "secret")
-        req.user = user
-        return res.redirect("/")
+    if(token) {
+        jwt.verify(token, "secret", async (err, userToken) => {
+            if(err) {
+                console.log(err.message)
+                res.clearCookie("jwt")
+                return res.json(null)
+            }
+            else{
+                console.log(userToken)
+                let user = await User.findById(userToken.id)
+                res.json(user)
+                next()
+            }
+        })
     }
-    catch(error){
-        res.clearCookie("token")
-        return res.redirect("/Login")
+    else{
+        console.log("no/invalid cookie")
+        return res.json(null)
     }
 }
 

@@ -11,6 +11,7 @@ var cors = require('cors')
 const nodemailer = require("nodemailer");
 const { JwtCookieAuth } = require('../utils/middleware')
 var app = express()
+const cookieParser = require('cookie-parser')
 
 const SECRET = process.env.SECRET
 
@@ -176,6 +177,8 @@ apiRouter.post('/api/login', async (req, res) => {
 
 })
 
+apiRouter.get('/api/getUser', JwtCookieAuth)
+
 apiRouter.post('/api/sign-up', async (req, res) => {
   const body= req.body
   const limit = 10
@@ -204,7 +207,6 @@ apiRouter.post('/api/sign-up', async (req, res) => {
   res.json(savedUser)
 }})
 
-apiRouter.post("/userVerification", JwtCookieAuth);
 
 apiRouter.get('/api/logout', function(req, res) {
   const authHeader = req.headers["authorization"];

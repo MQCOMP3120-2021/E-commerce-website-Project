@@ -38,6 +38,22 @@ const App = () => {
   },
   [])
 
+  useEffect(() => {
+    productService.getCurrentUser()
+                  .then(user => {
+                    if(user){
+                      setUser(user)
+                      console.log("user: ", user)
+                    }
+                    else{
+                      console.log("no user")
+                    }
+                  })
+                  .catch((err) => {
+                    console.log("error getting user")
+                  })
+  })
+
   const fetchCart = () => {
     console.log("effect is being run")
     productService.getCart()

@@ -52,7 +52,7 @@ const App = () => {
                   .catch((err) => {
                     console.log("error getting user")
                   })
-  })
+  }, [])
 
   const fetchCart = () => {
     console.log("effect is being run")

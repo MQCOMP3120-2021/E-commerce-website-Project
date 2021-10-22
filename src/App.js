@@ -15,7 +15,7 @@ import SingleProduct from './pages/individualScreen.js'
 import ListofCart from './pages/cartScreen.js';
 import SignUp from './pages/signupScreen';
 import { render } from '@testing-library/react';
-import Logout from './pages/logout.js';
+import Logout from './pages/logoutScreen.js';
 
 const App = () => {
   const [products, setProducts] = useState([])

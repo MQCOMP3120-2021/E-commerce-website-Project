@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import productService from '../services/productService';
-
+import '../css/logoutPage.css';
 const Logout = ({setUser}) => {
     let history = useHistory()
 
@@ -13,11 +13,13 @@ const Logout = ({setUser}) => {
     }
 
     return (
-        <>
-            <h2>Confirm LogOut?</h2>
-            <button>Cancel</button>
-            <button onClick={logoutHandle}>Yes</button>
-        </>
+        <div className = "logoutPage">
+            <h2>Confirm Logout?</h2>
+            <div className = "buttons">
+                <button className = "cancelBtn" onClick = {() => {history.push("/")}}>Cancel</button>
+                <button onClick={logoutHandle} className = "yesBtn">Yes</button>
+            </div>
+        </div>
     )
 }
 export default Logout

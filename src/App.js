@@ -14,13 +14,14 @@ import navBar from './Navigation-bar';
 import SingleProduct from './pages/individualScreen.js'
 import ListofCart from './pages/cartScreen.js';
 import SignUp from './pages/signupScreen';
-// import Logout from './services/logoutHandler';
+import { render } from '@testing-library/react';
+import Logout from './pages/logout.js';
 
 const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState([])
   const [user, setUser] = useState(null)
-  let history = useHistory()
+  let history = useHistory();
 
   useEffect(()=>{
     console.log("effect is being run")
@@ -98,12 +99,6 @@ const App = () => {
     fetchCart()
   }
 
-  const logoutHandle = () => {
-    localStorage.clear()
-    productService.logout()
-    setUser(null)
-  }
-
  if(user){
   return (
    <Router>
@@ -142,8 +137,8 @@ const App = () => {
         </Route>
 
         <Route path="/Logout">
-          {logoutHandle()}
-          <Redirect to="/"/>
+          <navBar.BrightNavBarUser/>
+          <Logout setUser={setUser}/>
         </Route>
 
         <Route path="/Checkout">
@@ -224,5 +219,4 @@ else {
   </Router>  )
   }
 }
-
 export default App;

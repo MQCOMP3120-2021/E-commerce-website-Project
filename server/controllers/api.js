@@ -9,6 +9,7 @@ const { response } = require('express')
 const apiRouter = express.Router()
 var cors = require('cors')
 const nodemailer = require("nodemailer");
+const { JwtCookieAuth } = require('../utils/middleware')
 var app = express()
 
 const SECRET = process.env.SECRET
@@ -159,11 +160,13 @@ apiRouter.post('/api/login', async (req, res) => {
 
       const userForToken = {
           id: user._id,
-          username: user.username            
+          username: user.username,
+          cart: user.cart,
+          name: user.name            
       }
       const token = jwt.sign(userForToken, "secret")
 
-      return res.cookie('jwt', token, {httpOnly: true, maxAge: 30000000})
+      return res.cookie('jwt', token, {httpOnly: true, maxAge: 3000000000})
                 .status(200)
                 .json({token, username: user.username, name: user.name})
 
@@ -200,6 +203,8 @@ apiRouter.post('/api/sign-up', async (req, res) => {
   const savedUser = await user.save()
   res.json(savedUser)
 }})
+
+apiRouter.post("/userVerification", JwtCookieAuth);
 
 apiRouter.get('/api/logout', function(req, res) {
   const authHeader = req.headers["authorization"];

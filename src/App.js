@@ -16,7 +16,7 @@ import ListofCart from './pages/cartScreen.js';
 import SignUp from './pages/signupScreen';
 import { render } from '@testing-library/react';
 import Logout from './pages/logoutScreen.js';
-
+import Checkout from './pages/checkoutScreen.js'
 const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState([])
@@ -159,7 +159,7 @@ const App = () => {
 
         <Route path="/Checkout">
           <navBar.BrightNavBarUser/>
-          
+          <Checkout />
         </Route>
 
           <Route path="/">

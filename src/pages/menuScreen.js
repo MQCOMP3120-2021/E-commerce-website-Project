@@ -9,9 +9,22 @@ import {
 const ListOfProducts = ({products}) => {
   const [allProducts, setProducts] = useState([])
   const [search, setSearch] = useState('')
+  const [category, setCategory] = useState(['All'])
+
+  const categories = [
+    'artisan bread',
+    'pastry',
+    'sweets'
+  ]
 
   const searchQuery = products.filter((p) => {
-    return (p.name.toLowerCase().includes(search))
+    if(p.category == category){
+      return (p.name.toLowerCase().includes(search))
+    }
+    else if(category == "All"){
+      return (p.name.toLowerCase().includes(search))
+    }
+    
   })
   
   const displayProducts = () => {
@@ -32,6 +45,7 @@ const ListOfProducts = ({products}) => {
       )
     )
   }
+
   return(
     <>
       <div className="SearchBar">
@@ -46,6 +60,15 @@ const ListOfProducts = ({products}) => {
                 />
           </form>
       </div>
+      <div className="filterResults">
+          <p>category</p>
+          <select value={category} onChange = {(e) => {setCategory(e.target.value)}}>
+            <option value = "All">All</option>
+            <option value = "artisan bread">Artisan Bread</option>
+            <option value = "pastry">Pastry</option>
+            <option value = "sweets">Sweets</option>
+          </select>
+      </div> 
       <ul>
           <section className="menuContainer">
             {displayProducts()}

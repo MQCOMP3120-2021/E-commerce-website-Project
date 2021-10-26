@@ -12,6 +12,7 @@ import About from './pages/aboutScreen.js'
 import navBar from './Navigation-bar';
 import SingleProduct from './pages/individualScreen.js'
 import CartScreen from './pages/cartScreen.js';
+import CheckoutScreen from './pages/checkoutScreen.js';
 const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState([])
@@ -84,7 +85,8 @@ const App = () => {
     fetchCart()
   }
 
-  const updateCart = (content) =>{
+  const updateCart = (content, newQty) => {
+    content.quantity = newQty
     console.log("Amount has been updated", content)
     productService.updateCart(content)
     .then((objects) => {
@@ -129,7 +131,7 @@ const App = () => {
 
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
-          <CartScreen cartcontents={cart} removeItem={removeCart} />
+          <CartScreen cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
 
         </Route>
 
@@ -140,6 +142,7 @@ const App = () => {
 
         <Route path="/Checkout">
           <navBar.BrightNavBarUser/>
+          <CheckoutScreen />
           
         </Route>
 
@@ -187,7 +190,6 @@ else {
          <Route path="/My-cart">
            <navBar.BrightNavBar/>
            <CartScreen cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
-           {/* <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/> */}
          </Route>
  
          <Route path="/Login">
@@ -197,6 +199,7 @@ else {
 
         <Route path="/Checkout">
           <navBar.BrightNavBarUser/>
+          <CheckoutScreen />
           
         </Route>
  

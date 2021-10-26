@@ -107,6 +107,13 @@ The folder includes a js file that contains all axios methods utilized to handle
 
 # Roles and Contributions of Each Member
 
+## Jessica Franklin
+
+- Resolved merge conflicts between branches when necessary.
+- Created the login and signup function for users.
+- Worked on the Home Page, Menu Page, FAQ Page.
+- Resolved errors occuring on the application.
+
 ## Jing Wen Ng
 
 - Created interface designs for application on Figma
@@ -115,13 +122,6 @@ The folder includes a js file that contains all axios methods utilized to handle
 - Resolved merge conflicts between branches when necessary.
 - Assisted on styling for Home Page, Menu Page and FAQ Page.
 - Added email function on FAQ page. 
-
-## Jessica Franklin
-
-- Resolved merge conflicts between branches when necessary.
-- Created the login and signup function for users.
-- Worked on the Home Page, FAQ Page.
-- Resolved errors occuring on the application.
 
 ## Mariel Uykim
 
@@ -132,7 +132,7 @@ The folder includes a js file that contains all axios methods utilized to handle
 - Fixed styling errors occuring. 
 - Resolved errors occuring on the application.
 
-### Daniel Wong
+## Daniel Wong
 
 - Worked on Cart page.
 

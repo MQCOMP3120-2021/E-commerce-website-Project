@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import '../css/cartScreen.css';
 import {
-  BrowserRouter as Router,
-  Switch, Route, Link
+   Link
 } from "react-router-dom";
-import logo from '../assets/logo-black.png'
 import CartMath from '../CartMath';
 
 const CartScreen = ({cartcontents, removeItem, updateItem, user}) => {
-  const [cart, setCart] = useState([])
+  
   const [amount, setAmount] = useState(1)
   const [edit, setEdit] = useState(false)
 
@@ -137,6 +135,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, user}) => {
       )
 }
 
+export default CartScreen;
 
 // const Cart = ({cartcontents, removeItem}) => {
 
@@ -214,6 +213,3 @@ const CartScreen = ({cartcontents, removeItem, updateItem, user}) => {
   //   </>
   // )
   
-
-
-export default CartScreen;

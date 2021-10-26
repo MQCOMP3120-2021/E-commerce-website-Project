@@ -36,7 +36,21 @@ const login = ({username, password}) => {
     .then(response => response.data)
 }
 
-const productService = {getAll, getProduct, getCart, addtoCart, updateCart, removeCart, login}
+const signUp = ({username, password, name}) => {
+    return axios.post(baseURL + 'sign-up', {username, password, name})
+    .then(response => response.data)
+}
+
+const logout = () => {
+    return axios.get("/api/logout")
+                .then(response => console.log("logged out!"))
+}
+
+const getCurrentUser = () => {
+    return axios.get("/api/getUser")
+                .then(response => response.data)
+}
+const productService = {getAll, getProduct, getCart, addtoCart, updateCart, removeCart, login, signUp, logout, getCurrentUser}
 
 export default productService;
 

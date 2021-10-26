@@ -109,8 +109,6 @@ const App = () => {
 
         <Route path="/Menu">
            <navBar.BrightNavBarUser/>
-           <navBar.BrightNavBar/>
-            {/* <menuDisplay.SearchBar /> */}
             <ListOfProducts  products={products}/> 
         </Route>
 

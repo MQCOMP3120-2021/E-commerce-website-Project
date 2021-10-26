@@ -135,6 +135,7 @@ The folder includes a js file that contains all axios methods utilized to handle
 ### Daniel Wong
 
 - Worked on Cart page.
+- Resolved errors occuring on the application.
 
 # Interaction and Communication
 

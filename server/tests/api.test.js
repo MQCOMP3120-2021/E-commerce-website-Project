@@ -24,11 +24,6 @@ const sampleData =  (fileName) => {
         await l.save() 
     })
 
-    // for(let i=0; i<data.products.length; i++) {
-    //     const record = data.products[i]
-    //     const p = new Product(record)
-    //     await p.save() 
-    // }
 }
 
 describe('api', () => {
@@ -48,22 +43,22 @@ describe('api', () => {
         expect(response.body).toHaveLength(12)
     })
 
-    // test('login works with correct username/password', async () => {
+    test('login works with correct username/password', async () => {
 
-    //     const data = {
-    //         username: 'bobalooba',
-    //         password: 'bob'
-    //     }
+        const data = {
+            username: 'bobalooba',
+            password: 'bob'
+        }
 
-    //     await api.post('/api/login')
-    //              .send(data)
-    //              .expect(200)
-    //              .expect('Content-Type', /application\/json/)
-    //              .then((res) => {
-    //                 expect(res.body.username).toBe(data.username)
-    //                 expect(res.body.name).toBe('Bob Bobalooba')
-    //             })
-    // })
+        await api.post('/api/login')
+                 .send(data)
+                 .expect(200)
+                 .expect('Content-Type', /application\/json/)
+                 .then((res) => {
+                    expect(res.body.username).toBe(data.username)
+                    expect(res.body.name).toBe('Bob Bobalooba')
+                })
+    })
 
     test('get request returns single product', async () => {
         await api.get('/api/products/1')

@@ -6,9 +6,10 @@
 }
 
 .productImg{
-    width: 556px;
-    height: 615px;
+    width: 500px;
+    height: 520px;
     object-fit: cover;
+    padding-left:5%;
 }
 
 .productInfo{
@@ -33,9 +34,10 @@
     margin: 1% 0;
     text-align: left;
     font-family: 'Cormorant', serif;
+    font-weight: 500;
 }
 .quantityBtn{
-    margin: 2% 0;
+    margin: 2% -4%;
 }
 .quantityBtn button{
     border: none;
@@ -45,16 +47,21 @@
     font-weight: 200;
 }
 .quantityBtn input[type=number]{
-    width: 12%;
+    width: 13%;
     text-align: center;
+    font-family: 'Cormorant Infant', serif;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
+
 .submitBtn button{
     background: black;
     border: solid 1px white;
     border-radius: 0;
     color: white;
     padding: 3% 5%;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .submitBtn button:hover{
@@ -64,8 +71,9 @@
 }
 
 .reviewSec{
-    padding: 2% 10%;
+    padding: 2% 14%;
 }
+
 .reviewSec h3{
     font-weight: 500;
     font-size: 25px;
@@ -126,3 +134,18 @@
     from { width: 0 }
     to { width: 100% }
 }
+
+input[type=number]{
+    border:solid 1px black;
+    border-radius: 0;
+}
+
+.minus{
+    width:30px;
+}
+
+.plus{
+    width:40px;
+}
+
+

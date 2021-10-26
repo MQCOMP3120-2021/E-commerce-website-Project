@@ -128,13 +128,8 @@
   "cart":[
     {
         "id": 1,
-        "productid": 4,
         "name": "Plain Doughnut (3 in a Pack)",
-        "description": "A small fried snack that is crispy on the outside yet maintaining a soft inner texture. Icing sugar is sprinkled upon to provide the right amount of sweetness you need.",
         "price": "$6.00",
-        "reviews": [
-          "First review"
-        ],
         "photo": "https://images.unsplash.com/photo-1573050329989-9c2509328687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
         "quantity": 2
     }

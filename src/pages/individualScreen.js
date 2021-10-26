@@ -4,6 +4,8 @@ import { useParams, Link
 import { useState } from 'react'
 import '../css/Product.css'
 import defaultImg from '../assets/defaultImg.jpg'
+import minusSign from '../assets/minusSign.png'
+import plusSign from '../assets/plusSign.png'
 
 const SingleProduct = ({product, moreCart}) => {
     const { id } = useParams()
@@ -42,11 +44,14 @@ const SingleProduct = ({product, moreCart}) => {
                             <p>{singleP.description}</p>
                             <h6>{singleP.price}</h6>
                             <div className="quantityBtn">
-                                <button onClick = {decrementQty} className="decrement"> - </button>
+                                <button onClick = {decrementQty} className="decrement"><img src={minusSign} className="minus"/></button>
                                 <input type="number" value={qty} className="qtyInput"/>
-                                <button onClick = {incrementQty} className="incriment"> + </button>
+                                <button onClick = {incrementQty} className="increment"><img src={plusSign} className="plus"/></button>
                             </div>
-                            <button onClick={() => moreCart(singleP)}>Add to Cart</button>
+                            <div className="submitBtn">
+                                <button type="submit" onClick={() => moreCart(singleP,qty)}>Add to Cart</button>
+                            </div>
+                            
                             {/* <div className="submitBtn">
                                 <button type="submit">ADD TO CART</button>
                             </div> */}
@@ -65,7 +70,7 @@ const SingleProduct = ({product, moreCart}) => {
                                         </div> )
                                 ) : (
                                     <div className="noReview">
-                                        <h3>This product has no reviews.</ h3>
+                                        <h3>This product has no reviews yet.</ h3>
                                     </div>
                                 )}
                         </div>

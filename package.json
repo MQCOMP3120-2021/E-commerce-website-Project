@@ -30,7 +30,7 @@
   "scripts": {
     "start": "cross-env PORT=3001 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cross-env NODE_ENV=test jest --verbose --coverage --testPathPattern server",
     "testreact": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "cross-env NODE_ENV=development nodemon server/server.js",
@@ -57,9 +57,11 @@
     ]
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^2.1.0",
     "cross-env": "^7.0.3",
     "jsdoc": "^3.6.7",
     "json-server": "^0.16.3",
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "supertest": "^6.1.6"
   }
 }

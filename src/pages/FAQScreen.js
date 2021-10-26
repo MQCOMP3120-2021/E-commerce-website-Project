@@ -28,10 +28,8 @@ const Faq = () => (
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                     <p>
-                        Exercitation in fugiat est ut ad ea cupidatat ut in
-                        cupidatat occaecat ut occaecat consequat est minim minim
-                        esse tempor laborum consequat esse adipisicing eu
-                        reprehenderit enim.
+                      Items are non-exchangeable, but refund can be requested with a logical reason. 
+                      If refund request is sent within three days from purchase date, a refund will be issued with no reason required.
                     </p>
                 </AccordionItemPanel>
             </AccordionItem>
@@ -43,9 +41,8 @@ const Faq = () => (
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                     <p>
-                        In ad velit in ex nostrud dolore cupidatat consectetur
-                        ea in ut nostrud velit in irure cillum tempor laboris
-                        sed adipisicing eu esse duis nulla non.
+                        Customers who signed up for an account are allowed to provide a review for all items available. Please leave reviews reasonably as offensive reviews 
+                        will be removed from display.
                     </p>
                 </AccordionItemPanel>
             </AccordionItem>
@@ -57,9 +54,9 @@ const Faq = () => (
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                     <p>
-                        In ad velit in ex nostrud dolore cupidatat consectetur
-                        ea in ut nostrud velit in irure cillum tempor laboris
-                        sed adipisicing eu esse duis nulla non.
+                        We reserve the right to change, modify or remove the contents of the site at any time or for any reason (including hiding reviews). We cannot
+                        guarantee that the site will be available at all times as we may experience hardware, software or other problems that would require site maintenance.
+                        You agree that we have no liability or whatsoever for any loss, damage or inconvenience caused by your inability to access the site.
                     </p>
                 </AccordionItemPanel>
             </AccordionItem>
@@ -71,9 +68,7 @@ const Faq = () => (
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                     <p>
-                        In ad velit in ex nostrud dolore cupidatat consectetur
-                        ea in ut nostrud velit in irure cillum tempor laboris
-                        sed adipisicing eu esse duis nulla non.
+                    If items received are not as expected, please send a message explaining the issues encountered, including an image of it to our customer service.
                     </p>
                 </AccordionItemPanel>
             </AccordionItem>
@@ -85,9 +80,8 @@ const Faq = () => (
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                     <p>
-                        In ad velit in ex nostrud dolore cupidatat consectetur
-                        ea in ut nostrud velit in irure cillum tempor laboris
-                        sed adipisicing eu esse duis nulla non.
+                        If a payment error has occured, customers are encouraged to first verify with their respective banks on whether their accounts have been charged.
+                        You are then advised to contact our customer service to check if order has been placed. 
                     </p>
                 </AccordionItemPanel>
             </AccordionItem>
@@ -99,9 +93,8 @@ const Faq = () => (
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                     <p>
-                        In ad velit in ex nostrud dolore cupidatat consectetur
-                        ea in ut nostrud velit in irure cillum tempor laboris
-                        sed adipisicing eu esse duis nulla non.
+                        If order is not received, kindly send an email containing your order ID to our customer service. You will be able to choose if you would like a refund
+                        or have the order delivered to you on another day. 
                     </p>
                 </AccordionItemPanel>
             </AccordionItem>
@@ -113,9 +106,8 @@ const Faq = () => (
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                     <p>
-                        In ad velit in ex nostrud dolore cupidatat consectetur
-                        ea in ut nostrud velit in irure cillum tempor laboris
-                        sed adipisicing eu esse duis nulla non.
+                        If your order has been cancelled, you will be refunded automatically within 3 days. If refund has not been received within the period of time, kindly
+                        contact our customer service to provide further assistance.
                     </p>
                 </AccordionItemPanel>
             </AccordionItem>

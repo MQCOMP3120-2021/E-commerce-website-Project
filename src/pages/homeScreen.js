@@ -20,11 +20,12 @@ const Home = () => (
                     <img src = {reviewImage}/> 
                 </div>
                 <div className="six columns">
-                    <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Curabitur a tristique arcu. Sed interdum est ac facilisis 
-                        posuere. Donec mattis pulvinar risus ac dictum. In sed consectetur nunc, 
-                        ut lobortis est. Ut interdum euismod egestas. 
-                        Donec dapibus nunc nec est fermentum tristique.”
+                    <p>“The pastries are fantastic. 
+                        The exquisite taste that the pastries here offer
+                        is beyond imagination. The pastries offer just the 
+                        right amount of sweetness to fill a person with joy. 
+                        It is not pastries that these people are making, 
+                        but magic. ”
                     </p>
                     <p className = "foodCriticName">by Food Critic Tom Bob</p>
                 </div>

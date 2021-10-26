@@ -20,6 +20,7 @@ input[type=textBox] {
   margin:auto;
   height: 20%;
 }
+
 .filterResults {
   display: flex;
   justify-content: center;

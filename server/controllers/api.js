@@ -4,11 +4,14 @@ const bcrypt = require ("bcrypt")
 const jwt = require("jsonwebtoken")
 const Product = require("../models/products")
 const Cart = require("../models/cart")
+const User = require("../models/user")
 const { response } = require('express')
 const apiRouter = express.Router()
 var cors = require('cors')
 const nodemailer = require("nodemailer");
+const { JwtCookieAuth } = require('../utils/middleware')
 var app = express()
+const cookieParser = require('cookie-parser')
 
 const SECRET = process.env.SECRET
 
@@ -29,7 +32,7 @@ const getProduct = (name) => {
     return data.products.filter(p => p.name === name)[0]
 }
 
-const getUser = (username) => {
+const getUser = ({username}) => {
     return data.users.filter(u => u.username === username)[0]
 }
 
@@ -147,24 +150,27 @@ apiRouter.delete('/api/cart/:id', (req, res, next) => {
 apiRouter.post('/api/login', async (req, res) => {
 
   const {username, password} = req.body
-
-  const user = getUser(username)
+  const user = await User.findOne({username}).lean()
   console.log(user)
 
   if (!user) {
-      return res.status(401).json({error: "invalid username or password"})
+      return res.status(401).json({error: "User does not exist"})
   }
 
   if (await bcrypt.compare(password, user.password)) {
       console.log("Password is good!")
 
       const userForToken = {
-          id: user.id,
-          username: user.username            
+          id: user._id,
+          username: user.username,
+          cart: user.cart,
+          name: user.name            
       }
       const token = jwt.sign(userForToken, "secret")
 
-      return res.status(200).json({token, username: user.username, name: user.name})
+      return res.cookie('jwt', token, {httpOnly: true, maxAge: 3000000000})
+                .status(200)
+                .json({token, username: user.username, name: user.name})
 
   } else {
       return res.status(401).json({error: "invalid username or password"})
@@ -172,6 +178,53 @@ apiRouter.post('/api/login', async (req, res) => {
 
 })
 
+apiRouter.get('/api/getUser', JwtCookieAuth)
+
+apiRouter.post('/api/sign-up', async (req, res) => {
+  const body= req.body
+  const limit = 10
+  const passwordHash= await bcrypt.hash(body.password, limit)
+
+  if (!body.username || typeof body.username !== 'string') {
+		return res.status(401).json({error: 'Invalid username' })
+	}
+
+	if (!body.password || typeof body.password !== 'string') {
+		return res.status(401).json({ error: 'Invalid password' })
+	}
+
+	if ((body.password).length < 3) {
+		return res.status(401).json({error: 'Password too small. Should be at least 3 characters'	})
+	}
+
+  else{
+
+  const user = new User({
+      username:body.username,
+      name: body.name,
+      password: passwordHash,
+  })
+  const savedUser = await user.save()
+  res.json(savedUser)
+}})
+
+
+apiRouter.get('/api/logout', function(req, res) {
+  const authHeader = req.headers["authorization"];
+  jwt.sign(authHeader, '', {expiresIn:1}, (logout, err) => {
+    if(logout){
+      res.cookie('jwt', '', {maxAge: 1})
+      res.send({msg:'You have been Logged Out'})
+      res.redirect('/')
+    }
+    else{
+      res.send({msg:'Error'})
+    }
+  })
+})
+  
+  
+ 
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',

@@ -1,3 +1,6 @@
+const jwt = require("jsonwebtoken")
+const User = require("../models/user")
+
 const requestLogger = (request, response, next) => {
     if (process.env.NODE_ENV === 'development') {
         console.log(request.method, request.path)
@@ -14,5 +17,28 @@ const errorMiddleware = (error, request, response, next) => {
     next()
 }
 
+const JwtCookieAuth = (req, res, next) => {
+    const token = req.cookies.jwt
 
-module.exports = {requestLogger, errorMiddleware}
+    if(token) {
+        jwt.verify(token, "secret", async (err, userToken) => {
+            if(err) {
+                console.log(err.message)
+                res.clearCookie("jwt")
+                return res.json(null)
+            }
+            else{
+                console.log(userToken)
+                let user = await User.findById(userToken.id)
+                res.json(user)
+                next()
+            }
+        })
+    }
+    else{
+        console.log("no/invalid cookie")
+        return res.json(null)
+    }
+}
+
+module.exports = {requestLogger, errorMiddleware, JwtCookieAuth}

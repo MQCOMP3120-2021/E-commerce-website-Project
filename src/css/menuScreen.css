@@ -20,6 +20,15 @@ input[type=textBox] {
   margin:auto;
   height: 20%;
 }
+.filterResults {
+  display: flex;
+  justify-content: center;
+}
+
+.filterResults p{
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
 .menuContainer {
   display: grid;
   grid-template-columns: auto auto auto auto;

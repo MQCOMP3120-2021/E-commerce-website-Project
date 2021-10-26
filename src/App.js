@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {
   BrowserRouter as Router,
-  Switch, Route, Link
+  Switch, Route, Link, useHistory, Redirect, withRouter
 } from "react-router-dom";
 import ListOfProducts from './pages/menuScreen.js';
 import productService from './services/productService';
@@ -11,12 +11,18 @@ import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
 import navBar from './Navigation-bar';
 import SingleProduct from './pages/individualScreen.js'
+import ListofCart from './pages/cartScreen.js';
+import SignUp from './pages/signupScreen';
+import { render } from '@testing-library/react';
+import Logout from './pages/logoutScreen.js';
+import Checkout from './pages/checkoutScreen.js'
 import CartScreen from './pages/cartScreen.js';
 const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState([])
   const [user, setUser] = useState(null)
-  
+  let history = useHistory();
+
   useEffect(()=>{
     console.log("effect is being run")
     productService.getAll()
@@ -31,6 +37,22 @@ const App = () => {
     fetchCart()
   },
   [])
+
+  useEffect(() => {
+    productService.getCurrentUser()
+                  .then(user => {
+                    if(user){
+                      setUser(user)
+                      console.log("user: ", user)
+                    }
+                    else{
+                      console.log("no user")
+                    }
+                  })
+                  .catch((err) => {
+                    console.log("error getting user")
+                  })
+  }, [])
 
   const fetchCart = () => {
     console.log("effect is being run")
@@ -109,9 +131,9 @@ const App = () => {
 
         <Route path="/Menu">
            <navBar.BrightNavBarUser/>
-           <navBar.BrightNavBar/>
-            {/* <menuDisplay.SearchBar /> */}
-            <ListOfProducts  products={products}/> 
+           {/* <menuDisplay.SearchBar />
+           <menuDisplay.ListOfProducts  products={products}/>  */}
+           <ListOfProducts  products={products}/> 
         </Route>
 
         <Route path="/About">
@@ -133,14 +155,14 @@ const App = () => {
 
         </Route>
 
-        <Route path="/My-Account">
+        <Route path="/Logout">
           <navBar.BrightNavBarUser/>
-          
+          <Logout setUser={setUser}/>
         </Route>
 
         <Route path="/Checkout">
           <navBar.BrightNavBarUser/>
-          
+          <Checkout />
         </Route>
 
           <Route path="/">
@@ -195,6 +217,11 @@ else {
            <Login user={user} setUser={setUser}/>
          </Route>
 
+         <Route path="/sign-up">
+           <navBar.BrightNavBar/>
+           <SignUp setUser={setUser}/>
+         </Route>
+
         <Route path="/Checkout">
           <navBar.BrightNavBarUser/>
           
@@ -211,5 +238,4 @@ else {
   </Router>  )
   }
 }
-
 export default App;

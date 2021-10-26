@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     BrowserRouter as Router,
-    Switch, Route, Link
+    Switch, Route, Link, useRouteMatch
   } from "react-router-dom";
 import { useState } from 'react'
 import '../css/Checkout.css'
@@ -10,6 +10,10 @@ import Payment from './checkoutFolder/Payment';
 import Confirm from './checkoutFolder/Confirm';
 
 const CheckoutScreen = () => {
+
+    const { path } = useRouteMatch
+    console.log(path)
+    
     const CheckoutNavBar = () => {
         return(
         <ul className="Navbar">
@@ -29,20 +33,17 @@ const CheckoutScreen = () => {
 
             <Switch>
                 <Router>
-                    <Route path="/Checkout">
+
+                    <Route path= "/Checkout/Delivery">
                         <Delivery />
                     </Route>
 
-                    <Route path="/Checkout/Delivery">
-                        <Delivery />
-                    </Route>
-
-                    <Route path="/Checkout/Payment">
+                    <Route path={`${path}/Payment`}>
                         <Payment />
 
                     </Route>
 
-                    <Route path="/Checkout/Confirm">
+                    <Route path={`${path}/Confirm`}>
                         <Confirm />
                     </Route>
                 

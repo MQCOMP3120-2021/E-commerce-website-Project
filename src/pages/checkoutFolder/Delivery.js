@@ -33,7 +33,7 @@ const Delivery = ({updateFn, personInfo, shipInfo}) => {
 
     return (
         <>
-        <div class="PersonInfoContainer">
+        <div className="PersonInfoContainer">
             <form onSubmit={formHandler}>
                 <h3>Address Details</h3>
                 <label htmlFor="FirstN">FirstName</label>

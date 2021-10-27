@@ -9,19 +9,13 @@ import {
 const ListOfProducts = ({products}) => {
   const [allProducts, setProducts] = useState([])
   const [search, setSearch] = useState('')
-  const [category, setCategory] = useState(['All'])
-
-  const categories = [
-    'artisan bread',
-    'pastry',
-    'sweets'
-  ]
+  const [category, setCategory] = useState('all')
 
   const searchQuery = products.filter((p) => {
-    if(p.category == category){
+    if(p.category === category){
       return (p.name.toLowerCase().includes(search))
     }
-    else if(category == "All"){
+    else if(category === "all"){
       return (p.name.toLowerCase().includes(search))
     }
     
@@ -63,7 +57,7 @@ const ListOfProducts = ({products}) => {
       <div className="filterResults">
           <p>category</p>
           <select value={category} onChange = {(e) => {setCategory(e.target.value)}}>
-            <option value = "All">All</option>
+            <option value = "all">All</option>
             <option value = "artisan bread">Artisan Bread</option>
             <option value = "pastry">Pastry</option>
             <option value = "sweets">Sweets</option>

@@ -87,7 +87,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem}) => {
         }
         </tbody>
       </table>
-      <p>Total costs = {"$" + TotalAmount()} </p>
+      <p className="totalCost">Total costs = {"$" + TotalAmount()} </p>
         <Link to='/Checkout'>
           <button className="checkoutButton">Checkout   <i className="inline-icon material-icons">trending_flat</i></button>  
         </Link>

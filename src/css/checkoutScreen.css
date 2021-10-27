@@ -73,3 +73,8 @@ input[type="radio"]:checked + img {
 .confirmBtn {
     padding: 5px;
 }
+.totalCost {
+    text-align: right;
+    margin-right: 17%;
+    font-size: 1.5rem;
+}

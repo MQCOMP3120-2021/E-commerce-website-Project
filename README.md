@@ -41,7 +41,7 @@ Home page acts as a basic introduction page for the application. The page includ
 
 ### Menu
 
-The menu page features all the products that the bakery shop sells. A search bar is attached to the top of the page, which should allow customers to easily find their targeted items. When users click on an item on the list, they will be redirected to the single product view page.
+The menu page features all the products that the bakery shop sells. A search bar is attached to the top of the page, which should allow customers to easily find their targeted items. Customers could also filter items based on category through the dropdown options. When users click on an item on the list, they will be redirected to the single product view page.
 
 ### Single Product View
 
@@ -128,9 +128,11 @@ The folder includes a js file that contains all axios methods utilized to handle
 - Resolved merge conflicts between branches when necessary.
 - Created database to store information.
 - Linked the application to the database.
-- Completed About Us page.
+- Completed About Us page, Checkout page, and Individual Product View page.
 - Fixed styling errors occuring. 
 - Resolved errors occuring on the application.
+- Added search and filter for menu items.
+- Implemented Login cookies and logout function.
 
 ## Daniel Wong
 

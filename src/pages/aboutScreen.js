@@ -12,16 +12,14 @@ const About = () => {
 
             <div className="aboutSection">
                 <h2>ABOUT US</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel sapien sem. 
-                    Nunc vel feugiat tellus, sed euismod ante. Duis facilisis lacus eget tincidunt 
-                    congue. Nam nisi orci, aliquet id pulvinar sollicitudin, pharetra pellentesque 
-                    dolor. Sed efficitur sollicitudin sem at tincidunt. Etiam congue libero velit, 
-                    in imperdiet tortor euismod nec. In sit amet magna in erat molestie accumsan. 
-                    Morbi sagittis ac augue non consectetur. Mauris non tempus arcu. Duis commodo 
-                    ligula id tortor dictum lacinia. Duis lectus metus, egestas ac ultricies rhoncus, 
-                    ultrices sed tellus. Nunc suscipit nunc eu est blandit scelerisque. Aenean 
-                    eleifend eget sapien ac aliquet. Donec vehicula auctor lacus, ac maximus sapien 
-                    mattis congue. Donec tortor diam.</p>
+                <p>Wake and Bake has been in the baking industry since 1920. The business started out with a small food stand that goes around the town, 
+                    offering simple pastries to a small group of people. With our secret recipes passed down by the ancestors,
+                    we select our baking ingredients carefully, ensuring that it wouldn't affect the taste of our precious 
+                    breads. The product menu is kept small, allowing our bakers to make every bread to perfection. At Wake and Bake, 
+                    our breads and pastries are freshly baked so that they are only served to our 
+                    dearest customers under their best conditions. Our breads and pastries may seem simple, but we believe that these 
+                    baked goods that we make can actually make a difference in people's life. 
+                </p>
             </div>
             
             <div className = "locationSection">
@@ -38,7 +36,7 @@ const About = () => {
                 tabIndex="0"
                 />
                 </div>
-                <h6>Loren ipsum dolor sit amet</h6>
+                <h6>Macquarie Centre, NSW</h6>
             </div>
 
             <div className="socialMedia">

@@ -15,7 +15,7 @@
   color:white;
   font-family: 'Cormorant', serif;
   font-size: 25px;
-  padding-top: 16%;
+  padding-top: 25%;
   padding-left: 5%;
   text-align: left;
 }
@@ -33,7 +33,7 @@
   
 .foodCriticName {
   font-style: italic;
-  margin-top: -50px;
+  margin-top: -100px;
 }
   
 .trendingTitle {

@@ -64,6 +64,18 @@ apiRouter.get('/api/products/:id', (req, res) => {
          })
 })
 
+apiRouter.post('/api/products/:id', (req, res) => {
+  const prod = Product.findById(req.params.id)
+
+  console.log(prod)
+
+
+  const review = req.body
+    console.log(review)
+  (prod.reviews).push(review)
+  
+})
+
 apiRouter.post('/api/products', (req, res) => {
     const body = req.body
 

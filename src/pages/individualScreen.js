@@ -10,6 +10,9 @@ import productService from '../services/productService'
 const SingleProduct = ({product, moreCart}) => {
 
     const { id } = useParams()
+    console.log(id)
+    console.log(singleP)
+    console.log(product.id)
     const singleP = product.filter((p) => {
         return p.id === id
     })[0]
@@ -34,6 +37,18 @@ const SingleProduct = ({product, moreCart}) => {
     }
 
     const formHandler =(event) => {
+        event.preventDefault()
+        console.log("Review Submitted")
+
+        productService.addReview(id)
+        .then(data => {
+            console.log("Success, new review added:", data)
+            ((data.id).reviews).push(data)
+            console.log(singleP)
+        })
+        .catch(error =>{
+            console.log("Error, new review not created:", error)
+          })
      
       }
     

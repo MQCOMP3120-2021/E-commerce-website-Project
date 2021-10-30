@@ -108,10 +108,14 @@ The folder includes a js file that contains all axios methods utilized to handle
 # Roles and Contributions of Each Member
 
 ## Jessica Franklin
-
+- Initial commits for structure of pages
+- Created and implemented the Navigation bar functions 
+- Added React Router and implemented on almost every page
+- Back-end server initialization and contribution
 - Resolved merge conflicts between branches when necessary.
 - Created the login and signup function for users.
-- Worked on the Home Page, Menu Page, FAQ Page.
+- Linked new users to the database
+- Worked on the Home Page, Menu Page, FAQ Page, Single Product Page.
 - Resolved errors occuring on the application.
 
 ## Jing Wen Ng

@@ -1,31 +1,44 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import '../css/cartScreen.css';
 import {
-  BrowserRouter as Router,
-  Switch, Route, Link
+   Link
 } from "react-router-dom";
-import logo from '../assets/logo-black.png'
+import CartMath from '../CartMath';
 
-const CartScreen = ({cartcontents, removeItem, updateItem}) => {
+const CartScreen = ({cartcontents, removeItem, updateItem, user}) => {
+  
   const [amount, setAmount] = useState(1)
+  const [edit, setEdit] = useState(false)
 
+  const editing = (qty) => {
+    setEdit(true)
+    setAmount(qty)
+  }
+  const cancelEdit = () => {
+    setEdit(false)
+  }
+  const finaliseEdit = (item, newQty) => {
+    setEdit(false)
+    updateItem(item, newQty)
+  }
+  
   const Decrease = () => {
-    if (amount < 1){
+    if (amount < 2){
       setAmount(1)
     }
     else{
       setAmount(amount-1)
-      console.log(amount)
+      console.log(amount-1)
     }
   }
 
   const Increase = () => {
-    if (amount > 99){
+    if (amount > 98){
       setAmount(99)
     }
     else{
       setAmount(amount+1)
-      console.log(amount)
+      console.log(amount+1)
     }
   }
 
@@ -49,7 +62,17 @@ const CartScreen = ({cartcontents, removeItem, updateItem}) => {
 
   return(
     <div className="cartDisplay">
-      
+      {user ? (
+        <>
+         <h2>Loggin in as User</h2>
+        </>
+      ) : (
+        <>
+          <h2>Guest</h2>
+        </>
+      )
+
+      }
       <table className="cartTable">
         <tbody>
           <tr>
@@ -66,11 +89,26 @@ const CartScreen = ({cartcontents, removeItem, updateItem}) => {
               <td><img src = {item.photo} alt = {item.name}></img></td>
               <td>{item.price}</td>
               <td>
-              <div className="quantityBtn">
-                <button onClick = {Decrease} className="decrement"> - </button>
-                {item.quantity}
-                <button onClick = {Increase} className="incriment"> + </button>
-              </div>
+                {edit === false ? (
+                  <>
+                  <input type="number" value={item.quantity} className="qtyInput" readOnly="{true}"/>
+                  <div className="submitBtn">
+                    <button type="submit" onClick={() => editing(item.quantity)}>Update Item</button>
+                  </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="quantityBtn">
+                      <button onClick = {Decrease} className="decrement"> - </button>
+                      <input type="number" value={amount} className="qtyInput" readOnly="{true}"/>
+                      <button onClick = {Increase} className="incriment"> + </button>
+                    </div>
+                    <div className="submitBtn">
+                      <button type="submit" onClick={() => cancelEdit()}>Back</button>
+                      <button type="submit" onClick={() => finaliseEdit(item,amount)}>Finalise Item</button>
+                    </div>
+                  </>
+                )}
               </td>
               <td>{"$" +TotalPrice(item.price, item.quantity)}
               <button onClick = {() => removeItem(item)}>Remove</button></td>
@@ -80,116 +118,21 @@ const CartScreen = ({cartcontents, removeItem, updateItem}) => {
             </>
 
           ) : ( 
-          <div>
-            <tr>No Item in Cart</tr>
-          </div>
+          <>
+            <h2>No Item in Cart: Lets get some bread</h2>
+          </>
           )
         }
         </tbody>
       </table>
-      <p className="totalCost">Total costs = {"$" + TotalAmount()} </p>
+      <p>Total costs = {"$" + TotalAmount()} </p>
         <Link to='/Checkout'>
           <button className="checkoutButton">Checkout   <i className="inline-icon material-icons">trending_flat</i></button>  
         </Link>
-
-
-          {/* {cartcontents.map((item) => (
-            <li key={item.id}>
-              <Link to={`/products/${item.productid}`}><img src={item.photo} alt="bread"></img></Link><br></br>
-              Product Name: {item.name}<br></br>
-              Price: {item.price} <br></br>
-              Amount: {setAmount(item.quantity)}
-              <div className="quantityBtn">
-                <button onClick = {Decrease} className="decrement"> - </button>
-                <input type="number" value={amount} className="qtyInput"/>
-                <button onClick = {Increase} className="incriment"> + </button>
-              </div>
-              <button onClick={() => removeItem(item)}>Delete Item</button>
-            </li>
-          ))}         */}
   
       </div>
        
       )
 }
-
-
-// const Cart = ({cartcontents, removeItem}) => {
-
-//   const [listCart, setCart] = useState([cartcontents])
-//   const [amount, setAmount] = useState([1])
-
-//   const Decrease = () => {
-//     if (amount < 1){
-//       setAmount(1)
-//     }
-//     else{
-//       setAmount(amount-1)
-//     }
-//   }
-
-//   const Increase = () => {
-//     if (amount > 99){
-//       setAmount(99)
-//     }
-//     else{
-//       setAmount(amount+1)
-//     }
-//   }
-
-//   const TotalPrice = () =>{
-//     let total = 0
-    
-//     for(let i=0; i<cartcontents.length; i++){
-//       let cartItemPrice = Number(cartcontents[i].price)
-//       let cartItemAmount = Number(cartcontents[i].amount)
-//       total = total + (cartItemPrice * cartItemAmount)
-//     }
-
-//     return total
-//   }
-
-// }
-
-
-  
-  // const ListofCart = () => {
-
-  //   return(
-  //     <div className="cartScreen">
-
-  //     {cartcontents.map((item) => (
-  //       <li key={item.id}>
-  //         <Link to={`/products/${item.productid}`}><img src={item.photo} alt="bread"></img></Link><br></br>
-  //         Product Name: {item.name}<br></br>
-  //         Price: {item.price} <br></br>
-  //         Amount: {setAmount(item.quantity)}
-  //         <div className="quantityBtn">
-  //           <button onClick = {Decrease} className="decrement"> - </button>
-  //           <input type="number" value={amount} className="qtyInput"/>
-  //           <button onClick = {Increase} className="incriment"> + </button>
-  //         </div>
-  //         <button onClick={() => removeItem(item)}>Delete Item</button>
-  //       </li>
-  //     ))}
-
-  //     <h1>Hello World</h1>
-      
-
-  //   </div>
-    
-    
-  //   )
-  // }
-  
-  // return (
-  //   <>
-  //     <h3>User Login details here</h3>
-  //     {/* {ListofCart} */}
-  //     Total Price: {TotalPrice}
-  //   </>
-  // )
-  
-
 
 export default CartScreen;

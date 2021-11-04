@@ -16,7 +16,7 @@ connect()
 
 const orderSchema = new mongoose.Schema({
     user: String,
-    cart: Array,
+    cart: Object,
     total: Number
   })
   

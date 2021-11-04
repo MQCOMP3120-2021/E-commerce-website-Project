@@ -45,7 +45,7 @@ const SingleProduct = ({product, moreCart}) => {
                             <h6>{singleP.price}</h6>
                             <div className="quantityBtn">
                                 <button onClick = {decrementQty} className="decrement"><img src={minusSign} className="minus"/></button>
-                                <input type="number" value={qty} className="qtyInput"/>
+                                <input type="number" value={qty} className="qtyInput" readOnly="{true}"/>
                                 <button onClick = {incrementQty} className="increment"><img src={plusSign} className="plus"/></button>
                             </div>
                             <div className="submitBtn">

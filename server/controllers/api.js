@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken")
 const Product = require("../models/products")
 const Cart = require("../models/cart")
 const User = require("../models/user")
+const Order = require("../models/order")
 const { response } = require('express')
 const apiRouter = express.Router()
 var cors = require('cors')
@@ -142,6 +143,36 @@ apiRouter.delete('/api/cart/:id', (req, res, next) => {
   
 })
 
+apiRouter.get('/api/order', (req, res) =>{
+  Order.find({})
+  .then(items => {
+    res.json(items)
+  })
+})
+
+apiRouter.post('/api/order', (req,res) => {
+  const body = req.body
+  console.log(body)
+
+  if(!body){
+    return res.status(400).json({error:"Order Not Updated"})
+  }
+
+  const order = new Order({
+    user: body.user,
+    cart: body.cart,
+    total: body.total
+  })
+
+  console.log(order)
+
+  order.save()
+      .then(o => {
+        res.json(o)
+        console.log("Order Submitted", o.name)
+      })
+      .catch(error => console.log(error))
+})
 // const generateId = () => {
 //   const MAXID = data.cart.length > 0 ? Math.max(...data.cart.map((u) => u.id)) : 0
 //   return MAXID + 1

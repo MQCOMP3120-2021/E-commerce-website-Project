@@ -17,6 +17,7 @@ const PaymentPopup = () => {
                 <h2>Payment Sucess</h2>
                 <button onClick = {redirectHome}>Home</button>
             </div>
+            
         </div>
     )
 }

@@ -7,16 +7,20 @@ import ubereats from '../assets/ubereats.png'
 import '../css/checkoutScreen.css'
 import React, { Component, useState, useEffect } from "react";
 import PaymentPopup from './paymentPopup.js'
+import {
+    Link
+ } from "react-router-dom"
 
-const Checkout = (props) => {
+const Checkout = ({cartTotal, postOrder, order}) => {
     const [done, setDone] = useState(false)
 
     const submitPopup = () => {
+        postOrder()
         setDone(true)
     }
     return(
         <>
-        {done ? <PaymentPopup /> :
+        {done ? <PaymentPopup order={order}/> :
             <div className = "checkoutPage">
                 <div className = "checkoutOptions">
                     <div className = "paymentPanel">
@@ -62,7 +66,7 @@ const Checkout = (props) => {
                             <table>
                                 <tr>
                                     <td>Subtotal</td>
-                                    <td className = "rightPrice">$30.00</td>
+                                    <td className = "rightPrice">${cartTotal}</td>
                                 </tr>
                                 <tr>
                                     <td>Delivery Charges</td>
@@ -74,6 +78,9 @@ const Checkout = (props) => {
                                 </tr>
                             </table>
                         </div>
+                        <Link to='/My-Cart'>
+                            <button className="confirmBtn">Back to Cart  </button>  
+                        </Link>
                         <button type="submit" className = "confirmBtn" onClick = {submitPopup}>Confirm Order</button>
                     </div>
                 </div>

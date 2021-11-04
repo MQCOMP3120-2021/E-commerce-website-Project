@@ -12,7 +12,7 @@ const getProduct = (id) => {
 }
 const getCart = () => {
     return axios.get(baseURL + "cart")
-                .then(response => response.data)
+                .then((response) => response.data)
 }
 const addtoCart = (newItem) => {
     console.log(newItem)
@@ -48,9 +48,20 @@ const logout = () => {
 
 const getCurrentUser = () => {
     return axios.get("/api/getUser")
-                .then(response => response.data)
+                .then((response) => response.data)
 }
-const productService = {getAll, getProduct, getCart, addtoCart, updateCart, removeCart, login, signUp, logout, getCurrentUser}
+
+const getOrder = () => {
+    return axios.get(baseURL + "order")
+                .then((response) => response.data)
+}
+
+const sendOrder = (order) => {
+    console.log(order)
+    return axios.post(baseURL + "order", order)
+                .then((response) => response.data)
+}
+const productService = {getAll, getProduct, getCart, addtoCart, updateCart, removeCart, login, signUp, logout, getCurrentUser, getOrder, sendOrder}
 
 export default productService;
 

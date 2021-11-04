@@ -17,10 +17,13 @@ import { render } from '@testing-library/react';
 import Logout from './pages/logoutScreen.js';
 import Checkout from './pages/checkoutScreen.js'
 import CartScreen from './pages/cartScreen.js';
+import CartMath from './CartMath.js';
 const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState([])
   const [user, setUser] = useState(null)
+  const [total, setTotal]= useState(0)
+  const [order, setOrder] = useState([])
   let history = useHistory();
 
   useEffect(()=>{
@@ -38,6 +41,7 @@ const App = () => {
   },
   [])
 
+
   useEffect(() => {
     productService.getCurrentUser()
                   .then(user => {
@@ -54,6 +58,13 @@ const App = () => {
                   })
   }, [])
 
+  useEffect(() => {
+    productService.getOrder()
+    .then(object => {
+      setOrder(object)
+    })
+  })
+
   const fetchCart = () => {
     console.log("effect is being run")
     productService.getCart()
@@ -64,23 +75,35 @@ const App = () => {
 
   }
 
-  const producttoCart = (content, qty) => {
+  const producttoCart = (content, qty, user) => {
     const body = content
-    console.log(qty)
+    if (user){
+      const newCart = {
+        name: body.name,
+        price: body.price,
+        photo: body.photo,
+        quantity: qty,
+        user: user
+      }
 
-    const newCart = {
-      name: body.name,
-      price: body.price,
-      photo: body.photo,
-      quantity: qty
+      return newCart
     }
+    else{
+      const newCart = {
+        name: body.name,
+        price: body.price,
+        photo: body.photo,
+        quantity: qty,
+        user: 'guest'
+      }
 
-
-    return newCart
+      return newCart
+      
+    }
   }
 
   const addCart = (content,qty) => {
-    content = producttoCart(content, qty)
+    content = producttoCart(content, qty, user)
     console.log(content)
     productService.addtoCart( content )
     .then((object) => {
@@ -91,6 +114,7 @@ const App = () => {
     .catch((error) => {
       console.log("Item has not been added")
     })
+    TotalAmount()
   }
 
   const removeCart = (content) =>{
@@ -104,9 +128,12 @@ const App = () => {
       console.log("Item has not been removed")
     })
     fetchCart()
+    TotalAmount()
   }
 
-  const updateCart = (content) =>{
+  //Updates the cart amount
+  const updateCart = (content, qty) => {
+    content.quantity = qty
     console.log("Amount has been updated", content)
     productService.updateCart(content)
     .then((objects) => {
@@ -116,6 +143,87 @@ const App = () => {
       console.log("Item has not been updated")
     })
     fetchCart()
+    TotalAmount()
+  }
+
+  //Checks if a product needs to be added or updated in the cart database
+  const updateCheck = (content, qty) => {
+    content = producttoCart(content, qty, user)
+    let cartCheck = false
+    let newQty = 0
+    for(let i = 0; i < cart.length; i++){
+      if (content.name === cart[i].name) {
+        cartCheck = true
+        newQty = cart[i].quantity
+        content.id = cart[i].id
+      }
+    }
+    newQty = newQty + qty
+
+    if(cartCheck === true){
+      updateCart(content, newQty)
+      TotalAmount()
+    }
+    else{
+      addCart(content, qty)
+      TotalAmount()
+    }
+    TotalAmount()
+  }
+
+  const clearCart = () => {
+    for(let i = 0; i<cart.length; i++){
+      removeCart(cart[i])
+    }
+    setTotal(0)
+  }
+
+  const TotalAmount = () => {
+    console.log(cart)
+    let Stotal = 0
+    for(let i=0; i<cart.length; i++){
+      let PriceString = cart[i].price
+      let cartItemPrice = Number(PriceString.replace('$', ''))
+      let cartItemAmount = Number(cart[i].quantity)
+      Stotal = Stotal + (cartItemPrice * cartItemAmount)
+    }
+    console.log(Stotal)
+    setTotal(Stotal)
+  }
+
+  const PostOrder = () => {
+    let content = prepOrder()
+    console.log(content)
+    productService.sendOrder(content)
+    .then((object) => {
+      console.log("POST response: ", object)
+      setCart(order.concat(object))
+      clearCart()
+      console.log("Order Submitted", object)
+    })
+    .catch((error) => {
+      console.log("Order has not been added")
+    })
+  }
+
+  const prepOrder = () => {
+    if(user){
+      const NewOrder = {
+        User: user,
+        Cart: cart,
+        Total: total
+      }
+      return NewOrder
+    }
+    else{
+      const NewOrder = {
+        User: 'guest',
+        Cart: cart,
+        Total: total
+      }
+      return NewOrder
+    }
+    
   }
 
  if(user){
@@ -126,7 +234,7 @@ const App = () => {
 
         <Route path="/products/:id">
            <navBar.BrightNavBarUser/>
-           <SingleProduct product ={products} moreCart={addCart}/>
+           <SingleProduct product ={products} moreCart={updateCheck}/>
         </Route>
 
         <Route path="/Menu">
@@ -151,7 +259,7 @@ const App = () => {
 
         <Route path="/My-cart">
           <navBar.BrightNavBarUser/>
-          <CartScreen cartcontents={cart} removeItem={removeCart} />
+          <CartScreen cartcontents={cart} removeItem={removeCart} updateItem={updateCart} clearCart={clearCart} user={user}/>
 
         </Route>
 
@@ -162,7 +270,7 @@ const App = () => {
 
         <Route path="/Checkout">
           <navBar.BrightNavBarUser/>
-          <Checkout />
+          <Checkout cartTotal={total} postOrder={PostOrder}/>
         </Route>
 
           <Route path="/">
@@ -184,7 +292,7 @@ else {
 
          <Route path="/products/:id">
             <navBar.BrightNavBar/>
-            <SingleProduct product ={products} moreCart={addCart}/>
+            <SingleProduct product ={products} moreCart={updateCheck}/>
          </Route>
 
          <Route path="/Menu">
@@ -208,8 +316,7 @@ else {
 
          <Route path="/My-cart">
            <navBar.BrightNavBar/>
-           <CartScreen cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/>
-           {/* <ListofCart cartcontents={cart} removeItem={removeCart} updateItem={updateCart}/> */}
+           <CartScreen cartcontents={cart} removeItem={removeCart} updateItem={updateCart} clearCart={clearCart} user={user}/>
          </Route>
 
          <Route path="/Login">
@@ -224,6 +331,7 @@ else {
 
         <Route path="/Checkout">
           <navBar.BrightNavBarUser/>
+          <Checkout cartTotal={total} postOrder={PostOrder}/>
 
         </Route>
 

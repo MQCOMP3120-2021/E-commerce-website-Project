@@ -5,6 +5,8 @@ import {
   Switch, Route, Link
 } from "react-router-dom";
 import logo from '../assets/logo-black.png'
+import minusSign from '../assets/minusSign.png'
+import plusSign from '../assets/plusSign.png'
 
 const CartScreen = ({cartcontents, removeItem, updateItem}) => {
   const [amount, setAmount] = useState(1)
@@ -53,6 +55,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem}) => {
       <table className="cartTable">
         <tbody>
           <tr>
+            <th></th>
             <th>ITEM</th>
             <th>PRICE</th>
             <th>QUANTITY</th>
@@ -63,17 +66,24 @@ const CartScreen = ({cartcontents, removeItem, updateItem}) => {
             <>
             {cartcontents.map((item) => (
             <tr key={item.id}>
-              <td><img src = {item.photo} alt = {item.name}></img></td>
+              <td className="blank"><button className="removeBtn" onClick = {() => removeItem(item)}><i className="inline-icon material-icons">close</i></button></td>
+              <td><img src = {item.photo} alt = {item.name}></img>
+                  <p>{item.name}</p>
+              </td>
               <td>{item.price}</td>
               <td>
-              <div className="quantityBtn">
+              {/* <div className="quantityBtn">
                 <button onClick = {Decrease} className="decrement"> - </button>
                 {item.quantity}
-                <button onClick = {Increase} className="incriment"> + </button>
-              </div>
+                <button onClick = {Increase} className="increment"> + </button>
+              </div> */}
+              <div className="quantityBtn">
+                <button onClick = {Decrease}><img src={minusSign} className="minus"/></button>
+                {item.quantity}
+                <button onClick = {Increase} className="increment"><img src={plusSign} className="plus"/></button>
+                </div>
               </td>
-              <td>{"$" +TotalPrice(item.price, item.quantity)}
-              <button onClick = {() => removeItem(item)}>Remove</button></td>
+              <td>{"$" +TotalPrice(item.price, item.quantity)}</td>
             </tr>
             ))}
 
@@ -87,26 +97,13 @@ const CartScreen = ({cartcontents, removeItem, updateItem}) => {
         }
         </tbody>
       </table>
-      <p className="totalCost">Total costs = {"$" + TotalAmount()} </p>
+      <div className="subtotalPrice">
+        <p className="subtotalName">SUBTOTAL</p>
+        <p className="totalCost">{"$" + TotalAmount()} </p>
+      </div>
         <Link to='/Checkout'>
-          <button className="checkoutButton">Checkout   <i className="inline-icon material-icons">trending_flat</i></button>  
-        </Link>
-
-
-          {/* {cartcontents.map((item) => (
-            <li key={item.id}>
-              <Link to={`/products/${item.productid}`}><img src={item.photo} alt="bread"></img></Link><br></br>
-              Product Name: {item.name}<br></br>
-              Price: {item.price} <br></br>
-              Amount: {setAmount(item.quantity)}
-              <div className="quantityBtn">
-                <button onClick = {Decrease} className="decrement"> - </button>
-                <input type="number" value={amount} className="qtyInput"/>
-                <button onClick = {Increase} className="incriment"> + </button>
-              </div>
-              <button onClick={() => removeItem(item)}>Delete Item</button>
-            </li>
-          ))}         */}
+          <button className="checkoutButton">Checkout</button>  
+        </Link>  
   
       </div>
        
@@ -114,82 +111,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem}) => {
 }
 
 
-// const Cart = ({cartcontents, removeItem}) => {
 
-//   const [listCart, setCart] = useState([cartcontents])
-//   const [amount, setAmount] = useState([1])
-
-//   const Decrease = () => {
-//     if (amount < 1){
-//       setAmount(1)
-//     }
-//     else{
-//       setAmount(amount-1)
-//     }
-//   }
-
-//   const Increase = () => {
-//     if (amount > 99){
-//       setAmount(99)
-//     }
-//     else{
-//       setAmount(amount+1)
-//     }
-//   }
-
-//   const TotalPrice = () =>{
-//     let total = 0
-    
-//     for(let i=0; i<cartcontents.length; i++){
-//       let cartItemPrice = Number(cartcontents[i].price)
-//       let cartItemAmount = Number(cartcontents[i].amount)
-//       total = total + (cartItemPrice * cartItemAmount)
-//     }
-
-//     return total
-//   }
-
-// }
-
-
-  
-  // const ListofCart = () => {
-
-  //   return(
-  //     <div className="cartScreen">
-
-  //     {cartcontents.map((item) => (
-  //       <li key={item.id}>
-  //         <Link to={`/products/${item.productid}`}><img src={item.photo} alt="bread"></img></Link><br></br>
-  //         Product Name: {item.name}<br></br>
-  //         Price: {item.price} <br></br>
-  //         Amount: {setAmount(item.quantity)}
-  //         <div className="quantityBtn">
-  //           <button onClick = {Decrease} className="decrement"> - </button>
-  //           <input type="number" value={amount} className="qtyInput"/>
-  //           <button onClick = {Increase} className="incriment"> + </button>
-  //         </div>
-  //         <button onClick={() => removeItem(item)}>Delete Item</button>
-  //       </li>
-  //     ))}
-
-  //     <h1>Hello World</h1>
-      
-
-  //   </div>
-    
-    
-  //   )
-  // }
-  
-  // return (
-  //   <>
-  //     <h3>User Login details here</h3>
-  //     {/* {ListofCart} */}
-  //     Total Price: {TotalPrice}
-  //   </>
-  // )
-  
 
 
 export default CartScreen;

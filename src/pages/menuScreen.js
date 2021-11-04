@@ -55,7 +55,7 @@ const ListOfProducts = ({products}) => {
           </form>
       </div>
       <div className="filterResults">
-          <p>category</p>
+          <p className="categoryType">category</p>
           <select value={category} onChange = {(e) => {setCategory(e.target.value)}}>
             <option value = "all">All</option>
             <option value = "artisan bread">Artisan Bread</option>

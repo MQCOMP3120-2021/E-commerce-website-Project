@@ -1,17 +1,20 @@
 .cartTable {
     margin-left: auto;
     margin-right: auto;
-    width:80%;
+    width:68%;
     text-align: center;
     border-top: solid 1px black;
+    border-bottom: solid 1px black;
     margin-top: 5%;
-    /* border-bottom: solid 1px black; */
 }
 
 .cartTable p {
     font-family: 'Cormorant', serif;
     font-size: 13px;
-    font-weight: 900;
+    font-weight: 500;
+    padding-top: 10px;
+    
+    /* text-align: left; */
 }
 
 th {
@@ -24,15 +27,15 @@ th {
 
 td {
     text-align: center;
-    border-top: solid 1px black;
     border-bottom: none;
     font-family: 'Cormorant', serif;
-    font-size: 13px;
-    font-weight: 900;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .checkoutButton {
-    margin-left: 75%;
+    margin-left: 64%;
+    margin-top: 3%;
     background-color: black;
     font-family: 'Cormorant', serif;
     border:solid 1px white;
@@ -44,7 +47,7 @@ td {
     padding: 15px 30px;
     text-transform: uppercase;
     font-size: 11px;
-    width: 15%;
+    width: 20%;
   }
   
 .checkoutButton:hover {
@@ -57,7 +60,41 @@ td {
 }
 
 td img{
-    width:200px;
-    height: 150px;
+    width:160px;
+    height: 160px;
+    object-fit: cover;
+    padding-top: 20px;
     
+}
+
+.material-icons {
+    font-size: 20px;
+    display: inline-flex;
+    vertical-align: top;
+  }
+
+.removeBtn {
+    background-color: white;
+    border: none
+}
+
+.quantityBtn img {
+    height: 20px;
+   width: 20px;
+}
+
+.subtotalPrice {
+    text-align: right;
+    margin-right: 50px;
+    font-family: 'Cormorant', serif;
+    font-weight: 400;
+}
+
+.totalCost, .subtotalName {
+    display:inline;
+}
+
+.subtotalName {
+    margin-right: 140px;
+    font-size: 15;
 }

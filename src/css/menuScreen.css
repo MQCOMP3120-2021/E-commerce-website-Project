@@ -65,3 +65,7 @@ input[type=textBox] {
   font-size: 1.1em;
   margin-top: -10%;
 } 
+
+.categoryType {
+  font-family: 'Cormorant', serif;
+}

@@ -4,36 +4,56 @@
     align-items: center;
     justify-content: center;
     padding: 8%;
+    background-color: black;
+    width:45%;
+    margin: auto;
+    margin-top: 5%;
 }
 .logoutPage h2{
-    font-size: 3rem;
+    font-size: 1.5rem;
+    font-family: 'Cormorant', serif;
+    color: white;
 }
+
 .logoutPage .buttons{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .cancelBtn{
-    background-color: rgb(161, 161, 161);
-    border-radius: 20px;
-    border: none;
-    font-size: 1.5rem;
+    background-color: black;
+    border: solid 1px white;
+    font-size: 0.8rem;
+    padding: 5px 20px;
+    margin-right: 40px;
+    color: white;
+    font-family: 'Cormorant', serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    width: 130px;
+}
+
+.yesBtn{
+    background-color: #FE4042;
+    border: solid 1px white;
+    font-size: 0.8rem;
     padding: 5px 20px;
     margin-right: 20px;
     color: white;
-}
-.yesBtn{
-    background-color: rgb(255, 60, 60);
-    border-radius: 20px;
-    border: none;
-    font-size: 1.5rem;
-    padding: 5px 20px;
-    margin-left: 20px;
-    color: white;
+    font-family: 'Cormorant', serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    width: 130px;
 }
 .yesBtn:hover{
-    background-color: rgb(197, 56, 56);
+    background-color:white;
+    transition: 0.2s;
+    color: red;
 }
+
 .cancelBtn:hover{
-    background-color: rgb(129, 118, 118);
+    background-color:white;
+    transition: 0.2s;
+    color: black
 }

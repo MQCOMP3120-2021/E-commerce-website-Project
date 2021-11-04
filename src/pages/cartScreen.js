@@ -4,6 +4,9 @@ import {
    Link
 } from "react-router-dom";
 import CartMath from '../CartMath';
+import logo from '../assets/logo-black.png'
+import minusSign from '../assets/minusSign.png'
+import plusSign from '../assets/plusSign.png'
 
 const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => {
   
@@ -78,6 +81,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
       <table className="cartTable">
         <tbody>
           <tr>
+            <th></th>
             <th>ITEM</th>
             <th>PRICE</th>
             <th>QUANTITY</th>
@@ -88,7 +92,10 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
             <>
             {cartcontents.map((item) => (
             <tr key={item.id}>
-              <td><img src = {item.photo} alt = {item.name}></img></td>
+              <td className="blank"><button className="removeBtn" onClick = {() => removeItem(item)}><i className="inline-icon material-icons">close</i></button></td>
+              <td><img src = {item.photo} alt = {item.name}></img>
+                  <p>{item.name}</p>
+              </td>
               <td>{item.price}</td>
               <td>
                 {edit === true && item.name === checkName ? (
@@ -118,6 +125,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
                 <button onClick = {() => removeItem(item)}>Remove</button>
                 </div>
               </td>
+
             </tr>
             ))}
 
@@ -131,11 +139,15 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
         }
         </tbody>
       </table>
-      <h2>Total Amount = {"$" + TotalAmount()} </h2>
-      <button className="checkoutButton" type="submit" onClick={() => clearCart()}>Clear Cart<i className="inline-icon material-icons">trending_flat</i></button>  
+
+      <div className="subtotalPrice">
+        <p className="subtotalName">SUBTOTAL</p>
+        <p className="totalCost">{"$" + TotalAmount()} </p>
+        <button className="checkoutButton" type="submit" onClick={() => clearCart()}>Clear Cart<i className="inline-icon material-icons">trending_flat</i></button>
+      </div>
         <Link to='/Checkout'>
-          <button className="checkoutButton">Checkout   <i className="inline-icon material-icons">trending_flat</i></button>  
-        </Link>
+          <button className="checkoutButton">Checkout</button>  
+        </Link>  
   
       </div>
        

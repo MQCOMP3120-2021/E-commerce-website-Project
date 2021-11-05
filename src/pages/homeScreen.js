@@ -49,7 +49,7 @@ const Home = () => (
                 </div>
             </section>
             <Link to='/Menu'>
-                <button className="trendingButton">Shop Now   <i className="inline-icon material-icons">trending_flat</i>
+                <button className="trendingButton">Shop Now   →
                 </button>  
             </Link>
         </div>

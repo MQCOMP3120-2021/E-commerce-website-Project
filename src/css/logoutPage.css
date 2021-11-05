@@ -32,6 +32,7 @@
     text-transform: uppercase;
     letter-spacing: 4px;
     width: 130px;
+    height: 40px;
 }
 
 .yesBtn{
@@ -45,6 +46,7 @@
     text-transform: uppercase;
     letter-spacing: 4px;
     width: 130px;
+    height: 40px;
 }
 .yesBtn:hover{
     background-color:white;

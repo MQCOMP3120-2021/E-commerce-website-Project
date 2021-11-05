@@ -67,7 +67,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
 
   return(
     <div className="cartDisplay">
-      {user ? (
+      {/* {user ? (
         <>
          <h2>Loggin in as {user}</h2>
         </>
@@ -77,7 +77,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
         </>
       )
 
-      }
+      } */}
       <table className="cartTable">
         <tbody>
           <tr>
@@ -101,12 +101,12 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
                 {edit === true && item.name === checkName ? (
                   <>
                   <div className="quantityBtn">
-                    <button onClick = {Decrease} className="decrement"> - </button>
+                  <button onClick = {Decrease} className="decrement"><img src={minusSign} className="minus"/></button>
                     <input type="number" value={amount} className="qtyInput" readOnly="{true}"/>
-                    <button onClick = {Increase} className="incriment"> + </button>
+                    <button onClick = {Increase} className="increment"><img src={plusSign} className="plus"/></button>
                   </div>
-                  <div className="submitBtn">
-                    <button type="submit" onClick={() => cancelEdit()}>Back</button>
+                  <div className="finaliseContainer">
+                    <button type="back" onClick={() => cancelEdit()}>BACK</button>
                     <button type="submit" onClick={() => finaliseEdit(item,amount)}>Finalise Item</button>
                   </div>
                 </>
@@ -114,15 +114,15 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
                 ) : (
                   <>
                   <input type="number" value={item.quantity} className="qtyInput" readOnly="{true}"/>
-                  <div className="submitBtn">
-                    <button type="submit" onClick={() => editing(item.quantity, item.name)}>Update Item</button>
+                  <div className="updateContainer">
+                    <button type="submit" className="updateBtn"onClick={() => editing(item.quantity, item.name)}>Update Item</button>
                   </div>
                   </>
                 )}
               </td>
               <td>
                 <div className="submitBtn">{"$" +TotalPrice(item.price, item.quantity)}
-                <button onClick = {() => removeItem(item)}>Remove</button>
+                {/* <button onClick = {() => removeItem(item)}>Remove</button> */}
                 </div>
               </td>
 
@@ -143,11 +143,16 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
       <div className="subtotalPrice">
         <p className="subtotalName">SUBTOTAL</p>
         <p className="totalCost">{"$" + TotalAmount()} </p>
-        <button className="checkoutButton" type="submit" onClick={() => clearCart()}>Clear Cart<i className="inline-icon material-icons">trending_flat</i></button>
-      </div>
+
+        <div className="buttonContainer">
+        <button className="clearButton" type="submit" onClick={() => clearCart()}>Clear Cart</button>
         <Link to='/Checkout'>
           <button className="checkoutButton">Checkout</button>  
         </Link>  
+      </div>
+      </div>
+
+
   
       </div>
        

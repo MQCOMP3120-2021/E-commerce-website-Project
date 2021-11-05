@@ -1,3 +1,7 @@
+* {
+    text-decoration: none;
+}
+
 .cartTable {
     margin-left: auto;
     margin-right: auto;
@@ -13,8 +17,6 @@
     font-size: 13px;
     font-weight: 500;
     padding-top: 10px;
-    
-    /* text-align: left; */
 }
 
 th {
@@ -34,7 +36,7 @@ td {
 }
 
 .checkoutButton {
-    margin-left: 64%;
+    margin-left: 1.5%;
     margin-top: 3%;
     background-color: black;
     font-family: 'Cormorant', serif;
@@ -47,7 +49,7 @@ td {
     padding: 15px 30px;
     text-transform: uppercase;
     font-size: 11px;
-    width: 20%;
+    display:inline-block;
   }
   
 .checkoutButton:hover {
@@ -66,12 +68,6 @@ td img{
     padding-top: 20px;
     
 }
-
-.material-icons {
-    font-size: 20px;
-    display: inline-flex;
-    vertical-align: top;
-  }
 
 .removeBtn {
     background-color: white;
@@ -98,3 +94,82 @@ td img{
     margin-right: 140px;
     font-size: 15;
 }
+
+.buttonContainer {
+    margin-right: 13%;
+}
+
+.buttonContainer .clearButton {
+    background-color: #FE4042;
+}
+
+.buttonContainer .clearButton:hover {
+    border: solid 1px #FE4042;
+    background-color: white ;
+    color: #FE4042;
+    transition: 0.2s;
+}
+
+.material-icons {
+    font-size: 20px;
+    display: inline-flex;
+    vertical-align: top;
+  }
+
+.updateContainer button[type=submit] {
+    width: 55%;
+    font-size: 0.5em;
+}
+
+.updateContainer button[type=submit]:hover {
+    border: solid 1px black;
+    background-color: white;
+    transition: 0.2s;
+}
+
+.finaliseContainer button[type=submit] {
+    width: 50%;
+    font-size: 0.5em;
+}
+
+.finaliseContainer button[type=submit]:hover {
+    border: solid 1px black;
+    background-color: white;
+    transition: 0.2s;
+}
+
+.finaliseContainer button[type=back] {
+    width: 30%;
+    font-size: 0.5em;
+    background-color: black;
+    font-family: 'Cormorant', serif;
+    border:solid 1px white;
+    border-radius: 0;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 5%;
+    color:white;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    margin-right: 15px;
+}
+
+.finaliseContainer button[type=back]:hover {
+    border: solid 1px black;
+    background-color: white;
+    color: black;
+    transition: 0.2s;
+}
+
+
+.cartDisplay h2 {
+    font-family: 'Cormorant', serif;
+}
+
+input[type=number]{
+    text-align: center;
+    width: 20%
+}
+
+
+

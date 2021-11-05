@@ -23,6 +23,12 @@ const Checkout = ({cartTotal, postOrder, order}) => {
         {done ? <PaymentPopup order={order}/> :
             <div className = "checkoutPage">
                 <div className = "checkoutOptions">
+
+                    <Link to='/My-Cart'>
+                        <button className="returnBtn">⟵  Back to Cart</button>  
+                    </Link>
+
+
                     <div className = "paymentPanel">
                         <p>Select your payment method</p>
                         <hr/>
@@ -41,6 +47,7 @@ const Checkout = ({cartTotal, postOrder, order}) => {
                             </label>
                         </div>
                     </div>
+                    
                     <div className = "deliveryPanel">
                         <p>Select your delivery method</p>
                         <hr/>
@@ -65,22 +72,19 @@ const Checkout = ({cartTotal, postOrder, order}) => {
                         <div className = "paymentTotal">
                             <table>
                                 <tr>
-                                    <td>Subtotal</td>
+                                    <td className="tagName">Subtotal</td>
                                     <td className = "rightPrice">${cartTotal}</td>
                                 </tr>
                                 <tr>
-                                    <td>Delivery Charges</td>
+                                    <td className="tagName">Delivery Charges</td>
                                     <td className = "rightPrice">$5.00</td>
                                 </tr>
-                                <tr>
-                                    <td>TOTAL</td>
+                                <tr className="tagTotal">
+                                    <td className="tagName">TOTAL</td>
                                     <td className = "rightPrice">$35.00</td>
                                 </tr>
                             </table>
                         </div>
-                        <Link to='/My-Cart'>
-                            <button className="confirmBtn">Back to Cart  </button>  
-                        </Link>
                         <button type="submit" className = "confirmBtn" onClick = {submitPopup}>Confirm Order</button>
                     </div>
                 </div>

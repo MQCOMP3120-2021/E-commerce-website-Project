@@ -160,7 +160,7 @@ const FaqForm = () => {
                 <label htmlFor="enquiry"></label>
                 <textarea id="enquiry" placeholder="Enquiry" required />
               </div>
-              <button type="submit">{status}   <i className="inline-icon material-icons">trending_flat</i></button>
+              <button type="submit">{status} →</button>
             </form>
 
       </div>

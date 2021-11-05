@@ -13,7 +13,7 @@ const BrightNavBar = () => {
       <li><Link to= "/" className="brightNav">Home</Link></li>
       <li><Link to= "/Menu" className="brightNav">Menu</Link></li>
       <li><Link to= "/About" className="brightNav">About</Link></li>
-      <li><img src={logo1} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
+      <li><img src={logo1} width="130px" height="130px" className="App-logo" alt="logo" /> </li>
       <li><Link to= "/FAQ" className="brightNav">FAQ</Link></li>
       <li><Link to= "/My-cart" className="brightNav">Cart</Link></li>
       <li><Link to= "/Login" className="brightNav">Login</Link></li> 
@@ -28,7 +28,7 @@ const DarkNavBar = () => {
         <li><Link to= "/" className="darkNav">Home</Link></li>
         <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
         <li><Link to= "/About" className="darkNav">About</Link></li>
-        <li><img src= {logo2} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
+        <li><img src= {logo2} width="130px" height="130px" className="App-logo" alt="logo" /> </li>
         <li><Link to= "/FAQ" className="darkNav">FAQ</Link></li>
         <li><Link to= "/My-cart" className="darkNav">Cart</Link></li>
         <li><Link to= "/Login" className="darkNav">Login</Link></li>
@@ -42,7 +42,7 @@ const BrightNavBarUser = () => {
     <li><Link to= "/" className="brightNav">Home</Link></li>
     <li><Link to= "/Menu" className="brightNav">Menu</Link></li>
     <li><Link to= "/About" className="brightNav">About</Link></li>
-    <li><img src={logo1} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
+    <li><img src={logo1} width="130px" height="130px" className="App-logo" alt="logo" /> </li>
     <li><Link to= "/FAQ" className="brightNav">FAQ</Link></li>
     <li><Link to= "/My-cart" className="brightNav">Cart</Link></li>
     <li><Link to= "/Logout" className="brightNav">Logout</Link></li> 
@@ -57,7 +57,7 @@ const DarkNavBarUser = () => {
       <li><Link to= "/" className="darkNav">Home</Link></li>
       <li><Link to= "/Menu" className="darkNav">Menu</Link></li>
       <li><Link to= "/About" className="darkNav">About</Link></li>
-      <li><img src= {logo2} width="100px" height="100px" className="App-logo" alt="logo" /> </li>
+      <li><img src= {logo2} width="130px" height="130px" className="App-logo" alt="logo" /> </li>
       <li><Link to= "/FAQ" className="darkNav">FAQ</Link></li>
       <li><Link to= "/My-cart" className="darkNav">Cart</Link></li>
       <li><Link to= "/Logout" className="darkNav">Logout</Link></li>

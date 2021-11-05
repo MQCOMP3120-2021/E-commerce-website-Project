@@ -69,3 +69,7 @@ input[type=textBox] {
 .categoryType {
   font-family: 'Cormorant', serif;
 }
+
+.SearchBar {
+  margin-top: -50px;
+}

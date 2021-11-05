@@ -1,6 +1,6 @@
 .checkoutPage {
     display: flex;
-    margin: 5% 20%;
+    margin: 3% 10%;
     justify-content: space-around;
 }
 .checkoutOptions {
@@ -18,7 +18,20 @@
 }
 .paymentPanel {
     margin-bottom: 30px;
+    margin-top: 80px;
 }
+
+.paymentPanel p {
+    font-family: 'Cormorant', serif;
+    font-weight: 500;
+    
+}
+
+.deliveryPanel p {
+    font-family: 'Cormorant', serif;
+    font-weight: 500;
+}
+
 .deliveryPanel {
     margin-top: 20px;
 }
@@ -28,9 +41,11 @@
 }
 .paymentMethods {
     display: flex;
+    margin-top: 20px;
 }
 .deliveryMethods {
     display: flex;
+    margin-top: 20px;
 }
 input[type=radio] { 
     position: absolute;
@@ -44,14 +59,15 @@ input[type=radio] + img {
 }
 
 input[type="radio"]:checked + img {
-    border: 2px solid rgb(14, 255, 26);
+    border: 2px solid black;
 }
 .checkoutDetails {
     display: flex;
     flex-direction: column;
+    margin-top: 65px;
 }
 .spacing {
-    margin-top: 50%;
+    margin-top: 53%;
 }
 .checkoutDetails p {
     margin: 2px;
@@ -70,11 +86,43 @@ input[type="radio"]:checked + img {
 .paymentTotal table:nth-child(2){
     border-bottom: 1px solid black;
 }
-.confirmBtn {
-    padding: 5px;
+.returnBtn {
+    background-color: white;
+    font-family: 'Cormorant', serif;
+    letter-spacing: 4px;
+    font-weight: 600;
+    border: none;
+    color:black;
+    margin-left:-50px;
+    text-transform: uppercase;
+    font-size: 11px;
 }
+
 .totalCost {
     text-align: right;
     margin-right: 17%;
     font-size: 1.5rem;
+}
+
+.checkoutDetails button[type=submit] {
+    width: 250px;
+    margin-top: -20px;
+}
+
+.checkoutDetails button[type=submit]:hover {
+    border: solid 1px black;
+    transition: 0.2s;
+}
+
+.paymentTotal td {
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.tagName {
+    text-align: left;
+}
+
+.tagTotal {
+    border-top: solid 1px black;
 }

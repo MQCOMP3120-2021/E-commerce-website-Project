@@ -161,7 +161,6 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
           <button className="checkoutButton" type="submit" onClick={() => clearCart()}>Clear Cart<i className="inline-icon material-icons">trending_flat</i></button>
         </div>
         </>
-          
       )}
 
     </div>

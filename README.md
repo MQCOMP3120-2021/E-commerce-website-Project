@@ -49,7 +49,11 @@ A single product view page contains a basic description of the item selected. Cu
 
 ### Cart
 
-Cart page allows customers to checkout the items that they have added or edit the quantity as desired. A delete option is available for customers who no longer show interest in a product added into cart.
+Cart page allows customers to checkout the items that they have added or edit the quantity as desired. A delete option is available for customers who no longer show interest in a product added into cart. If customers wish to edit the quantity of item, an update item button is available for use, where it will update the item total according to the selected amount. Customers can also use the clear cart button to remove all items in the cart
+
+### Checkout
+
+Upon confirmation, customers will be redirected to the checkout page, where they are permitted to select their preferred delivery partners and payment methods. The screen also displays a random number next to delivery fee estimation to make the page look more realistic.
 
 ### Contact
 

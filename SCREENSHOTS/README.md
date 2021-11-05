@@ -13,5 +13,14 @@ The about us page contains a basic introduction of the business, followed by a G
 # FAQPage.png || FAQEmail.png
 The faq page provides an accordion that answers frequently asked questions, and an email form that users can utilize to send emails to the business's account.
 
+# CheckoutPage.png
+The checkout page allows user to select their desired delivery partner and payment method for their orders. 
+
+# PaymentPopUp.png
+The page displays a message when users click on confirm order to show them that their order has been placed.
+
 # LoginPage.png
 The login page contains a login form that permits registered users to log in to their account.
+
+# LogoutPage.png
+The page provides an alert message to users to confirm their logout. 

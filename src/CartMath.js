@@ -17,7 +17,7 @@ const TotalAmount = (cartcontents) => {
     return total
 }
 
-const CartMath = ({}) 
+const CartMath = ({TotalAmount}) 
 
 
 

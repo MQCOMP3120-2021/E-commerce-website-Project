@@ -69,7 +69,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
     <div className="cartDisplay">
       {user ? (
         <>
-         <h2>Loggin in as {user}</h2>
+         <h2>Logged in as {user.username}</h2>
         </>
       ) : (
         <>
@@ -88,7 +88,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
             <th>ITEM TOTAL</th>
           </tr>
 
-          {cartcontents ? (
+          {cartcontents && cartcontents.length !== 0 ? (
             <>
             {cartcontents.map((item) => (
             <tr key={item.id}>

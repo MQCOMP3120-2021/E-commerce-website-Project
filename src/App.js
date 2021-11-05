@@ -60,8 +60,8 @@ const App = () => {
 
   useEffect(() => {
     productService.getOrder()
-    .then(object => {
-      setOrder(object)
+    .then(objects => {
+      setOrder(objects)
     })
   })
 
@@ -71,21 +71,21 @@ const App = () => {
     .then(objects => {
       console.log("we have a response", objects)
       setCart(objects)
+      TotalAmount(objects)
     })
-
   }
+
 
   const producttoCart = (content, qty, user) => {
     const body = content
-    if (user){
+    if (user !== null){
       const newCart = {
         name: body.name,
         price: body.price,
         photo: body.photo,
         quantity: qty,
-        user: user
+        user: user.name
       }
-
       return newCart
     }
     else{
@@ -96,9 +96,7 @@ const App = () => {
         quantity: qty,
         user: 'guest'
       }
-
       return newCart
-      
     }
   }
 
@@ -114,7 +112,7 @@ const App = () => {
     .catch((error) => {
       console.log("Item has not been added")
     })
-    TotalAmount()
+    fetchCart()
   }
 
   const removeCart = (content) =>{
@@ -128,7 +126,6 @@ const App = () => {
       console.log("Item has not been removed")
     })
     fetchCart()
-    TotalAmount()
   }
 
   //Updates the cart amount
@@ -143,7 +140,6 @@ const App = () => {
       console.log("Item has not been updated")
     })
     fetchCart()
-    TotalAmount()
   }
 
   //Checks if a product needs to be added or updated in the cart database
@@ -162,13 +158,10 @@ const App = () => {
 
     if(cartCheck === true){
       updateCart(content, newQty)
-      TotalAmount()
     }
     else{
       addCart(content, qty)
-      TotalAmount()
     }
-    TotalAmount()
   }
 
   const clearCart = () => {
@@ -178,48 +171,43 @@ const App = () => {
     setTotal(0)
   }
 
-  const TotalAmount = () => {
-    console.log(cart)
-    let Stotal = 0
-    for(let i=0; i<cart.length; i++){
-      let PriceString = cart[i].price
-      let cartItemPrice = Number(PriceString.replace('$', ''))
-      let cartItemAmount = Number(cart[i].quantity)
-      Stotal = Stotal + (cartItemPrice * cartItemAmount)
-    }
+  const TotalAmount = (objects) => {
+    let Stotal = CartMath.TotalAmount(objects)
     console.log(Stotal)
     setTotal(Stotal)
   }
 
-  const PostOrder = () => {
-    let content = prepOrder()
+  const PostOrder = (overall) => {
+    let content = prepOrder(overall)
     console.log(content)
     productService.sendOrder(content)
     .then((object) => {
       console.log("POST response: ", object)
-      setCart(order.concat(object))
+      setOrder(order.concat(object))
       clearCart()
       console.log("Order Submitted", object)
     })
     .catch((error) => {
       console.log("Order has not been added")
     })
+    console.log(order.length)
+    console.log(order[order.length-1].id)
   }
 
-  const prepOrder = () => {
-    if(user){
+  const prepOrder = (overall) => {
+    if(user !== null){
       const NewOrder = {
-        User: user,
+        User: user.name,
         Cart: cart,
-        Total: total
+        Total: overall
       }
       return NewOrder
     }
     else{
       const NewOrder = {
         User: 'guest',
-        Cart: cart,
-        Total: total
+        Cart:  cart,
+        Total: overall
       }
       return NewOrder
     }
@@ -270,7 +258,7 @@ const App = () => {
 
         <Route path="/Checkout">
           <navBar.BrightNavBarUser/>
-          <Checkout cartTotal={total} postOrder={PostOrder}/>
+          <Checkout cartTotal={total} postOrder={PostOrder} order={order}/>
         </Route>
 
           <Route path="/">
@@ -331,7 +319,7 @@ else {
 
         <Route path="/Checkout">
           <navBar.BrightNavBarUser/>
-          <Checkout cartTotal={total} postOrder={PostOrder}/>
+          <Checkout cartTotal={total} postOrder={PostOrder} order={order}/>
 
         </Route>
 

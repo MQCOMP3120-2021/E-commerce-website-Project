@@ -18,7 +18,8 @@ const cartSchema = new mongoose.Schema({
     name: String,
     price: String,
     photo: String,
-    quantity: Number
+    quantity: Number,
+    user: String
   })
   
   cartSchema.set('toJSON', {

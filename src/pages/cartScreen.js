@@ -47,24 +47,6 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
     }
   }
 
-  const TotalPrice = (price, quantity) =>{
-    let PriceString = price
-    let ItemPrice = Number(PriceString.replace('$', ''))
-    return ItemPrice * quantity
-  }
-
-  const TotalAmount = () => {
-    let total = 0
-    for(let i=0; i<cartcontents.length; i++){
-      let PriceString = cartcontents[i].price
-      let cartItemPrice = Number(PriceString.replace('$', ''))
-      let cartItemAmount = Number(cartcontents[i].quantity)
-      total = total + (cartItemPrice * cartItemAmount)
-    }
-
-    return total
-  }
-
   return(
     <div className="cartDisplay">
       {user ? (
@@ -118,7 +100,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
                     )}
                   </td>
                   <td>
-                    <div className="submitBtn">{"$" +TotalPrice(item.price, item.quantity)}
+                    <div className="submitBtn">{"$" + CartMath.TotalPrice(item.price, item.quantity)}
                       <button onClick = {() => removeItem(item)}>Remove</button>
                     </div>
                   </td>
@@ -129,7 +111,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
               
           <div className="subtotalPrice">
             <p className="subtotalName">SUBTOTAL</p>
-            <p className="totalCost">{"$" + TotalAmount()} </p>
+            <p className="totalCost">{"$" + CartMath.TotalAmount(cartcontents)} </p>
             <button className="checkoutButton" type="submit" onClick={() => clearCart()}>Clear Cart<i className="inline-icon material-icons">trending_flat</i></button>
           </div>
           <div>
@@ -157,7 +139,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
         <h2>No Item in Cart: Lets get some bread</h2>
         <div className="subtotalPrice">
           <p className="subtotalName">SUBTOTAL</p>
-          <p className="totalCost">{"$" + TotalAmount()} </p>
+          <p className="totalCost">{"$" + 0} </p>
           <button className="checkoutButton" type="submit" onClick={() => clearCart()}>Clear Cart<i className="inline-icon material-icons">trending_flat</i></button>
         </div>
         </>

@@ -160,9 +160,10 @@ apiRouter.post('/api/order', (req,res) => {
   }
 
   const order = new Order({
-    user: body.user,
-    cart: body.cart,
-    total: body.total
+    User: body.User,
+    Cart: body.Cart,
+    Total: body.Total,
+    orderNo: body.orderNo
   })
 
   console.log(order)

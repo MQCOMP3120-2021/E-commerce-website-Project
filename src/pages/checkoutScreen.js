@@ -18,6 +18,7 @@ const Checkout = ({cartTotal, postOrder, order}) => {
 
     const submitPopup = () => {
         postOrder(overall)
+        console.log(order[order.length-1])
         setDone(true)
     }
 
@@ -40,7 +41,7 @@ const Checkout = ({cartTotal, postOrder, order}) => {
     }
     return(
         <>
-        {done ? <PaymentPopup order={order}/> :
+        {done ? <PaymentPopup order={order[order.length-1]} /> :
             <div className = "checkoutPage">
                 <div className = "checkoutOptions">
                     <div className = "paymentPanel">

@@ -11,7 +11,6 @@ import Login from './pages/loginScreen.js';
 import About from './pages/aboutScreen.js'
 import navBar from './Navigation-bar';
 import SingleProduct from './pages/individualScreen.js'
-import ListofCart from './pages/cartScreen.js';
 import SignUp from './pages/signupScreen';
 import { render } from '@testing-library/react';
 import Logout from './pages/logoutScreen.js';
@@ -62,8 +61,10 @@ const App = () => {
     productService.getOrder()
     .then(objects => {
       setOrder(objects)
+      console.log(objects.length)
     })
-  })
+  },
+  [])
 
   const fetchCart = () => {
     console.log("effect is being run")
@@ -173,7 +174,6 @@ const App = () => {
 
   const TotalAmount = (objects) => {
     let Stotal = CartMath.TotalAmount(objects)
-    console.log(Stotal)
     setTotal(Stotal)
   }
 
@@ -184,14 +184,12 @@ const App = () => {
     .then((object) => {
       console.log("POST response: ", object)
       setOrder(order.concat(object))
-      clearCart()
+      //clearCart()
       console.log("Order Submitted", object)
     })
     .catch((error) => {
       console.log("Order has not been added")
     })
-    console.log(order.length)
-    console.log(order[order.length-1].id)
   }
 
   const prepOrder = (overall) => {
@@ -199,7 +197,8 @@ const App = () => {
       const NewOrder = {
         User: user.name,
         Cart: cart,
-        Total: overall
+        Total: overall,
+        orderNo: order.length
       }
       return NewOrder
     }
@@ -207,7 +206,8 @@ const App = () => {
       const NewOrder = {
         User: 'guest',
         Cart:  cart,
-        Total: overall
+        Total: overall,
+        orderNo: order.length
       }
       return NewOrder
     }

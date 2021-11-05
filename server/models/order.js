@@ -15,9 +15,10 @@ const connect = async () => {
 connect()
 
 const orderSchema = new mongoose.Schema({
-    user: String,
-    cart: Object,
-    total: Number
+    User: String,
+    Cart: Object,
+    Total: Number,
+    orderNo: Number
   })
   
   orderSchema.set('toJSON', {

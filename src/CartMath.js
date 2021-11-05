@@ -17,8 +17,25 @@ const TotalAmount = (cartcontents) => {
     return total
 }
 
-const CartMath = ({TotalAmount}) 
+const TotalPrice = (price, quantity) =>{
+  let PriceString = price
+  let ItemPrice = Number(PriceString.replace('$', ''))
+  return ItemPrice * quantity
+}
 
+
+const BigNumber = (order) => {
+  let big = 0
+  for(let i=0; i<order.length; i++){
+    for(let j=0; j<=i; j++){
+      if(order[i].orderNo < order[j].orderNo){
+        big=j
+      }
+    }
+  }
+  return big
+}
+const CartMath = ({TotalAmount, TotalPrice, BigNumber}) 
 
 
 

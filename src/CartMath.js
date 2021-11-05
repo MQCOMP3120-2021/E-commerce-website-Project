@@ -24,18 +24,7 @@ const TotalPrice = (price, quantity) =>{
 }
 
 
-const BigNumber = (order) => {
-  let big = 0
-  for(let i=0; i<order.length; i++){
-    for(let j=0; j<=i; j++){
-      if(order[i].orderNo < order[j].orderNo){
-        big=j
-      }
-    }
-  }
-  return big
-}
-const CartMath = ({TotalAmount, TotalPrice, BigNumber}) 
+const CartMath = ({TotalAmount, TotalPrice}) 
 
 
 

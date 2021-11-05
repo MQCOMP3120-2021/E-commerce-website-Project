@@ -141,7 +141,9 @@ The folder includes a js file that contains all axios methods utilized to handle
 ## Daniel Wong
 
 - Worked on Cart & Checkout page.
-- Implemented cart and order functions
+- Implemented cart functions for GET, POST, PUT and DELETE(for one item or for all in cart)
+- Implemented order functions for GET and POST
+- Made math functions to calculate costs 
 - Resolved errors on the application
 - Ensured that products when added would update if there was a product already being ordered.
 

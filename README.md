@@ -140,7 +140,7 @@ The folder includes a js file that contains all axios methods utilized to handle
 
 ## Daniel Wong
 
-- Worked on Cart page.
+- Worked on Cart & Checkout page.
 - Implemented cart and order functions
 - Resolved errors on the application
 - Ensured that products when added would update if there was a product already being ordered.

@@ -76,7 +76,7 @@ const App = () => {
     })
   }
 
-
+//sorts and converts a product item for a cart database
   const producttoCart = (content, qty, user) => {
     const body = content
     if (user !== null){
@@ -192,6 +192,7 @@ const App = () => {
     })
   }
 
+  //rearanges data to be inserted into Order database
   const prepOrder = (overall) => {
     if(user !== null){
       const NewOrder = {

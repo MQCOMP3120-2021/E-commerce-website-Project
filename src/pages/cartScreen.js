@@ -47,116 +47,107 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
     }
   }
 
-  const TotalPrice = (price, quantity) =>{
-    let PriceString = price
-    let ItemPrice = Number(PriceString.replace('$', ''))
-    return ItemPrice * quantity
-  }
-
-  const TotalAmount = () => {
-    let total = 0
-    for(let i=0; i<cartcontents.length; i++){
-      let PriceString = cartcontents[i].price
-      let cartItemPrice = Number(PriceString.replace('$', ''))
-      let cartItemAmount = Number(cartcontents[i].quantity)
-      total = total + (cartItemPrice * cartItemAmount)
-    }
-
-    return total
-  }
-
   return(
     <div className="cartDisplay">
-      {/* {user ? (
+     {user ? (
         <>
-         <h2>Loggin in as {user}</h2>
+         <h2>Logged in as {user.username}</h2>
         </>
       ) : (
         <>
           <h2>Guest</h2>
         </>
-      )
+      )}
 
-      } */}
-      <table className="cartTable">
-        <tbody>
-          <tr>
-            <th></th>
-            <th>ITEM</th>
-            <th>PRICE</th>
-            <th>QUANTITY</th>
-            <th>ITEM TOTAL</th>
-          </tr>
+      {cartcontents && cartcontents.length !== 0 ? (
+        <>
+          <table className="cartTable">
+            <tbody>
+              <tr>
+                <th></th>
+                <th>ITEM</th>
+                <th>PRICE</th>
+                <th>QUANTITY</th>
+                <th>ITEM TOTAL</th>
+              </tr>
+              {cartcontents.map((item) => (
+                <tr key={item.id}>
+                  <td className="blank"><button className="removeBtn" onClick = {() => removeItem(item)}><i className="inline-icon material-icons">close</i></button></td>
+                  <td><img src = {item.photo} alt = {item.name}></img>
+                    <p>{item.name}</p>
+                  </td>
+                  <td>{item.price}</td>
+                  <td>
+                    {edit === true && item.name === checkName ? (
+                    <>
+                    <div className="quantityBtn">
+                      <button onClick = {Decrease} className="decrement"> - </button>
+                      <input type="number" value={amount} className="qtyInput" readOnly="{true}"/>
+                      <button onClick = {Increase} className="incriment"> + </button>
+                    </div>
+                    <div className="submitBtn">
+                      <button type="submit" onClick={() => cancelEdit()}>Back</button>
+                      <button type="submit" onClick={() => finaliseEdit(item,amount)}>Finalise Item</button>
+                    </div>
+                    </>
+                  ) : (
+                    <>
+                    <input type="number" value={item.quantity} className="qtyInput" readOnly="{true}"/>
+                      <div className="submitBtn">
+                        <button type="submit" onClick={() => editing(item.quantity, item.name)}>Update Item</button>
+                      </div>
+                    </>
+                    )}
+                  </td>
+                  <td>
+                    <div className="submitBtn">{"$" + CartMath.TotalPrice(item.price, item.quantity)}
+                      <button onClick = {() => removeItem(item)}>Remove</button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+              
+          <div className="subtotalPrice">
+            <p className="subtotalName">SUBTOTAL</p>
+            <p className="totalCost">{"$" + CartMath.TotalAmount(cartcontents)} </p>
+            <button className="checkoutButton" type="submit" onClick={() => clearCart()}>Clear Cart<i className="inline-icon material-icons">trending_flat</i></button>
+          </div>
+          <div>
+            <Link to='/Checkout'>
+              <button className="checkoutButton">Checkout</button>  
+            </Link>  
+          </div>
+      
 
-          {cartcontents ? (
-            <>
-            {cartcontents.map((item) => (
-            <tr key={item.id}>
-              <td className="blank"><button className="removeBtn" onClick = {() => removeItem(item)}><i className="inline-icon material-icons">close</i></button></td>
-              <td><img src = {item.photo} alt = {item.name}></img>
-                  <p>{item.name}</p>
-              </td>
-              <td>{item.price}</td>
-              <td>
-                {edit === true && item.name === checkName ? (
-                  <>
-                  <div className="quantityBtn">
-                  <button onClick = {Decrease} className="decrement"><img src={minusSign} className="minus"/></button>
-                    <input type="number" value={amount} className="qtyInput" readOnly="{true}"/>
-                    <button onClick = {Increase} className="increment"><img src={plusSign} className="plus"/></button>
-                  </div>
-                  <div className="finaliseContainer">
-                    <button type="back" onClick={() => cancelEdit()}>BACK</button>
-                    <button type="submit" onClick={() => finaliseEdit(item,amount)}>Finalise Item</button>
-                  </div>
-                </>
-                  
-                ) : (
-                  <>
-                  <input type="number" value={item.quantity} className="qtyInput" readOnly="{true}"/>
-                  <div className="updateContainer">
-                    <button type="submit" className="updateBtn"onClick={() => editing(item.quantity, item.name)}>Update Item</button>
-                  </div>
-                  </>
-                )}
-              </td>
-              <td>
-                <div className="submitBtn">{"$" +TotalPrice(item.price, item.quantity)}
-                {/* <button onClick = {() => removeItem(item)}>Remove</button> */}
-                </div>
-              </td>
+        </>
 
+      ) : ( 
+        <>
+        <table className="cartTable">
+          <tbody>
+            <tr>
+              <th></th>
+              <th>ITEM</th>
+              <th>PRICE</th>
+              <th>QUANTITY</th>
+              <th>ITEM TOTAL</th>
             </tr>
-            ))}
+          </tbody>
+        </table>
+        <h2>No Item in Cart: Lets get some bread</h2>
+        <div className="subtotalPrice">
+          <p className="subtotalName">SUBTOTAL</p>
+          <p className="totalCost">{"$" + 0} </p>
+          <button className="checkoutButton" type="submit" onClick={() => clearCart()}>Clear Cart<i className="inline-icon material-icons">trending_flat</i></button>
+        </div>
+        </>
+      )}
 
-            </>
-
-          ) : ( 
-          <>
-            <h2>No Item in Cart: Lets get some bread</h2>
-          </>
-          )
-        }
-        </tbody>
-      </table>
-
-      <div className="subtotalPrice">
-        <p className="subtotalName">SUBTOTAL</p>
-        <p className="totalCost">{"$" + TotalAmount()} </p>
-
-        <div className="buttonContainer">
-        <button className="clearButton" type="submit" onClick={() => clearCart()}>Clear Cart</button>
-        <Link to='/Checkout'>
-          <button className="checkoutButton">Checkout</button>  
-        </Link>  
-      </div>
-      </div>
-
-
-  
-      </div>
-       
-      )
+    </div>
+  )
+      
 }
 
 export default CartScreen;

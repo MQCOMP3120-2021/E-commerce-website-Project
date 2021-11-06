@@ -13,14 +13,35 @@ import {
 
 const Checkout = ({cartTotal, postOrder, order}) => {
     const [done, setDone] = useState(false)
+    const [delivery, setDelivery] = useState(0.00)
+    const[overall, setOverall] = useState(0.00)
 
     const submitPopup = () => {
-        postOrder()
+        postOrder(overall)
+        console.log(order[order.length-1])
         setDone(true)
+    }
+
+    const deliveryAmount = (option) =>{
+        if(option === "menulog"){
+            setDelivery(4.00) 
+            let amount = 4.00 + cartTotal
+            setOverall(amount)
+        }
+        else if(option === "deliveroo"){
+            setDelivery(3.00) 
+            let amount = 3.00 + cartTotal
+            setOverall(amount)
+        }
+        else if(option === "ubereats"){
+            setDelivery(5.00) 
+            let amount = 5.00 + cartTotal
+            setOverall(amount)
+        }
     }
     return(
         <>
-        {done ? <PaymentPopup order={order}/> :
+        {done ? <PaymentPopup order={order[order.length-1]} /> :
             <div className = "checkoutPage">
                 <div className = "checkoutOptions">
 
@@ -53,15 +74,15 @@ const Checkout = ({cartTotal, postOrder, order}) => {
                         <hr/>
                         <div className = "deliveryMethods">
                         <label>
-                                <input type = "radio" name="deliveryMethod" value="menulog" checked/>
+                                <input type = "radio" name="deliveryMethod" value="menulog" checked onClick={() => deliveryAmount("menulog")}/>
                                 <img src = {menulog}/>
                         </label>
                         <label>
-                                <input type = "radio" name="deliveryMethod" value="deliveroo"/>
+                                <input type = "radio" name="deliveryMethod" value="deliveroo" onClick={() => deliveryAmount("deliveroo")}/>
                                 <img src = {deliveroo}/>
                         </label>
                         <label>
-                                <input type = "radio" name="deliveryMethod" value="ubereats" />
+                                <input type = "radio" name="deliveryMethod" value="ubereats" onClick={() => deliveryAmount("ubereats")}/>
                                 <img src = {ubereats}/>
                         </label>
                         </div>
@@ -76,12 +97,12 @@ const Checkout = ({cartTotal, postOrder, order}) => {
                                     <td className = "rightPrice">${cartTotal}</td>
                                 </tr>
                                 <tr>
-                                    <td className="tagName">Delivery Charges</td>
-                                    <td className = "rightPrice">$5.00</td>
+                                    <td>Delivery Charges</td>
+                                    <td className = "rightPrice">${delivery}</td>
                                 </tr>
-                                <tr className="tagTotal">
-                                    <td className="tagName">TOTAL</td>
-                                    <td className = "rightPrice">$35.00</td>
+                                <tr>
+                                    <td>TOTAL</td>
+                                    <td className = "rightPrice">${overall}</td>
                                 </tr>
                             </table>
                         </div>

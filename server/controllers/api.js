@@ -110,7 +110,8 @@ apiRouter.post('/api/cart', (req,res) => {
     name: body.name,
     price: body.price,
     photo: body.photo,
-    quantity: body.quantity
+    quantity: body.quantity,
+    user: body.user
   })
 
   console.log(body.quantity)
@@ -159,9 +160,10 @@ apiRouter.post('/api/order', (req,res) => {
   }
 
   const order = new Order({
-    user: body.user,
-    cart: body.cart,
-    total: body.total
+    User: body.User,
+    Cart: body.Cart,
+    Total: body.Total,
+    orderNo: body.orderNo
   })
 
   console.log(order)
@@ -173,10 +175,6 @@ apiRouter.post('/api/order', (req,res) => {
       })
       .catch(error => console.log(error))
 })
-// const generateId = () => {
-//   const MAXID = data.cart.length > 0 ? Math.max(...data.cart.map((u) => u.id)) : 0
-//   return MAXID + 1
-// }
 
 apiRouter.post('/api/login', async (req, res) => {
 

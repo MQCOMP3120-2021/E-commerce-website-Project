@@ -26,10 +26,13 @@ The application contains 8 pages in total:
 - Home
 - Menu
 - Single product view
-- My order
-- Cart
 - About
 - FAQ
+- Cart
+- Checkout
+- Payment
+- Login
+- Logout
 
 ## Features
 
@@ -49,11 +52,15 @@ A single product view page contains a basic description of the item selected. Cu
 
 ### Cart
 
-Cart page allows customers to checkout the items that they have added or edit the quantity as desired. A delete option is available for customers who no longer show interest in a product added into cart. If customers wish to edit the quantity of item, an update item button is available for use, where it will update the item total according to the selected amount. Customers can also use the clear cart button to remove all items in the cart
+Cart page allows customers to checkout the items that they have added or edit the quantity as desired. A delete option is available for customers who no longer show interest in a product added into cart. If customers wish to edit the quantity of item, an update item button is available for use, where it will update the item total according to the selected amount. Customers can also use the clear cart button to remove all items in the cart.
 
 ### Checkout
 
-Upon confirmation, customers will be redirected to the checkout page, where they are permitted to select their preferred delivery partners and payment methods. The screen also displays a random number next to delivery fee estimation to make the page look more realistic.
+Upon confirmation, customers will be redirected to the checkout page, where they are permitted to select their preferred delivery partners and payment methods. The screen also displays a different delivery cost for each delivery partners to make the page look more realistic.
+
+### Payment
+
+When users confirm their payment, a message will pop up saying that that payment is successful. The order being placed will also be displayed below the message. 
 
 ### Contact
 
@@ -62,6 +69,14 @@ The page includes a simple description of the business with a google map stating
 ### FAQ
 
 Accordion component is implemented under the page to build vertically collapsing boxes that display some usual questions that users will encounter when using a web application of such. A contact form is attached below the accordion, allowing users to send emails to the business for further enquiries. 
+
+### Login
+
+The login page allows registerd users to sign in to their account and for unregistered customers to create a new account. 
+
+### Logout
+
+The logout page shows an alert to confirm users' logout. 
 
 # Project Source Code
 
@@ -105,9 +120,13 @@ The folder includes a js file that contains all axios methods utilized to handle
 
 # Next Steps
 
-- A sorting function should be added to the application, where it allows users to view the products in menu in sorted manner such as by ratings, pricing or alphabetical order of product names.
+- A sorting function could be added to the application, where it allows users to view the products in menu in sorted manner such as by ratings, pricing or alphabetical order of product names.
 
-- The proper checkout page should be set up, where users can select their desired delivery partner and choose their payment methods.
+- Implementation of a payment system which will allow users to pay for their orders.
+
+- Integration with actual delivery partners for items to get delivered. 
+
+- A form that allows users to add reviews to items that they previously purchased.
 
 # Roles and Contributions of Each Member
 

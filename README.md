@@ -175,7 +175,37 @@ The team has been using Messenger as the main communication platform for members
 
 Github has been utilized for members to publish their code into their respective branches. Once one pushed their changes into their branches, another member will pull the code to their local branch to examine that the code is functionable. After verification, the checker will merge the branches.
 
+# For New Frontend Production Build 
+
+Additional npm-scripts are added to package.json so that new production build of the frontend can be created without extra manual work.
+
+### `npm run build:ui`
+
+Remove previous build and create a new one for frontend
+
+### `npm run deploy`
+
+Releases current code to Heroku
+
+### `npm run deploy:full`
+
+Combines both scripts with necessary git commands to update the repository
+
+### `npm run log:prod`
+
+Displays Heroku logs
+
 # Available Scripts
+
+### `npm start`
+
+Application will run under development mode. Open http://localhost:3001 to view it in the browser. The page will reload if any edits are made. Lint errors can also been seen in the browser's console.
+
+Open http://localhost:3001/api/products to view the list of products in the browser.
+
+The page will reload if any edits are made.
+
+Lint errors can also been seen in the browser's console.
 
 ### `npm run build`
 

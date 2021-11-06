@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import productService from '../services/productService';
 import '../css/logoutPage.css';
+
 const Logout = ({setUser}) => {
     let history = useHistory()
 

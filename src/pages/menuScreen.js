@@ -5,7 +5,6 @@ import {
   Switch, Route, Link
 } from "react-router-dom";
 
-
 const ListOfProducts = ({products}) => {
   const [allProducts, setProducts] = useState([])
   const [search, setSearch] = useState('')

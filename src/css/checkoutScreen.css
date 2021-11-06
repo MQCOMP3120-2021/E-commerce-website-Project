@@ -3,19 +3,23 @@
     margin: 3% 10%;
     justify-content: space-around;
 }
+
 .checkoutOptions {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between;
 }
+
 .checkoutOptions p {
     margin: 0;
 }
+
 .checkoutPage hr {
     margin: 8px auto;
     border-top: 1px solid #0f0f0f;
 }
+
 .paymentPanel {
     margin-bottom: 30px;
     margin-top: 80px;
@@ -24,7 +28,6 @@
 .paymentPanel p {
     font-family: 'Cormorant', serif;
     font-weight: 500;
-    
 }
 
 .deliveryPanel p {
@@ -35,18 +38,22 @@
 .deliveryPanel {
     margin-top: 20px;
 }
+
 .checkoutOptions img{
     width: 120px;
     margin: auto 10px;
 }
+
 .paymentMethods {
     display: flex;
     margin-top: 20px;
 }
+
 .deliveryMethods {
     display: flex;
     margin-top: 20px;
 }
+
 input[type=radio] { 
     position: absolute;
     height: 0;
@@ -61,31 +68,39 @@ input[type=radio] + img {
 input[type="radio"]:checked + img {
     border: 2px solid black;
 }
+
 .checkoutDetails {
     display: flex;
     flex-direction: column;
     margin-top: 65px;
 }
+
 .spacing {
     margin-top: 53%;
 }
+
 .checkoutDetails p {
     margin: 2px;
 }
+
 .rightPrice {
     text-align: right;
 }
+
 .paymentTotal table {
     font-size: 2rem;
     border: none;
     width: 100%;
 }
+
 .paymentTotal table:nth-child(1){
     border-bottom: none;
 }
+
 .paymentTotal table:nth-child(2){
     border-bottom: 1px solid black;
 }
+
 .returnBtn {
     background-color: white;
     font-family: 'Cormorant', serif;

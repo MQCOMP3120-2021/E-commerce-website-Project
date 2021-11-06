@@ -9,6 +9,7 @@
     margin: auto;
     margin-top: 5%;
 }
+
 .logoutPage h2{
     font-size: 1.5rem;
     font-family: 'Cormorant', serif;
@@ -48,6 +49,7 @@
     width: 130px;
     height: 40px;
 }
+
 .yesBtn:hover{
     background-color:white;
     transition: 0.2s;

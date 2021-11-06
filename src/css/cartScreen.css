@@ -183,5 +183,11 @@ input[type=number]{
     margin-top: 5%
 }
 
+.emptyCart {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
 
 

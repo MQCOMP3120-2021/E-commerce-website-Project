@@ -100,9 +100,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
                     )}
                   </td>
                   <td>
-                    <div className="submitBtn">{"$" + CartMath.TotalPrice(item.price, item.quantity)}
-                      {/* <button onClick = {() => removeItem(item)}>Remove</button> */}
-                    </div>
+                    <div className="submitBtn">{"$" + CartMath.TotalPrice(item.price, item.quantity)}</div>
                   </td>
                 </tr>
               ))}
@@ -137,12 +135,7 @@ const CartScreen = ({cartcontents, removeItem, updateItem, clearCart, user}) => 
             </tr>
           </tbody>
         </table>
-        <h2>No Item in Cart: Lets get some bread</h2>
-        <div className="subtotalPrice">
-          <p className="subtotalName">SUBTOTAL</p>
-          <p className="totalCost">{"$" + 0} </p>
-          <button className="checkoutButton" type="submit" onClick={() => clearCart()}>Clear Cart<i className="inline-icon material-icons">trending_flat</i></button>
-        </div>
+        <h2 className="emptyCart">No Item in Cart: Let's get some bread!</h2>
         </>
       )}
 

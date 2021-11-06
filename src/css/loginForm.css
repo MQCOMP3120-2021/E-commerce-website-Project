@@ -2,17 +2,20 @@ body{
     background: white;
     font-family: 'Times New Roman', Times, serif;
 }
+
 .loginSection{
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
+
 .loginImg{
     height: 500px;
     width: 500px;
     object-fit: cover;
 }
+
 .loginForm{
     height: 500px;
     width: 500px;
@@ -25,12 +28,30 @@ body{
 .loginPadding{
     padding: 0 12%;
 }
+
 .loginForm h3{
     color: white;
     text-align: left;
     font-weight: 400;
     font-family: 'Cormorant Infant', serif;
     margin-top: 50px;
+}
+
+.signUp {
+    color:white;
+    font-family: 'Cormorant Infant', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.signUp:hover {
+    color:white;
+    transition: 0.2s;
+    padding-bottom: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 0.5px;
+    width: fit-content;
 }
 
 form{
@@ -61,19 +82,20 @@ input[type=text], input[type=password]{
     height: 50px;
   }
 
-  input[type=text]{
+input[type=text]{
     margin-top: -15px;
-  }
+}
 
-  ::placeholder {
+::placeholder {
     color: black;
     font-family: 'Cormorant', serif;
     letter-spacing: 2px;
     font-size: 0.9em;
     font-weight: 500;
-  }
+}
   
-  input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus, input[type=password]:focus {
     border:none;
     outline: 0; 
-  }
+}
+

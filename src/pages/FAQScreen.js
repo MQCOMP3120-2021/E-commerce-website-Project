@@ -10,9 +10,7 @@ import {
   AccordionItemPanel, } from 'react-accessible-accordion';
   import productService from '../services/productService';
 
- 
-
-const Faq = () => (
+ const Faq = () => (
 
         <div className="faqContainer">
           

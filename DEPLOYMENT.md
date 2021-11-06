@@ -3,7 +3,7 @@
 After the project is completed, it will be published to web using Heroku. 
 
 Deployment is successful and can be accessed through:
-
+(https://limitless-bastion-36675.herokuapp.com/)
 
 ### `git push heroku master`
 

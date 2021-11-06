@@ -140,12 +140,12 @@ input[type=number]{
     border-radius: 0;
 }
 
-.minus{
-    width:30px;
+.minusIcon{
+    object-fit: contain; 
 }
 
-.plus{
-    width:40px;
+.plusIcon{
+    object-fit: contain; 
 }
 
 

@@ -97,11 +97,11 @@ const Checkout = ({cartTotal, postOrder, order}) => {
                                     <td className = "rightPrice">${cartTotal}</td>
                                 </tr>
                                 <tr>
-                                    <td>Delivery Charges</td>
+                                    <td className="tagName">Delivery Charges</td>
                                     <td className = "rightPrice">${delivery}</td>
                                 </tr>
-                                <tr>
-                                    <td>TOTAL</td>
+                                <tr className="tagTotal">
+                                    <td className="tagName">TOTAL</td>
                                     <td className = "rightPrice">${overall}</td>
                                 </tr>
                             </table>

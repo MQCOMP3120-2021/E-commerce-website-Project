@@ -93,6 +93,8 @@ td img{
 .subtotalName {
     margin-right: 140px;
     font-size: 15;
+    font-family: 'Cormorant', serif;
+    font-weight: 500;
 }
 
 .buttonContainer {
@@ -169,6 +171,16 @@ td img{
 input[type=number]{
     text-align: center;
     width: 20%
+}
+
+.loggedUser {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Cormorant', serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    letter-spacing: 7px;
+    margin-top: 5%
 }
 
 

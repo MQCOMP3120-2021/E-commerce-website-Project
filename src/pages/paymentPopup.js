@@ -21,9 +21,9 @@ const PaymentPopup = (order) => {
             </div>
             {order ? (
                 <div className ="Orders">
-                    <h2>User: {reorder.User}</h2>
-                    <h2>Your Order id is: #{reorder.orderNo}</h2>
-                    <table>
+                    <h2 className="orderID">User: {reorder.User}</h2>
+                    <h2 className="orderID">Your Order id is: #{reorder.orderNo}</h2>
+                    <table className="orderTable">
                         <tbody>
                         <tr>
                         <th></th>
@@ -35,7 +35,7 @@ const PaymentPopup = (order) => {
                         {reorder.Cart.map((item) => (
                             <tr key={item.id}>
                                 <td><img src={item.photo} alt={item.name}></img></td>
-                                <td>{item.name}</td>
+                                <td className="orderItem">{item.name}</td>
                                 <td>{item.price}</td>
                                 <td>{item.quantity}</td>
                                 <td>{CartMath.TotalPrice(item.price, item.quantity)}</td>
@@ -43,12 +43,12 @@ const PaymentPopup = (order) => {
                         ))}
                         </tbody>
                     </table>
-                    <h2>Total Cost (including delivery fee): ${reorder.Total}</h2>
-                    <h3> Thanks for paying with Wake and Bake</h3>
+                    <h2 className="orderTotal">Total Cost (including delivery fee): ${reorder.Total}</h2>
+                    <h3 className="orderTotal"> Thanks for shopping with Wake and Bake!</h3>
                 </div>
             ):(
             <div className = "Orders">
-                <h2> Thanks for paying with Wake n Bake</h2>
+                <h2> Thanks for shopping with Wake n Bake!</h2>
             </div>
             )
             }

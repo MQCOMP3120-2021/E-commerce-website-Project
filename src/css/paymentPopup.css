@@ -44,3 +44,31 @@
     color: black;
     transition: 0.2s;
 }
+
+.Orders {
+  border: solid 1px black;
+  width:50%;
+  margin:auto;
+  padding: 50px;
+  margin-bottom: 50px;
+  align-content: center;
+}
+
+.orderItem {
+  font-size: 1em;
+}
+
+.orderTable {
+  width: 100%
+}
+
+.orderID {
+  font-family: 'Cormorant', serif;
+  font-weight: bold;
+}
+
+.orderTotal {
+  font-family: 'Cormorant', serif;
+  font-weight: bold;
+  text-align: right;
+}

@@ -63,5 +63,9 @@
     "json-server": "^0.16.3",
     "nodemon": "^2.0.13",
     "supertest": "^6.1.6"
-  }
+  },
+  "build:ui": "rm -f build && npm run build",
+  "deploy": "git push heroku master",
+  "deploy:full": "npm run build:ui && git add . git commit -m && npm run deploy",
+  "log:prod": "heroku logs --tail"
 }

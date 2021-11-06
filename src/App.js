@@ -184,7 +184,7 @@ const App = () => {
     .then((object) => {
       console.log("POST response: ", object)
       setOrder(order.concat(object))
-      //clearCart()
+      clearCart()
       console.log("Order Submitted", object)
     })
     .catch((error) => {

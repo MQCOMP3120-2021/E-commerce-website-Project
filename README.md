@@ -45,7 +45,7 @@ The menu page features all the products that the bakery shop sells. A search bar
 
 ### Single Product View
 
-A single product view page contains a basic description of the item selected. Customers who are interested in the product are permitted to choose their desired quantity and add the item into their cart. Some ratings and reviews provided by previous customers are also viewable by customers on the page. 
+A single product view page contains a basic description of the item selected. Customers who are interested in the product are permitted to choose their desired quantity and add the item into their cart. Some reviews provided by previous customers are also viewable by customers on the page. 
 
 ### Cart
 
@@ -111,28 +111,36 @@ The folder includes a js file that contains all axios methods utilized to handle
 
 # Roles and Contributions of Each Member
 
+## Daniel Wong
+- Worked on Cart & Checkout page.
+- Implemented cart functions for GET, POST, PUT and DELETE(for one item or for all in cart)
+- Implemented order functions for GET and POST
+- Made math functions to calculate costs 
+- Resolved errors on the application
+- Ensured that products when added would update if there was a product already being ordered.
+
 ## Jessica Franklin
-- Initial commits for structure of pages
-- Created and implemented the Navigation bar functions 
-- Added React Router and implemented on almost every page
-- Back-end server initialization and contribution
+- Initial commits for structure of pages.
+- Created and implemented the Navigation bar functions.
+- Added React Router and implemented on almost every page.
+- Back-end server initialization and contribution.
 - Resolved merge conflicts between branches when necessary.
 - Created the login and signup function for users.
-- Linked new users to the database
+- Linked new users to the database.
 - Worked on the Home Page, Menu Page, FAQ Page, Single Product Page.
 - Resolved errors occuring on the application.
 
 ## Jing Wen Ng
-
-- Created interface designs for application on Figma
+- Created interface designs for application on Figma.
 - Worked on any documentations required (i.e. the project proposal, README.md)
 - Created the initial empty React application
 - Resolved merge conflicts between branches when necessary.
-- Assisted on styling for Home Page, Menu Page and FAQ Page.
+- Assisted on styling for all pages.
 - Added email function on FAQ page. 
+- Wrote api tests for application.
+- In charge of deployment and finalising things. 
 
 ## Mariel Uykim
-
 - Resolved merge conflicts between branches when necessary.
 - Created database to store information.
 - Linked the application to the database.
@@ -141,15 +149,6 @@ The folder includes a js file that contains all axios methods utilized to handle
 - Resolved errors occuring on the application.
 - Added search and filter for menu items.
 - Implemented Login cookies and logout function.
-
-## Daniel Wong
-
-- Worked on Cart & Checkout page.
-- Implemented cart functions for GET, POST, PUT and DELETE(for one item or for all in cart)
-- Implemented order functions for GET and POST
-- Made math functions to calculate costs 
-- Resolved errors on the application
-- Ensured that products when added would update if there was a product already being ordered.
 
 # Interaction and Communication
 

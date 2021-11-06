@@ -13,11 +13,17 @@ The about us page contains a basic introduction of the business, followed by a G
 # FAQPage.png || FAQEmail.png
 The faq page provides an accordion that answers frequently asked questions, and an email form that users can utilize to send emails to the business's account.
 
-# CheckoutPage.png
-The checkout page allows user to select their desired delivery partner and payment method for their orders. 
+# FAQPage.png || FAQEmail.png
+The faq page provides an accordion that answers frequently asked questions, and an email form that users can utilize to send emails to the business's account.
 
-# PaymentPopUp.png
-The page displays a message when users click on confirm order to show them that their order has been placed.
+# CartPage.png
+The cart page contains all items that users add into cart. There is a delete button for users to remove items that they no longer want, a clear cart button where users can delete all items in the cart, and an update item button that allows users to edit the quantity of the items in cart.
+
+# CheckoutPage.png
+The checkout page allows user to select their desired delivery partner and payment method for their orders. Upon selecting the different delivery partner, the page displays a different delivery cost for each partner. 
+
+# PaymentPopUp.png || OrderPlaced.png
+The page displays a message when users click on confirm order to show them that their order has been placed. A table containing the order placed is shown below the message. 
 
 # LoginPage.png
 The login page contains a login form that permits registered users to log in to their account.
